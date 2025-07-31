@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://uf3x5rrl31qh" path="res://levels/final_level/final_level.tscn" id="4_1qy1k"]
 [ext_resource type="PackedScene" uid="uid://ypgd2rchig6s" path="res://monster/monster.tscn" id="6_cbffv"]
 [ext_resource type="FontFile" uid="uid://di04vknxmp46b" path="res://main_menu/Daneehand Regular Cyr.ttf" id="7_fbudy"]
-[ext_resource type="Script" uid="uid://dtydotpfe7we1" path="res://ux/meters_label.gd" id="9_2ihbs"]
+[ext_resource type="Script" uid="uid://dgtcr12eq0r3r" path="res://ux/meters_label.gd" id="9_2ihbs"]
 [ext_resource type="PackedScene" uid="uid://cwklp2uls81do" path="res://visuals/borders/borders.tscn" id="11_3n40r"]
 
 [node name="Gameplay" type="Node2D" node_paths=PackedStringArray("player_respawn_timer")]
