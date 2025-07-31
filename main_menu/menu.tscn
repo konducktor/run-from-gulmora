@@ -81,23 +81,26 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_vsb4k")
 text = "X"
 script = ExtResource("3_m2eq4")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -302.0
-offset_top = -238.0
-offset_right = 302.0
-offset_bottom = -113.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 37
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 51.0
+offset_top = -281.0
+offset_right = 400.0
+offset_bottom = -38.0
+grow_vertical = 0
+texture = ExtResource("1_lti8b")
+expand_mode = 1
 
-[node name="Button" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Node" type="Node" parent="."]
+
+[node name="Button" type="Button" parent="Node"]
+offset_left = 658.0
+offset_top = 316.0
+offset_right = 1262.0
+offset_bottom = 426.0
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
@@ -112,18 +115,11 @@ text = "Play
 "
 script = ExtResource("3_m2eq4")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 51.0
-offset_top = -281.0
-offset_right = 400.0
-offset_bottom = -38.0
-grow_vertical = 0
-texture = ExtResource("1_lti8b")
-expand_mode = 1
+[node name="HSlider" type="HSlider" parent="Node"]
+offset_left = 658.0
+offset_top = 463.0
+offset_right = 1262.0
+offset_bottom = 479.0
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -165,4 +161,4 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="Button3" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Node/Button" to="." method="_on_start_pressed"]
