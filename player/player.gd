@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 @export var PLAYER_SPEED : float
 
-@export var MAX_JUMPS : int
+@export var EXTRA_JUMPS : int
 
 @export var JUMP_HEIGHT : float
 @export var JUMP_PEAK_TIME : float
@@ -28,7 +28,7 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	if is_on_floor():
-		jump_amount = MAX_JUMPS
+		jump_amount = EXTRA_JUMPS
 	else:
 		velocity.y = calculate_gravity(delta, velocity.y)
 	
@@ -46,10 +46,10 @@ func calculate_gravity(delta: float, vertical_velocity: float) -> float:
 
 
 func calculate_jump(_delta: float, vertical_velocity: float) -> float:
-	if (jump_amount > 0) or (jump_amount == -1):
-		
+	var grounded := is_on_floor()
+	if grounded or (jump_amount > 0) or (jump_amount == -1):
 		if Input.is_action_just_pressed('movement_jump'):
-			if (jump_amount > 0):
+			if not grounded:
 				jump_amount -= 1
 			
 			return jump_velocity
