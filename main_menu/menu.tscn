@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://oy076h1ap0o0"]
+[gd_scene load_steps=17 format=3 uid="uid://oy076h1ap0o0"]
 
 [ext_resource type="Texture2D" uid="uid://eemdwk24aovb" path="res://main_menu/gmtk2025.png" id="1_lti8b"]
 [ext_resource type="Script" uid="uid://ys28y1n0g2id" path="res://main_menu/main_menu.gd" id="1_ouk20"]
 [ext_resource type="PackedScene" uid="uid://dtamhc3u844oa" path="res://gameplay.tscn" id="2_mae5d"]
+[ext_resource type="FontFile" uid="uid://cxj34544xr6v7" path="res://main_menu/Holiday Mama.otf" id="3_ao3db"]
 [ext_resource type="Script" uid="uid://ctlyrlympirev" path="res://main_menu/menu_button.gd" id="3_m2eq4"]
 [ext_resource type="Script" uid="uid://cn8bmgvld6mor" path="res://main_menu/menu_texture_button.gd" id="5_33wq2"]
 [ext_resource type="Texture2D" uid="uid://dgqtvqow03sq6" path="res://main_menu/ui_slider_handle.png" id="5_xpv0w"]
@@ -87,6 +88,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ao3db")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = SubResource("StyleBoxEmpty_lti8b")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ouk20")
@@ -133,6 +135,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ao3db")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = SubResource("StyleBoxEmpty_lti8b")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ouk20")
@@ -154,6 +157,7 @@ offset_right = 211.0
 offset_bottom = -43.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_ao3db")
 theme_override_font_sizes/font_size = 35
 text = "Music Volume:"
 horizontal_alignment = 1
@@ -194,6 +198,7 @@ offset_right = 211.0
 offset_bottom = 58.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_ao3db")
 theme_override_font_sizes/font_size = 35
 text = "SFX Volume:"
 horizontal_alignment = 1
@@ -227,6 +232,7 @@ offset_left = 659.0
 offset_top = 626.0
 offset_right = 1262.0
 offset_bottom = 696.0
+theme_override_fonts/font = ExtResource("3_ao3db")
 theme_override_font_sizes/font_size = 36
 text = "Fullscreen"
 
@@ -243,6 +249,7 @@ offset_right = -45.0
 offset_bottom = -31.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_ao3db")
 theme_override_font_sizes/font_size = 30
 text = "AmongRyzh - Level Design, itch.io page
 GaMMa - Game Design, Sound Design
@@ -264,6 +271,7 @@ offset_right = 714.5
 offset_bottom = -270.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_ao3db")
 theme_override_font_sizes/font_size = 125
 text = "RUN FROM GULMORA"
 horizontal_alignment = 1

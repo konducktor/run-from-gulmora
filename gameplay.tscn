@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://hqq6qxfhsob4" path="res://gameplay_elements/platform/platform.tscn" id="1_n4psk"]
 [ext_resource type="Script" uid="uid://dux2ueculjt2t" path="res://global/camera.gd" id="1_oe8ih"]
-[ext_resource type="Script" path="res://global/gameplay.gd" id="1_smepj"]
+[ext_resource type="Script" uid="uid://bvntop35l4m5u" path="res://global/gameplay.gd" id="1_smepj"]
 [ext_resource type="Script" uid="uid://byvfvad6xuppm" path="res://levels/level_generator.gd" id="1_xuee5"]
 [ext_resource type="PackedScene" uid="uid://uos88rcjypfn" path="res://player/player.tscn" id="2_ej4tk"]
 [ext_resource type="PackedScene" uid="uid://ypgd2rchig6s" path="res://monster/monster.tscn" id="6_cbffv"]
