@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://ys28y1n0g2id" path="res://main_menu/main_menu.gd" id="1_ouk20"]
 [ext_resource type="PackedScene" uid="uid://dtamhc3u844oa" path="res://gameplay.tscn" id="2_mae5d"]
 [ext_resource type="Script" uid="uid://ctlyrlympirev" path="res://main_menu/menu_button.gd" id="3_m2eq4"]
-[ext_resource type="Texture2D" uid="uid://dgqtvqow03sq6" path="res://ui_slider_handle.png" id="5_xpv0w"]
-[ext_resource type="AudioStream" uid="uid://dsgs4jqs3nw0p" path="res://ляляля.mp3" id="6_33wq2"]
+[ext_resource type="Texture2D" uid="uid://dgqtvqow03sq6" path="res://main_menu/ui_slider_handle.png" id="5_xpv0w"]
+[ext_resource type="AudioStream" uid="uid://dsgs4jqs3nw0p" path="res://sounds/ляляля.mp3" id="6_33wq2"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ouk20"]
 
@@ -266,6 +266,7 @@ vertical_alignment = 1
 stream = ExtResource("6_33wq2")
 volume_db = 15.0
 autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="Button3" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Node/Button" to="." method="_on_start_pressed"]
