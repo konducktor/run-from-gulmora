@@ -6,13 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://bggjd5duuwn5t" path="res://gameplay_elements/one-way-platform/one_way_platform.tscn" id="4_5mrsh"]
 [ext_resource type="PackedScene" uid="uid://b8esukmcwaxoj" path="res://gameplay_elements/spring/spring.tscn" id="5_safpt"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hjsbj"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_safpt"]
 texture = ExtResource("1_80vhd")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_5mrsh"]
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_gjl0y"]
 scenes/1/scene = ExtResource("3_cwqvt")
 scenes/2/scene = ExtResource("4_5mrsh")
 scenes/3/scene = ExtResource("5_safpt")
@@ -20,8 +20,8 @@ scenes/3/scene = ExtResource("5_safpt")
 [sub_resource type="TileSet" id="TileSet_cwqvt"]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 2
-sources/0 = SubResource("TileSetAtlasSource_hjsbj")
-sources/1 = SubResource("TileSetScenesCollectionSource_5mrsh")
+sources/0 = SubResource("TileSetAtlasSource_safpt")
+sources/1 = SubResource("TileSetScenesCollectionSource_gjl0y")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hjsbj"]
 size = Vector2(1919.75, 64)
