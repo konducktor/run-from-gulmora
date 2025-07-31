@@ -58,7 +58,7 @@ func add_level_to_scene(level: PackedScene, level_position: Vector2 = Vector2.ZE
 	var new_level : Level = level.instantiate()
 	new_level.position = level_position
 	
-	self.add_child(new_level)
+	call_deferred('add_child', new_level)
 
 
 func get_level_array_from_type(type: LEVEL_TYPES) -> Array[PackedScene]:

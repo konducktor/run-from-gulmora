@@ -28,6 +28,7 @@ window/stretch/mode="viewport"
 [file_customization]
 
 folder_colors={
+"res://gameplay_elements/": "pink",
 "res://global/": "blue",
 "res://levels/": "green",
 "res://main_menu/": "purple",

@@ -1,11 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtamhc3u844oa"]
+[gd_scene load_steps=6 format=3 uid="uid://dtamhc3u844oa"]
 
 [ext_resource type="PackedScene" uid="uid://hqq6qxfhsob4" path="res://platform/platform.tscn" id="1_n4psk"]
 [ext_resource type="Script" uid="uid://dux2ueculjt2t" path="res://global/camera.gd" id="1_oe8ih"]
+[ext_resource type="Script" uid="uid://bvntop35l4m5u" path="res://global/gameplay.gd" id="1_smepj"]
 [ext_resource type="Script" uid="uid://byvfvad6xuppm" path="res://levels/level_generator.gd" id="1_xuee5"]
 [ext_resource type="PackedScene" uid="uid://uos88rcjypfn" path="res://player/player.tscn" id="2_ej4tk"]
 
-[node name="Gameplay" type="Node2D"]
+[node name="Gameplay" type="Node2D" node_paths=PackedStringArray("player_respawn_timer")]
+script = ExtResource("1_smepj")
+player_respawn_timer = NodePath("PlayerRespawnTimer")
+
+[node name="PlayerRespawnTimer" type="Timer" parent="."]
+one_shot = true
+ignore_time_scale = true
 
 [node name="LevelGenerator" type="Node2D" parent="."]
 script = ExtResource("1_xuee5")

@@ -14,9 +14,19 @@ extends CharacterBody2D
 @onready var jump_gravity : float = ((-2.0 * JUMP_HEIGHT) / (JUMP_PEAK_TIME ** 2)) * -1.0
 @onready var fall_gravity : float = ((-2.0 * JUMP_HEIGHT) / (JUMP_FALL_TIME ** 2)) * -1.0
 
-@onready var jump_amount : int
+var jump_amount : int
+var has_died : bool
+
+
+func _ready():
+	has_died = false
+	GlobalSignals.player_died.connect(_on_death)
+
 
 func _physics_process(delta: float) -> void:
+	if has_died:
+		return
+	
 	if is_on_floor():
 		jump_amount = MAX_JUMPS
 	else:
@@ -51,10 +61,14 @@ func calculate_jump(_delta: float, vertical_velocity: float) -> float:
 	return vertical_velocity
 
 
-func calculate_horizontal_movement(_delta: float, horizontal_velocity: float) -> float:
+func calculate_horizontal_movement(_delta: float, _horizontal_velocity: float) -> float:
 	var direction := Input.get_axis("movement_left", "movement_right")
 	
 	if direction:
 		return direction * PLAYER_SPEED
 	else:
 		return move_toward(velocity.x, 0, PLAYER_SPEED)
+
+
+func _on_death():
+	has_died = true
