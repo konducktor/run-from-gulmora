@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cwklp2uls81do"]
 
-[ext_resource type="Script" uid="uid://wm8d2jkoik0c" path="res://visuals/borders/border.gd" id="1_enlri"]
+[ext_resource type="Script" path="res://visuals/borders/border.gd" id="1_enlri"]
 [ext_resource type="Texture2D" uid="uid://dqj8c0pqrbmmb" path="res://visuals/borders/borders.png" id="1_x2tsb"]
-[ext_resource type="Script" uid="uid://d3ky5fcclj483" path="res://visuals/borders/borders_logic.gd" id="1_y6k8p"]
+[ext_resource type="Script" path="res://visuals/borders/borders_logic.gd" id="1_y6k8p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y6k8p"]
 size = Vector2(416, 192)
