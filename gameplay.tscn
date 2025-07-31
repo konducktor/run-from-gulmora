@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://uos88rcjypfn" path="res://player/player.tscn" id="2_ej4tk"]
 [ext_resource type="PackedScene" uid="uid://ypgd2rchig6s" path="res://monster/monster.tscn" id="6_cbffv"]
 [ext_resource type="FontFile" uid="uid://di04vknxmp46b" path="res://main_menu/Daneehand Regular Cyr.ttf" id="7_fbudy"]
-[ext_resource type="Script" uid="uid://553nis8ue7c0" path="res://ux/meters_label.gd" id="9_2ihbs"]
+[ext_resource type="Script" uid="uid://dtydotpfe7we1" path="res://ux/meters_label.gd" id="9_2ihbs"]
 
 [node name="Gameplay" type="Node2D" node_paths=PackedStringArray("player_respawn_timer")]
 script = ExtResource("1_smepj")
@@ -48,7 +48,7 @@ position = Vector2(958, 1664)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="MetersLabel" type="Label" parent="CanvasLayer"]
+[node name="MetersLabel" type="Label" parent="CanvasLayer" node_paths=PackedStringArray("PLAYER")]
 offset_left = 24.0
 offset_top = 26.0
 offset_right = 415.0
@@ -57,3 +57,4 @@ theme_override_fonts/font = ExtResource("7_fbudy")
 theme_override_font_sizes/font_size = 50
 text = "Meters: миллион тысяч"
 script = ExtResource("9_2ihbs")
+PLAYER = NodePath("../../Player")
