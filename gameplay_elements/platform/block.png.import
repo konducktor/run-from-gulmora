@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bwlaympteebee"
-path="res://.godot/imported/block.png-88ae8f2db96953a38aed2f0c70a6ebee.ctex"
+path="res://.godot/imported/block.png-66aa694a5eaef4507b2d5f2ac57eb90a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://platform/block.png"
-dest_files=["res://.godot/imported/block.png-88ae8f2db96953a38aed2f0c70a6ebee.ctex"]
+source_file="res://gameplay_elements/platform/block.png"
+dest_files=["res://.godot/imported/block.png-66aa694a5eaef4507b2d5f2ac57eb90a.ctex"]
 
 [params]
 

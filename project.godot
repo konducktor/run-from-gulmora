@@ -37,7 +37,6 @@ folder_colors={
 "res://levels/": "green",
 "res://main_menu/": "purple",
 "res://monster/": "orange",
-"res://platform/": "yellow",
 "res://player/": "red"
 }
 

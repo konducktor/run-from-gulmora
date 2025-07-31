@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bggjd5duuwn5t"]
+
+[ext_resource type="Texture2D" uid="uid://bwlaympteebee" path="res://gameplay_elements/platform/block.png" id="1_82d62"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82d62"]
+size = Vector2(64, 64)
+
+[node name="OneWayPlatform" type="StaticBody2D"]
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.294118)
+texture = ExtResource("1_82d62")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_82d62")
+one_way_collision = true
+debug_color = Color(0.624759, 0.426969, 0.822682, 0.42)

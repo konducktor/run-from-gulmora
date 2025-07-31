@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://bwgimqktwg1dp"]
+[gd_scene load_steps=9 format=4 uid="uid://bwgimqktwg1dp"]
 
-[ext_resource type="Texture2D" uid="uid://bwlaympteebee" path="res://platform/block.png" id="1_80vhd"]
+[ext_resource type="Texture2D" uid="uid://bwlaympteebee" path="res://gameplay_elements/platform/block.png" id="1_80vhd"]
 [ext_resource type="Script" uid="uid://d1d7dlfpksgqn" path="res://levels/level.gd" id="1_hjsbj"]
 [ext_resource type="PackedScene" uid="uid://eurxn62028bp" path="res://gameplay_elements/spike/spike.tscn" id="3_cwqvt"]
+[ext_resource type="PackedScene" uid="uid://bggjd5duuwn5t" path="res://gameplay_elements/one-way-platform/one_way_platform.tscn" id="4_5mrsh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hjsbj"]
 texture = ExtResource("1_80vhd")
@@ -12,6 +13,7 @@ texture_region_size = Vector2i(64, 64)
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_5mrsh"]
 scenes/1/scene = ExtResource("3_cwqvt")
+scenes/2/scene = ExtResource("4_5mrsh")
 
 [sub_resource type="TileSet" id="TileSet_cwqvt"]
 tile_size = Vector2i(64, 64)
