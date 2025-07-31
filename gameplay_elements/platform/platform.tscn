@@ -3,18 +3,17 @@
 [ext_resource type="Texture2D" uid="uid://qagk3531rpwx" path="res://icon.svg" id="1_x2c4s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2q7nh"]
-size = Vector2(127.8, 128)
+size = Vector2(384, 128)
 
 [node name="Platform" type="StaticBody2D"]
 collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 1)
-scale = Vector2(5, 1)
+scale = Vector2(15, 1)
 texture = ExtResource("1_x2c4s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0)
 scale = Vector2(5, 1)
 shape = SubResource("RectangleShape2D_2q7nh")
 debug_color = Color(1, 0.00630188, 0.0555948, 0.42)

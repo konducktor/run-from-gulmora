@@ -26,15 +26,6 @@ var has_died : bool
 var previously_jumping : bool
 var previously_falling : bool
 
-@export var METERS_OFFSET: float
-var meters:
-	set(value):
-		meters = clamp((-value + METERS_OFFSET) * 0.001, 0, INF)
-		var clamped_value = clamp((-value + METERS_OFFSET) * 0.001, 0, INF)
-		#meters = -value + METERS_OFFSET
-		meters = snapped(clamped_value, 0.01)
-		GlobalSignals.meters_updated.emit(meters)
-
 func _ready():
 	has_died = false
 	GlobalSignals.player_died.connect(_on_death)
@@ -50,10 +41,9 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.y = calculate_gravity(delta, velocity.y)
 	
-	velocity.x = calculate_horizontal_movement(delta, velocity.x)
-	velocity.y = calculate_jump(delta, velocity.y)
-	
-	meters = position.y
+	if not has_died:
+		velocity.x = calculate_horizontal_movement(delta, velocity.x)
+		velocity.y = calculate_jump(delta, velocity.y)
 	
 	move_and_slide()
 

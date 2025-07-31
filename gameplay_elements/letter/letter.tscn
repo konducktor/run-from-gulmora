@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://cgweq44ec2mce"]
+
+[ext_resource type="Texture2D" uid="uid://c64etftqqhbyj" path="res://gameplay_elements/letter/art/L_letter.png" id="1_edkgh"]
+[ext_resource type="Script" uid="uid://bewkgt0sd4i2h" path="res://gameplay_elements/letter/letter.gd" id="1_hxa6d"]
+[ext_resource type="Texture2D" uid="uid://p673ehvwajtp" path="res://gameplay_elements/letter/art/O_letter.png" id="3_b5b0c"]
+[ext_resource type="Texture2D" uid="uid://dxbclix2yeism" path="res://gameplay_elements/letter/art/P.png" id="4_vrgli"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hxa6d"]
+radius = 31.7805
+
+[node name="Letter" type="Area2D" node_paths=PackedStringArray("collison_shape", "sprite") groups=["Letter"]]
+script = ExtResource("1_hxa6d")
+letter_textures = Array[Texture2D]([ExtResource("1_edkgh"), ExtResource("3_b5b0c"), ExtResource("3_b5b0c"), ExtResource("4_vrgli")])
+collison_shape = NodePath("CollisionShape2D")
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_edkgh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hxa6d")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

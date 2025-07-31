@@ -7,6 +7,8 @@ class_name LevelGenerator
 @export var C_LEVEL_DIR : String
 @export var D_LEVEL_DIR : String
 
+@export var FINAL_LEVEL : PackedScene
+
 
 var A_levels : Array[PackedScene]
 var B_levels : Array[PackedScene]
@@ -37,30 +39,38 @@ func _ready() -> void:
 
 
 func _on_next_level():
-	generate_next_level()
+	var next_level : Level = generate_next_level()
 	
 	if get_child_count() > 5:
 		get_child(0).queue_free()
 
 
-func generate_next_level() -> void:
+func generate_next_level(custom_level: PackedScene = null) -> Level:
 	var level_array : Array[PackedScene] = get_level_array_from_type(current_level_type)
-	var next_level : PackedScene = pick_level_from_level_array(level_array)
+	var next_level : PackedScene
+	
+	if custom_level:
+		next_level = custom_level
+	else:
+		next_level = pick_level_from_level_array(level_array)
 	
 	var level_positopn := Vector2(0, -17*64*current_level_index)
-	add_level_to_scene(next_level, level_positopn)
+	var added_level : Level = add_level_to_scene(next_level, level_positopn)
 	
 	current_level_index += 1
 	
 	if current_level_index % 5 == 0:
 		update_current_level_type()
+	
+	return added_level
 
 
-func add_level_to_scene(level: PackedScene, level_position: Vector2 = Vector2.ZERO) -> void:
+func add_level_to_scene(level: PackedScene, level_position: Vector2 = Vector2.ZERO) -> Level:
 	var new_level : Level = level.instantiate()
 	new_level.position = level_position
 	
 	call_deferred('add_child', new_level)
+	return new_level
 
 
 func get_level_array_from_type(type: LEVEL_TYPES) -> Array[PackedScene]:
@@ -113,3 +123,7 @@ func get_all_levels(directory_path: String) -> Array[PackedScene]:
 		print("An error occurred when trying to access the path.")
 
 	return output
+
+
+func generate_final_level():
+	generate_next_level(FINAL_LEVEL)
