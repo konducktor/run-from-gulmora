@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwklp2uls81do"]
+
+[ext_resource type="Texture2D" uid="uid://dqj8c0pqrbmmb" path="res://visuals/borders/borders.png" id="1_x2tsb"]
+
+[node name="Borders" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = 5
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 1.2)
+motion_mirroring = Vector2(0, 1080)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(242, 540)
+texture = ExtResource("1_x2tsb")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(1678, 540)
+texture = ExtResource("1_x2tsb")
+flip_h = true
+flip_v = true
