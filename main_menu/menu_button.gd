@@ -15,7 +15,7 @@ func _ready():
 	
 	call_deferred("_init_pivot")
 	
-	call_deferred("button_loop")
+	#call_deferred("button_loop")
 
 #func _process(delta):
 	#self.size = Vector2(sinh(delta), sinh(delta))
