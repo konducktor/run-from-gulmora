@@ -1,9 +1,9 @@
 [gd_scene load_steps=25 format=3 uid="uid://uos88rcjypfn"]
 
 [ext_resource type="Script" uid="uid://dga84sgb8gjup" path="res://player/player.gd" id="1_rkbax"]
-[ext_resource type="Script" uid="uid://baxjv5p6gbkoa" path="res://player/player_animation.gd" id="2_g1dw6"]
+[ext_resource type="Script" path="res://player/player_animation.gd" id="2_g1dw6"]
 [ext_resource type="Texture2D" uid="uid://1tw5fyb5lm1i" path="res://player/art/player.png" id="3_g1dw6"]
-[ext_resource type="Script" uid="uid://bq8iu54cwgcg4" path="res://player/player_death_animation.gd" id="3_yw30f"]
+[ext_resource type="Script" path="res://player/player_death_animation.gd" id="3_yw30f"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g1dw6"]
 radius = 26.0
