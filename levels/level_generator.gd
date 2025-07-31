@@ -51,7 +51,9 @@ func generate_next_level() -> void:
 	add_level_to_scene(next_level, level_positopn)
 	
 	current_level_index += 1
-	update_current_level_type()
+	
+	if current_level_index % 5 == 0:
+		update_current_level_type()
 
 
 func add_level_to_scene(level: PackedScene, level_position: Vector2 = Vector2.ZERO) -> void:
