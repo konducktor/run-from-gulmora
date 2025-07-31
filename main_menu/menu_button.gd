@@ -14,10 +14,11 @@ func _ready():
 	pressed.connect(_button_pressed)
 	
 	call_deferred("_init_pivot")
+	
+	call_deferred("button_loop")
 
-#func _process(_delta):
-	#create_tween().tween_property(self, "scale", Vector2(1.05, 1.05), 2).set_trans(trans_type)
-	#create_tween().tween_property(self, "scale", Vector2(0.95, 0.95), 2).set_trans(trans_type)
+#func _process(delta):
+	#self.size = Vector2(sinh(delta), sinh(delta))
 
 func _init_pivot():
 	pivot_offset = size/2.0
@@ -27,6 +28,11 @@ func _button_enter():
 
 func _button_exit():
 	create_tween().tween_property(self, "scale", Vector2.ONE, hover_tween_time).set_trans(trans_type)
+
+#func button_loop():
+	#var idle_tween = create_tween()
+	#idle_tween.tween_property(self, "scale", Vector2(1.05, 1.05), 2).set_trans(trans_type)
+	#idle_tween.tween_property(self, "scale", Vector2(0.95, 0.95), 2).set_trans(trans_type)
 
 func _button_pressed():
 	var button_press_tween: Tween = create_tween()
