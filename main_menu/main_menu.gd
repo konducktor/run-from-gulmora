@@ -30,3 +30,7 @@ func _on_fullscreen_toggled(toggled_on):
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+
+
+func _on_gmtk_logo_pressed():
+	OS.shell_open("https://itch.io/jam/gmtk-2025")
