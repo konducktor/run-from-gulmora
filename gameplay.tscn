@@ -1,14 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtamhc3u844oa"]
+[gd_scene load_steps=5 format=3 uid="uid://dtamhc3u844oa"]
 
 [ext_resource type="PackedScene" uid="uid://hqq6qxfhsob4" path="res://platform/platform.tscn" id="1_n4psk"]
+[ext_resource type="Script" uid="uid://dux2ueculjt2t" path="res://global/camera.gd" id="1_oe8ih"]
+[ext_resource type="Script" uid="uid://byvfvad6xuppm" path="res://levels/level_generator.gd" id="1_xuee5"]
 [ext_resource type="PackedScene" uid="uid://uos88rcjypfn" path="res://player/player.tscn" id="2_ej4tk"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Gameplay" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="LevelGenerator" type="Node2D" parent="."]
+script = ExtResource("1_xuee5")
+A_LEVEL_DIR = "res://levels/A_levels/"
+B_LEVEL_DIR = "res://levels/B_levels/"
+C_LEVEL_DIR = "res://levels/C_levels/"
+D_LEVEL_DIR = "res://levels/D_levels/"
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("REFERENCE_OBJECT")]
+position = Vector2(960, 537)
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+script = ExtResource("1_oe8ih")
+REFERENCE_OBJECT = NodePath("../CharacterBody2D")
+OFFSET = 100.0
 
 [node name="Platform" parent="." instance=ExtResource("1_n4psk")]
-position = Vector2(0, 537)
+position = Vector2(960, 1074)
 scale = Vector2(4.28, 1)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_ej4tk")]
+position = Vector2(960, 537)
