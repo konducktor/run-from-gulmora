@@ -45,6 +45,7 @@ position = Vector2(960, 1088)
 [node name="Player" parent="." instance=ExtResource("2_ej4tk")]
 position = Vector2(960, 960)
 collision_mask = 14
+PLAYER_SPEED = 800.0
 
 [node name="Monster" parent="." instance=ExtResource("6_cbffv")]
 position = Vector2(958, 1664)
