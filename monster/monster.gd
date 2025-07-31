@@ -4,6 +4,8 @@ extends Node2D
 @export var NORMAL_SPEED : float
 @export var SLOW_SPEED : float
 
+@export var ACCELERATION : float
+
 enum SPEED_STATES {NORMAL, SLOW, FAST}
 
 var current_speed_state : SPEED_STATES
@@ -21,8 +23,10 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	vertical_velocity = current_speed * delta * (-1.0)
-	
 	position.y += vertical_velocity
+	
+	if current_speed_state == SPEED_STATES.NORMAL:
+		current_speed += ACCELERATION * delta
 
 
 func _on_normal() -> void:

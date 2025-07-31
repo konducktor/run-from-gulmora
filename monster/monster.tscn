@@ -7,5 +7,6 @@
 script = ExtResource("1_gsx7y")
 NORMAL_SPEED = 200.0
 SLOW_SPEED = 50.0
+ACCELERATION = 10.0
 
 [node name="MonsterHit" parent="." instance=ExtResource("1_okp8s")]
