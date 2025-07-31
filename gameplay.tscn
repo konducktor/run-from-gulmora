@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dtamhc3u844oa"]
+[gd_scene load_steps=8 format=3 uid="uid://dtamhc3u844oa"]
 
 [ext_resource type="PackedScene" uid="uid://hqq6qxfhsob4" path="res://gameplay_elements/platform/platform.tscn" id="1_n4psk"]
 [ext_resource type="Script" uid="uid://dux2ueculjt2t" path="res://global/camera.gd" id="1_oe8ih"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://byvfvad6xuppm" path="res://levels/level_generator.gd" id="1_xuee5"]
 [ext_resource type="PackedScene" uid="uid://uos88rcjypfn" path="res://player/player.tscn" id="2_ej4tk"]
 [ext_resource type="PackedScene" uid="uid://ypgd2rchig6s" path="res://monster/monster.tscn" id="6_cbffv"]
+[ext_resource type="FontFile" uid="uid://di04vknxmp46b" path="res://main_menu/Daneehand Regular Cyr.ttf" id="7_fbudy"]
 
 [node name="Gameplay" type="Node2D" node_paths=PackedStringArray("player_respawn_timer", "meters_label")]
 script = ExtResource("1_smepj")
@@ -50,5 +51,6 @@ offset_left = 24.0
 offset_top = 26.0
 offset_right = 415.0
 offset_bottom = 68.0
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("7_fbudy")
+theme_override_font_sizes/font_size = 50
 text = "Meters: миллион тысяч"

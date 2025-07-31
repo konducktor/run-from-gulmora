@@ -30,7 +30,9 @@ var previously_falling : bool
 var meters:
 	set(value):
 		meters = clamp((-value + METERS_OFFSET) * 0.001, 0, INF)
+		var clamped_value = clamp((-value + METERS_OFFSET) * 0.001, 0, INF)
 		#meters = -value + METERS_OFFSET
+		meters = snapped(clamped_value, 0.01)
 		GlobalSignals.meters_updated.emit(meters)
 
 func _ready():
