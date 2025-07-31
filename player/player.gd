@@ -17,6 +17,12 @@ extends CharacterBody2D
 var jump_amount : int
 var has_died : bool
 
+@export var METERS_OFFSET: float
+var meters:
+	set(value):
+		meters = clamp((-value + METERS_OFFSET) * 0.001, 0, INF)
+		#meters = -value + METERS_OFFSET
+		GlobalSignals.meters_updated.emit(meters)
 
 func _ready():
 	has_died = false
@@ -34,6 +40,8 @@ func _physics_process(delta: float) -> void:
 	
 	velocity.x = calculate_horizontal_movement(delta, velocity.x)
 	velocity.y = calculate_jump(delta, velocity.y)
+	
+	meters = position.y
 	
 	move_and_slide()
 

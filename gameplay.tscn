@@ -2,14 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://hqq6qxfhsob4" path="res://gameplay_elements/platform/platform.tscn" id="1_n4psk"]
 [ext_resource type="Script" uid="uid://dux2ueculjt2t" path="res://global/camera.gd" id="1_oe8ih"]
-[ext_resource type="Script" path="res://global/gameplay.gd" id="1_smepj"]
+[ext_resource type="Script" uid="uid://bvntop35l4m5u" path="res://global/gameplay.gd" id="1_smepj"]
 [ext_resource type="Script" uid="uid://byvfvad6xuppm" path="res://levels/level_generator.gd" id="1_xuee5"]
 [ext_resource type="PackedScene" uid="uid://uos88rcjypfn" path="res://player/player.tscn" id="2_ej4tk"]
 [ext_resource type="PackedScene" uid="uid://ypgd2rchig6s" path="res://monster/monster.tscn" id="6_cbffv"]
 
-[node name="Gameplay" type="Node2D" node_paths=PackedStringArray("player_respawn_timer")]
+[node name="Gameplay" type="Node2D" node_paths=PackedStringArray("player_respawn_timer", "meters_label")]
 script = ExtResource("1_smepj")
 player_respawn_timer = NodePath("PlayerRespawnTimer")
+meters_label = NodePath("CanvasLayer/MetersLabel")
 
 [node name="PlayerRespawnTimer" type="Timer" parent="."]
 one_shot = true
@@ -35,8 +36,19 @@ position = Vector2(960, 1074)
 scale = Vector2(4.28, 1)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_ej4tk")]
-position = Vector2(960, 537)
+position = Vector2(960, 542)
 collision_mask = 14
+METERS_OFFSET = 941.0
 
 [node name="Monster" parent="." instance=ExtResource("6_cbffv")]
 position = Vector2(958, 1664)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MetersLabel" type="Label" parent="CanvasLayer"]
+offset_left = 57.0
+offset_top = 26.0
+offset_right = 778.0
+offset_bottom = 110.0
+theme_override_font_sizes/font_size = 61
+text = "Meters: миллион тысяч"
