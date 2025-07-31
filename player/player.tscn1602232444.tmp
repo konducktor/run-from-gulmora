@@ -1,17 +1,12 @@
-[gd_scene load_steps=25 format=3 uid="uid://uos88rcjypfn"]
+[gd_scene load_steps=23 format=3 uid="uid://uos88rcjypfn"]
 
 [ext_resource type="Script" uid="uid://dga84sgb8gjup" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Script" uid="uid://baxjv5p6gbkoa" path="res://player/player_animation.gd" id="2_g1dw6"]
 [ext_resource type="Texture2D" uid="uid://1tw5fyb5lm1i" path="res://player/art/player.png" id="3_g1dw6"]
-[ext_resource type="Script" uid="uid://bq8iu54cwgcg4" path="res://player/player_death_animation.gd" id="3_yw30f"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g1dw6"]
 radius = 24.0
 height = 102.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g1dw6"]
-atlas = ExtResource("3_g1dw6")
-region = Rect2(2176, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yw30f"]
 atlas = ExtResource("3_g1dw6")
@@ -83,14 +78,6 @@ region = Rect2(1792, 0, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x7c3f"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g1dw6")
-}],
-"loop": true,
-"name": &"dead",
-"speed": 12.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yw30f")
@@ -168,7 +155,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="Player" type="CharacterBody2D" groups=["Player"]]
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["Player"]]
 collision_mask = 30
 script = ExtResource("1_rkbax")
 PLAYER_SPEED = 1200.0
@@ -182,21 +169,11 @@ position = Vector2(0, 11)
 shape = SubResource("CapsuleShape2D_g1dw6")
 debug_color = Color(0.665493, 0.314121, 1, 0.42)
 
-[node name="Visuals" type="Node2D" parent="." node_paths=PackedStringArray("ANIMATED_SPRITE", "PLAYER")]
+[node name="Animation" type="Node2D" parent="." node_paths=PackedStringArray("ANIMATED_SPRITE", "PLAYER")]
 script = ExtResource("2_g1dw6")
 ANIMATED_SPRITE = NodePath("AnimatedSprite2D")
 PLAYER = NodePath("..")
 
-[node name="DeathAnimation" type="Node2D" parent="Visuals" node_paths=PackedStringArray("collision_shape", "player")]
-script = ExtResource("3_yw30f")
-player_death_impact_velocity = Vector2(0, -1000)
-collision_shape = NodePath("../../CollisionShape2D")
-player = NodePath("../..")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Animation"]
 sprite_frames = SubResource("SpriteFrames_x7c3f")
-animation = &"walking"
-
-[connection signal="falling" from="." to="Visuals" method="_on_player_falling"]
-[connection signal="grounded" from="." to="Visuals" method="_on_player_grounded"]
-[connection signal="jumped" from="." to="Visuals" method="_on_player_jumped"]
+animation = &"idle_1"

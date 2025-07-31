@@ -1,4 +1,10 @@
 extends CharacterBody2D
+class_name Player
+
+
+signal jumped
+signal falling
+signal grounded
 
 
 @export var PLAYER_SPEED : float
@@ -17,6 +23,9 @@ extends CharacterBody2D
 var jump_amount : int
 var has_died : bool
 
+var previously_jumping : bool
+var previously_falling : bool
+
 @export var METERS_OFFSET: float
 var meters:
 	set(value):
@@ -30,10 +39,11 @@ func _ready():
 
 
 func _physics_process(delta: float) -> void:
-	if has_died:
-		return
-	
 	if is_on_floor():
+		if previously_falling:
+			previously_falling = false
+			grounded.emit()
+		
 		jump_amount = EXTRA_JUMPS
 	else:
 		velocity.y = calculate_gravity(delta, velocity.y)
@@ -48,18 +58,26 @@ func _physics_process(delta: float) -> void:
 
 func calculate_gravity(delta: float, vertical_velocity: float) -> float:
 		if vertical_velocity < 0.0:
+			previously_jumping = true
 			return vertical_velocity + (jump_gravity * delta)
+		
+		if previously_jumping:
+			previously_jumping = false
+			previously_falling = true
+			
+			falling.emit()
 		
 		return vertical_velocity + (fall_gravity * delta)
 
 
 func calculate_jump(_delta: float, vertical_velocity: float) -> float:
-	var grounded := is_on_floor()
-	if grounded or (jump_amount > 0) or (EXTRA_JUMPS == -1):
+	var is_grounded := is_on_floor()
+	if is_grounded or (jump_amount > 0) or (EXTRA_JUMPS == -1):
 		if Input.is_action_just_pressed('movement_jump'):
-			if not grounded:
+			if not is_grounded:
 				jump_amount -= 1
 			
+			jumped.emit()
 			return jump_velocity
 	
 	if velocity.y < 0.0:
