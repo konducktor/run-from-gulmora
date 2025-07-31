@@ -47,7 +47,7 @@ func calculate_gravity(delta: float, vertical_velocity: float) -> float:
 
 func calculate_jump(_delta: float, vertical_velocity: float) -> float:
 	var grounded := is_on_floor()
-	if grounded or (jump_amount > 0) or (jump_amount == -1):
+	if grounded or (jump_amount > 0) or (EXTRA_JUMPS == -1):
 		if Input.is_action_just_pressed('movement_jump'):
 			if not grounded:
 				jump_amount -= 1

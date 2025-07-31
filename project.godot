@@ -37,7 +37,8 @@ folder_colors={
 "res://levels/": "green",
 "res://main_menu/": "purple",
 "res://monster/": "orange",
-"res://player/": "red"
+"res://player/": "red",
+"res://sounds/": "yellow"
 }
 
 [input]
@@ -64,6 +65,7 @@ movement_jump={
 2d_physics/layer_2="Platform"
 2d_physics/layer_3="Danger"
 2d_physics/layer_4="Trigger"
+2d_physics/layer_5="Interactable"
 
 [rendering]
 
