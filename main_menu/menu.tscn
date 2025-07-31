@@ -266,7 +266,6 @@ vertical_alignment = 1
 stream = ExtResource("6_33wq2")
 volume_db = 15.0
 autoplay = true
-bus = &"Music"
 
 [connection signal="pressed" from="Button3" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Node/Button" to="." method="_on_start_pressed"]

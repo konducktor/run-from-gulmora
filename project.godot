@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 GlobalSignals="*res://global/global_signals.gd"
 
+[debug]
+
+gdscript/warnings/unused_signal=0
+
 [display]
 
 window/size/viewport_width=1920
@@ -32,6 +36,7 @@ folder_colors={
 "res://global/": "blue",
 "res://levels/": "green",
 "res://main_menu/": "purple",
+"res://monster/": "orange",
 "res://platform/": "yellow",
 "res://player/": "red"
 }

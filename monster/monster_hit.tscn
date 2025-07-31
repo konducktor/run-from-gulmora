@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7wmjvxkn8eus"]
+
+[ext_resource type="PackedScene" uid="uid://bplerfmc38va2" path="res://gameplay_elements/danger/danger.tscn" id="1_mhg26"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mhg26"]
+size = Vector2(1920, 64)
+
+[node name="MonsterHit" instance=ExtResource("1_mhg26")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_mhg26")
+debug_color = Color(0.873866, 0.346186, 0, 0.42)
