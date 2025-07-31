@@ -39,7 +39,7 @@ func _ready() -> void:
 
 
 func _on_next_level():
-	var next_level : Level = generate_next_level()
+	generate_next_level()
 	
 	if get_child_count() > 5:
 		get_child(0).queue_free()

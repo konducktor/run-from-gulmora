@@ -1,8 +1,36 @@
-[gd_scene load_steps=2 format=3 uid="uid://cwklp2uls81do"]
+[gd_scene load_steps=5 format=3 uid="uid://cwklp2uls81do"]
 
+[ext_resource type="Script" uid="uid://wm8d2jkoik0c" path="res://visuals/borders/border.gd" id="1_enlri"]
 [ext_resource type="Texture2D" uid="uid://dqj8c0pqrbmmb" path="res://visuals/borders/borders.png" id="1_x2tsb"]
+[ext_resource type="Script" uid="uid://d3ky5fcclj483" path="res://visuals/borders/borders_logic.gd" id="1_y6k8p"]
 
-[node name="Borders" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y6k8p"]
+size = Vector2(416, 192)
+
+[node name="Borders" type="Node2D" node_paths=PackedStringArray("right_border", "left_border")]
+script = ExtResource("1_y6k8p")
+right_border = NodePath("RightBorder")
+left_border = NodePath("LeftBorder")
+
+[node name="RightBorder" type="Area2D" parent="." node_paths=PackedStringArray("sprite")]
+position = Vector2(1728, 540)
+collision_layer = 8
+script = ExtResource("1_enlri")
+sprite = NodePath("../ParallaxBackground/ParallaxLayer/RightBorder")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightBorder"]
+position = Vector2(-16, 4)
+shape = SubResource("RectangleShape2D_y6k8p")
+
+[node name="LeftBorder" type="Area2D" parent="." node_paths=PackedStringArray("sprite")]
+position = Vector2(242, 540)
+collision_layer = 8
+script = ExtResource("1_enlri")
+sprite = NodePath("../ParallaxBackground/ParallaxLayer/LeftBorder")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftBorder"]
+position = Vector2(-34, 4)
+shape = SubResource("RectangleShape2D_y6k8p")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 layer = 5
@@ -11,12 +39,16 @@ layer = 5
 motion_scale = Vector2(0, 1.2)
 motion_mirroring = Vector2(0, 1080)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+[node name="LeftBorder" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(242, 540)
 texture = ExtResource("1_x2tsb")
 
-[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+[node name="RightBorder" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(1678, 540)
 texture = ExtResource("1_x2tsb")
 flip_h = true
-flip_v = true
+
+[connection signal="body_entered" from="RightBorder" to="RightBorder" method="_on_body_entered"]
+[connection signal="body_exited" from="RightBorder" to="RightBorder" method="_on_body_exited"]
+[connection signal="body_entered" from="LeftBorder" to="LeftBorder" method="_on_body_entered"]
+[connection signal="body_exited" from="LeftBorder" to="LeftBorder" method="_on_body_exited"]

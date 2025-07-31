@@ -1,12 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://ypgd2rchig6s"]
+[gd_scene load_steps=4 format=3 uid="uid://ypgd2rchig6s"]
 
 [ext_resource type="Script" uid="uid://cm8i4olqljfqd" path="res://monster/monster.gd" id="1_gsx7y"]
 [ext_resource type="PackedScene" uid="uid://b7wmjvxkn8eus" path="res://monster/monster_hit.tscn" id="1_okp8s"]
+[ext_resource type="Texture2D" uid="uid://qagk3531rpwx" path="res://icon.svg" id="2_2k2s0"]
 
 [node name="Monster" type="Node2D"]
 script = ExtResource("1_gsx7y")
 NORMAL_SPEED = 200.0
 SLOW_SPEED = 50.0
 ACCELERATION = 10.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.885344, 0.448835, 1.92523e-07, 1)
+scale = Vector2(15, 0.5)
+texture = ExtResource("2_2k2s0")
 
 [node name="MonsterHit" parent="." instance=ExtResource("1_okp8s")]

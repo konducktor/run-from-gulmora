@@ -10,6 +10,7 @@ signal grounded
 @export var PLAYER_SPEED : float
 
 @export var EXTRA_JUMPS : int
+@export var MAX_VERTICAL_SPEED : float
 
 @export var JUMP_HEIGHT : float
 @export var JUMP_PEAK_TIME : float
@@ -44,6 +45,8 @@ func _physics_process(delta: float) -> void:
 	if not has_died:
 		velocity.x = calculate_horizontal_movement(delta, velocity.x)
 		velocity.y = calculate_jump(delta, velocity.y)
+	
+	velocity.y = clampf(velocity.y, -12000.0, 12000.0)
 	
 	move_and_slide()
 
