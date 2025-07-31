@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://eksi3rs5shn4"
+path="res://.godot/imported/so alone.mp3-e5247bf6a0fdf69d598a7ecad1544255.mp3str"
+
+[deps]
+
+source_file="res://sounds/so alone.mp3"
+dest_files=["res://.godot/imported/so alone.mp3-e5247bf6a0fdf69d598a7ecad1544255.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
