@@ -3,8 +3,10 @@ class_name LevelGenerator
 
 
 @export var LEVELS_IN_LAYER : int = 5
+@export var MAX_LEVELS_LOADED : int = 3
 
 @export_group("Layer directories")
+@export var TUTORIAL_DIR : String
 @export var A_LEVEL_DIR : String
 @export var B_LEVEL_DIR : String
 @export var C_LEVEL_DIR : String
@@ -20,6 +22,7 @@ class_name LevelGenerator
 @export var FINAL_LEVEL : PackedScene
 
 
+var tutorial_levels : Array[PackedScene]
 var A_levels : Array[PackedScene]
 var B_levels : Array[PackedScene]
 var C_levels : Array[PackedScene]
@@ -29,7 +32,9 @@ var random_generator = RandomNumberGenerator.new()
 
 var current_level_index : int
 
-enum LEVEL_LAYERS {A_LEVEL, B_LEVEL, C_LEVEL, D_LEVEL}
+enum LEVEL_LAYERS {
+	A_LEVEL = 0, B_LEVEL = 1, C_LEVEL = 2, D_LEVEL = 3
+}
 var current_level_layer : LEVEL_LAYERS
 
 var is_generating_letter_levels : bool
@@ -43,13 +48,15 @@ func _ready() -> void:
 	current_level_index = 0
 	current_level_layer = LEVEL_LAYERS.A_LEVEL
 	
+	tutorial_levels = get_all_levels(TUTORIAL_DIR)
 	A_levels = get_all_levels(A_LEVEL_DIR)
 	B_levels = get_all_levels(B_LEVEL_DIR)
 	C_levels = get_all_levels(C_LEVEL_DIR)
 	D_levels = get_all_levels(D_LEVEL_DIR)
 	
-	for i in range(2):
-		generate_next_level()
+	for tutorial_level in tutorial_levels:
+		generate_next_level(tutorial_level)
+	generate_next_level()
 	
 	GlobalSignals.next_level.connect(_on_next_level)
 
@@ -57,7 +64,7 @@ func _ready() -> void:
 func _on_next_level() -> void:
 	generate_next_level()
 	
-	if get_child_count() > 5:
+	if get_child_count() > (MAX_LEVELS_LOADED-1):
 		get_child(0).queue_free()
 
 
@@ -99,13 +106,13 @@ func add_level_to_scene(level: PackedScene, level_position: Vector2 = Vector2.ZE
 
 func get_level_array_from_layer(level_layer: LEVEL_LAYERS) -> Array[PackedScene]:
 	match level_layer:
-		0:
+		LEVEL_LAYERS.A_LEVEL:
 			return A_levels
-		1:
+		LEVEL_LAYERS.B_LEVEL:
 			return B_levels
-		2:
+		LEVEL_LAYERS.C_LEVEL:
 			return C_levels
-		3:
+		LEVEL_LAYERS.D_LEVEL:
 			return D_levels
 		_:
 			return []
@@ -118,35 +125,27 @@ func pick_level_from_level_array(level_array: Array[PackedScene]) -> PackedScene
 
 func update_current_level_layer() -> void:
 	match current_level_layer:
-		0:
+		LEVEL_LAYERS.A_LEVEL:
 			current_level_layer = LEVEL_LAYERS.B_LEVEL
-		1:
+		LEVEL_LAYERS.B_LEVEL:
 			current_level_layer = LEVEL_LAYERS.C_LEVEL
-		2:
+		LEVEL_LAYERS.C_LEVEL:
 			current_level_layer = LEVEL_LAYERS.D_LEVEL
-		3:
+		LEVEL_LAYERS.D_LEVEL:
 			current_level_layer = LEVEL_LAYERS.A_LEVEL
 			new_lap()
 
 
 func get_all_levels(directory_path: String) -> Array[PackedScene]:
 	var output : Array[PackedScene]
-
+	
 	var dir = DirAccess.open(directory_path)
 	if dir:
-		dir.list_dir_begin()
-		var file_name = dir.get_next()
-		while file_name != "":
-			if dir.current_is_dir():
-				print("Found directory: " + file_name)
-			else:
-				if file_name.get_extension() == "tscn":
-					var full_path = directory_path.path_join(file_name)
-					output.append(load(full_path))
-			file_name = dir.get_next()
-	else:
-		print("An error occurred when trying to access the path.")
-
+		for file_name in dir.get_files():
+			if file_name.get_extension() == "tscn":
+				var full_path = directory_path.path_join(file_name)
+				output.append(load(full_path))
+	
 	return output
 
 
@@ -160,13 +159,13 @@ func generate_letter_level_index_in_layer() -> void:
 	letter_level_index_in_layer = random_generator.randi_range(0, LEVELS_IN_LAYER-1)
 	
 	match current_level_layer:
-		0:
+		LEVEL_LAYERS.A_LEVEL:
 			current_letter_level = A_LETTER_LEVEL
-		1:
+		LEVEL_LAYERS.B_LEVEL:
 			current_letter_level = B_LETTER_LEVEL
-		2:
+		LEVEL_LAYERS.C_LEVEL:
 			current_letter_level = C_LETTER_LEVEL
-		3:
+		LEVEL_LAYERS.D_LEVEL:
 			current_letter_level = D_LETTER_LEVEL
 
 

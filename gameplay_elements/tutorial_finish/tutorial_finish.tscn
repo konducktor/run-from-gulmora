@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://uquft4dciip5"]
+
+[ext_resource type="Script" uid="uid://dks1be138yoat" path="res://gameplay_elements/tutorial_finish/tutorial_finish.gd" id="1_wcgex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wcgex"]
+size = Vector2(1920, 64)
+
+[node name="TutorialFinish" type="Area2D"]
+script = ExtResource("1_wcgex")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wcgex")
+debug_color = Color(0.184697, 0.642503, 0, 0.42)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -2,6 +2,7 @@ extends Node
 #class_name GlobalSignals
 
 
+signal tutorial_finished
 signal next_level
 signal new_lap_started
 
