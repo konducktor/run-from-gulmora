@@ -8,7 +8,7 @@ var meters_offset
 
 var meters:
 	set(value):
-		var clamped_value = clamp((-value + meters_offset) * 0.001, 0, INF)
+		var clamped_value = clamp((-value + meters_offset) * 0.003, 0, INF)
 		meters = snapped(clamped_value, 0.01)
 		
 		text = "Meters: " + str(meters)
