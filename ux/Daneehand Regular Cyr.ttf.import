@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://di04vknxmp46b"
-path="res://.godot/imported/Daneehand Regular Cyr.ttf-544129b3420078cd54e87cc62b6e173a.fontdata"
+path="res://.godot/imported/Daneehand Regular Cyr.ttf-98c4ff31db9b484ad8097bf570cc2394.fontdata"
 
 [deps]
 
-source_file="res://main_menu/Daneehand Regular Cyr.ttf"
-dest_files=["res://.godot/imported/Daneehand Regular Cyr.ttf-544129b3420078cd54e87cc62b6e173a.fontdata"]
+source_file="res://ux/Daneehand Regular Cyr.ttf"
+dest_files=["res://.godot/imported/Daneehand Regular Cyr.ttf-98c4ff31db9b484ad8097bf570cc2394.fontdata"]
 
 [params]
 

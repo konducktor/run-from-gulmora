@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://eurxn62028bp" path="res://gameplay_elements/spike/spike.tscn" id="2_h1ypa"]
 [ext_resource type="PackedScene" uid="uid://bggjd5duuwn5t" path="res://gameplay_elements/one-way-platform/one_way_platform.tscn" id="3_a6mss"]
 [ext_resource type="PackedScene" uid="uid://b8esukmcwaxoj" path="res://gameplay_elements/spring/spring.tscn" id="4_h87kb"]
-[ext_resource type="FontFile" uid="uid://di04vknxmp46b" path="res://main_menu/Daneehand Regular Cyr.ttf" id="6_07vnw"]
+[ext_resource type="FontFile" uid="uid://di04vknxmp46b" path="res://ux/Daneehand Regular Cyr.ttf" id="6_07vnw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a3e3d"]
 texture = ExtResource("1_bpo0i")

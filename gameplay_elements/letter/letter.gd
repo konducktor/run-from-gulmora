@@ -11,9 +11,9 @@ class_name Letter
 
 func _ready() -> void:
 	set_letter()
-	GlobalSignals.letter_collected.connect(_on_letter_connected)
+	GlobalSignals.letter_collected.connect(_on_letter_collected)
 
-func _on_letter_connected():
+func _on_letter_collected():
 	set_letter()
 
 

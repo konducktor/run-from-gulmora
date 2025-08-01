@@ -1,0 +1,130 @@
+[gd_scene load_steps=8 format=3 uid="uid://ceblj6gvvm5c0"]
+
+[ext_resource type="Script" uid="uid://gxas6eq2ddoo" path="res://ux/death_screen/death_screen.gd" id="1_gsorh"]
+[ext_resource type="FontFile" uid="uid://di04vknxmp46b" path="res://ux/Daneehand Regular Cyr.ttf" id="1_ogq5k"]
+[ext_resource type="Script" uid="uid://ctlyrlympirev" path="res://ux/main_menu/menu_button.gd" id="2_glyeq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_glyeq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gsorh"]
+bg_color = Color(0.843184, 0.843184, 0.843184, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_color = Color(0.205117, 0.205117, 0.205117, 0.6)
+shadow_size = 5
+shadow_offset = Vector2(0, 2.335)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4gom"]
+bg_color = Color(0.625597, 0.625597, 0.625597, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_color = Color(0.205117, 0.205117, 0.205117, 0.6)
+shadow_size = 5
+shadow_offset = Vector2(0, 2.335)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_66ltg"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_color = Color(0.205117, 0.205117, 0.205117, 0.6)
+shadow_size = 5
+shadow_offset = Vector2(0, 2.335)
+
+[node name="DeathScreen" type="Control" node_paths=PackedStringArray("METERS_LABEL", "TIME_LABEL")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_gsorh")
+ENTER_TYPE = 5
+ENTER_TIME = 1.0
+METERS_LABEL = NodePath("Panel/StatsContainer/MetersLabel")
+TIME_LABEL = NodePath("Panel/StatsContainer/TimeLabel")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -384.0
+offset_top = 256.0
+offset_right = 384.0
+offset_bottom = -256.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOverLabel" type="Label" parent="Panel"]
+layout_mode = 2
+anchor_right = 1.0
+offset_bottom = 168.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_ogq5k")
+theme_override_font_sizes/font_size = 75
+text = "Game Over!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StatsContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_right = 192.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="MetersLabel" type="Label" parent="Panel/StatsContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ogq5k")
+theme_override_font_sizes/font_size = 50
+text = "Meters: 9999"
+
+[node name="TimeLabel" type="Label" parent="Panel/StatsContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ogq5k")
+theme_override_font_sizes/font_size = 50
+text = "Time: 99:99"
+
+[node name="PlayAgainButton" type="Button" parent="Panel"]
+layout_mode = 2
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_top = -160.0
+offset_right = -96.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ogq5k")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = SubResource("StyleBoxEmpty_glyeq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gsorh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_x4gom")
+theme_override_styles/normal = SubResource("StyleBoxFlat_66ltg")
+text = "Play Again
+"
+script = ExtResource("2_glyeq")
+
+[connection signal="pressed" from="Panel/PlayAgainButton" to="." method="_on_play_again_button_pressed"]

@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://cxj34544xr6v7"
-path="res://.godot/imported/Holiday Mama.otf-8f1641344869eceb4740b003f4ee4c23.fontdata"
+path="res://.godot/imported/Holiday Mama.otf-05b5bc6c6aec0ebd83de27c05feca3dd.fontdata"
 
 [deps]
 
-source_file="res://main_menu/Holiday Mama.otf"
-dest_files=["res://.godot/imported/Holiday Mama.otf-8f1641344869eceb4740b003f4ee4c23.fontdata"]
+source_file="res://ux/main_menu/Holiday Mama.otf"
+dest_files=["res://.godot/imported/Holiday Mama.otf-05b5bc6c6aec0ebd83de27c05feca3dd.fontdata"]
 
 [params]
 

@@ -38,11 +38,11 @@ folder_colors={
 "res://gameplay_elements/": "pink",
 "res://global/": "blue",
 "res://levels/": "green",
-"res://main_menu/": "purple",
 "res://monster/": "orange",
 "res://player/": "red",
 "res://sounds/": "yellow",
 "res://ux/": "purple",
+"res://ux/main_menu/": "purple",
 "res://visuals/": "teal"
 }
 
