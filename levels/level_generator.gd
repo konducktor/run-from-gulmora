@@ -2,11 +2,21 @@ extends Node2D
 class_name LevelGenerator
 
 
+@export var LEVELS_IN_LAYER : int = 5
+
+@export_group("Layer directories")
 @export var A_LEVEL_DIR : String
 @export var B_LEVEL_DIR : String
 @export var C_LEVEL_DIR : String
 @export var D_LEVEL_DIR : String
 
+@export_group("Levels with letters")
+@export var A_LETTER_LEVEL : PackedScene
+@export var B_LETTER_LEVEL : PackedScene
+@export var C_LETTER_LEVEL : PackedScene
+@export var D_LETTER_LEVEL : PackedScene
+
+@export_group("")
 @export var FINAL_LEVEL : PackedScene
 
 
@@ -19,13 +29,19 @@ var random_generator = RandomNumberGenerator.new()
 
 var current_level_index : int
 
-enum LEVEL_TYPES {A_LEVEL, B_LEVEL, C_LEVEL, D_LEVEL}
-var current_level_type : LEVEL_TYPES
+enum LEVEL_LAYERS {A_LEVEL, B_LEVEL, C_LEVEL, D_LEVEL}
+var current_level_layer : LEVEL_LAYERS
+
+var is_generating_letter_levels : bool
+var letter_level_index_in_layer : int
+var current_letter_level : PackedScene
 
 
 func _ready() -> void:
+	is_generating_letter_levels = false
+	
 	current_level_index = 0
-	current_level_type = LEVEL_TYPES.A_LEVEL
+	current_level_layer = LEVEL_LAYERS.A_LEVEL
 	
 	A_levels = get_all_levels(A_LEVEL_DIR)
 	B_levels = get_all_levels(B_LEVEL_DIR)
@@ -38,7 +54,7 @@ func _ready() -> void:
 	GlobalSignals.next_level.connect(_on_next_level)
 
 
-func _on_next_level():
+func _on_next_level() -> void:
 	generate_next_level()
 	
 	if get_child_count() > 5:
@@ -46,21 +62,29 @@ func _on_next_level():
 
 
 func generate_next_level(custom_level: PackedScene = null) -> Level:
-	var level_array : Array[PackedScene] = get_level_array_from_type(current_level_type)
+	var level_array : Array[PackedScene] = get_level_array_from_layer(current_level_layer)
 	var next_level : PackedScene
 	
 	if custom_level:
 		next_level = custom_level
 	else:
-		next_level = pick_level_from_level_array(level_array)
+		var letter_level_condition := (
+			is_generating_letter_levels and
+			(current_level_index % LEVELS_IN_LAYER) == letter_level_index_in_layer
+		)
+		
+		if letter_level_condition:
+			next_level = current_letter_level
+		else:
+			next_level = pick_level_from_level_array(level_array)
 	
 	var level_positopn := Vector2(0, -17*64*current_level_index)
 	var added_level : Level = add_level_to_scene(next_level, level_positopn)
 	
 	current_level_index += 1
 	
-	if current_level_index % 5 == 0:
-		update_current_level_type()
+	if current_level_index % LEVELS_IN_LAYER == 0:
+		update_current_level_layer()
 	
 	return added_level
 
@@ -73,8 +97,8 @@ func add_level_to_scene(level: PackedScene, level_position: Vector2 = Vector2.ZE
 	return new_level
 
 
-func get_level_array_from_type(type: LEVEL_TYPES) -> Array[PackedScene]:
-	match type:
+func get_level_array_from_layer(level_layer: LEVEL_LAYERS) -> Array[PackedScene]:
+	match level_layer:
 		0:
 			return A_levels
 		1:
@@ -92,16 +116,17 @@ func pick_level_from_level_array(level_array: Array[PackedScene]) -> PackedScene
 	return level_array[level_id]
 
 
-func update_current_level_type():
-	match current_level_type:
+func update_current_level_layer() -> void:
+	match current_level_layer:
 		0:
-			current_level_type = LEVEL_TYPES.B_LEVEL
+			current_level_layer = LEVEL_LAYERS.B_LEVEL
 		1:
-			current_level_type = LEVEL_TYPES.C_LEVEL
+			current_level_layer = LEVEL_LAYERS.C_LEVEL
 		2:
-			current_level_type = LEVEL_TYPES.D_LEVEL
+			current_level_layer = LEVEL_LAYERS.D_LEVEL
 		3:
-			current_level_type = LEVEL_TYPES.A_LEVEL
+			current_level_layer = LEVEL_LAYERS.A_LEVEL
+			new_lap()
 
 
 func get_all_levels(directory_path: String) -> Array[PackedScene]:
@@ -125,5 +150,25 @@ func get_all_levels(directory_path: String) -> Array[PackedScene]:
 	return output
 
 
-func generate_final_level():
+func new_lap() -> void:
+	is_generating_letter_levels = true
+	generate_letter_level_index_in_layer()
+	GlobalSignals.new_lap_started.emit()
+
+
+func generate_letter_level_index_in_layer() -> void:
+	letter_level_index_in_layer = random_generator.randi_range(0, LEVELS_IN_LAYER-1)
+	
+	match current_level_layer:
+		0:
+			current_letter_level = A_LETTER_LEVEL
+		1:
+			current_letter_level = B_LETTER_LEVEL
+		2:
+			current_letter_level = C_LETTER_LEVEL
+		3:
+			current_letter_level = D_LETTER_LEVEL
+
+
+func generate_final_level() -> void:
 	generate_next_level(FINAL_LEVEL)

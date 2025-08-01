@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dtamhc3u844oa"]
+[gd_scene load_steps=16 format=3 uid="uid://dtamhc3u844oa"]
 
 [ext_resource type="PackedScene" uid="uid://hqq6qxfhsob4" path="res://gameplay_elements/platform/platform.tscn" id="1_n4psk"]
 [ext_resource type="Script" uid="uid://dux2ueculjt2t" path="res://global/camera.gd" id="1_oe8ih"]
@@ -7,9 +7,13 @@
 [ext_resource type="Script" uid="uid://dod40gv4mo7kl" path="res://gameplay_elements/letter/letter_setup.gd" id="2_0m7cd"]
 [ext_resource type="PackedScene" uid="uid://uos88rcjypfn" path="res://player/player.tscn" id="2_ej4tk"]
 [ext_resource type="PackedScene" uid="uid://uf3x5rrl31qh" path="res://levels/final_level/final_level.tscn" id="4_1qy1k"]
+[ext_resource type="PackedScene" uid="uid://df0v2abqki1gm" path="res://levels/letter_levels/A_letter_level.tscn" id="4_nwk8b"]
+[ext_resource type="PackedScene" uid="uid://c1lkuldvp0734" path="res://levels/letter_levels/B_letter_level.tscn" id="5_x2ust"]
+[ext_resource type="PackedScene" uid="uid://daqxkd3qpb8bd" path="res://levels/letter_levels/C_letter_level.tscn" id="6_7y1a3"]
 [ext_resource type="PackedScene" uid="uid://ypgd2rchig6s" path="res://monster/monster.tscn" id="6_cbffv"]
+[ext_resource type="PackedScene" uid="uid://ciofim6bqh6iw" path="res://levels/letter_levels/D_letter_level.tscn" id="7_eglai"]
 [ext_resource type="FontFile" uid="uid://di04vknxmp46b" path="res://main_menu/Daneehand Regular Cyr.ttf" id="7_fbudy"]
-[ext_resource type="Script" uid="uid://dgtcr12eq0r3r" path="res://ux/meters_label.gd" id="9_2ihbs"]
+[ext_resource type="Script" uid="uid://dtydotpfe7we1" path="res://ux/meters_label.gd" id="9_2ihbs"]
 [ext_resource type="PackedScene" uid="uid://cwklp2uls81do" path="res://visuals/borders/borders.tscn" id="11_3n40r"]
 
 [node name="Gameplay" type="Node2D" node_paths=PackedStringArray("player_respawn_timer")]
@@ -30,6 +34,10 @@ A_LEVEL_DIR = "res://levels/A_levels/"
 B_LEVEL_DIR = "res://levels/B_levels/"
 C_LEVEL_DIR = "res://levels/C_levels/"
 D_LEVEL_DIR = "res://levels/D_levels/"
+A_LETTER_LEVEL = ExtResource("4_nwk8b")
+B_LETTER_LEVEL = ExtResource("5_x2ust")
+C_LETTER_LEVEL = ExtResource("6_7y1a3")
+D_LETTER_LEVEL = ExtResource("7_eglai")
 FINAL_LEVEL = ExtResource("4_1qy1k")
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("REFERENCE_OBJECT")]

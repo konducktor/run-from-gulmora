@@ -9,7 +9,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAACAAAAEAAAAAAAAAACAAAAIAAAAAAAA
 
 [connection signal="body_entered" from="Tiles/Spring" to="Tiles/Spring" method="_on_body_entered"]
 [connection signal="body_entered" from="Tiles/Danger" to="Tiles/Danger" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@305455" to="Tiles/@Area2D@305455" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@305456" to="Tiles/@Area2D@305456" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@305457" to="Tiles/@Area2D@305457" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@305465" to="Tiles/@Area2D@305465" method="_on_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@56443" to="Tiles/@Area2D@56443" method="_on_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@56444" to="Tiles/@Area2D@56444" method="_on_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@56445" to="Tiles/@Area2D@56445" method="_on_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@56446" to="Tiles/@Area2D@56446" method="_on_body_entered"]

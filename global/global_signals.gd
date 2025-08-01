@@ -3,6 +3,7 @@ extends Node
 
 
 signal next_level
+signal new_lap_started
 
 signal player_died
 
