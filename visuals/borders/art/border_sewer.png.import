@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwl18ydyadln2"
-path="res://.godot/imported/border_2.png-7f4b93b77b2cf2b2b041fa269c5d5fd0.ctex"
+uid="uid://dabq3pss81fvk"
+path="res://.godot/imported/border_sewer.png-58096c615fdfb8ac0e3f83a82ec26e31.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://visuals/borders/art/border_2.png"
-dest_files=["res://.godot/imported/border_2.png-7f4b93b77b2cf2b2b041fa269c5d5fd0.ctex"]
+source_file="res://visuals/borders/art/border_sewer.png"
+dest_files=["res://.godot/imported/border_sewer.png-58096c615fdfb8ac0e3f83a82ec26e31.ctex"]
 
 [params]
 

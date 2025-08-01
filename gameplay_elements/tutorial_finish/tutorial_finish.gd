@@ -6,4 +6,6 @@ func _on_body_entered(body: Node2D) -> void:
 		return
 	
 	set_deferred('monitoring', false)
+	
+	GlobalValues.is_tutorial_finished = true
 	GlobalSignals.tutorial_finished.emit()

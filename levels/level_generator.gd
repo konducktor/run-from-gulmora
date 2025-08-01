@@ -54,6 +54,9 @@ func _ready() -> void:
 		generate_letter_level_index_in_layer()
 		new_lap()
 	
+	if DISABLE_TUTORIAL:
+		GlobalValues.is_tutorial_finished = true
+	
 	current_level_index = 0
 	current_level_layer = LEVEL_LAYERS.A_LEVEL
 	
@@ -62,7 +65,7 @@ func _ready() -> void:
 	C_levels = get_all_levels(C_LEVEL_DIR)
 	D_levels = get_all_levels(D_LEVEL_DIR)
 	
-	if not DISABLE_TUTORIAL:
+	if not GlobalValues.is_tutorial_finished:
 		tutorial_levels = get_all_levels(TUTORIAL_DIR)
 		
 		for tutorial_level in tutorial_levels:
@@ -179,7 +182,6 @@ func generate_letter_level_index_in_layer() -> void:
 			current_letter_level = C_LETTER_LEVEL
 		LEVEL_LAYERS.D_LEVEL:
 			current_letter_level = D_LETTER_LEVEL
-	print(current_level_layer)
 
 
 func generate_final_level() -> void:
