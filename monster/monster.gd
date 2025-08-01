@@ -22,6 +22,7 @@ var vertical_velocity : float
 
 
 func _ready() -> void:
+	
 	current_speed_state = SPEED_STATES.NORMAL
 	current_speed = NORMAL_SPEED
 	
