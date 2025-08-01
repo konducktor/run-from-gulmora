@@ -4,7 +4,8 @@ class_name Player
 
 signal jumped
 signal falling
-signal grounded
+signal idle
+signal walking
 
 
 @export var PLAYER_SPEED : float
@@ -26,9 +27,11 @@ var has_died : bool
 
 var previously_jumping : bool
 var previously_falling : bool
+var previously_walking : bool
 
 func _ready():
 	has_died = false
+	previously_walking = false
 	GlobalSignals.player_died.connect(_on_death)
 
 
@@ -36,9 +39,21 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		if previously_falling:
 			previously_falling = false
-			grounded.emit()
+			
+			if velocity.x == 0:
+				idle.emit()
+			else:
+				walking.emit()
 		
 		jump_amount = EXTRA_JUMPS
+		
+		if (velocity.x == 0) and previously_walking:
+			previously_walking = false
+			idle.emit()
+		
+		if (velocity.x != 0) and ((not previously_walking) or is_on_wall()):
+			previously_walking = true
+			walking.emit()
 	else:
 		velocity.y = calculate_gravity(delta, velocity.y)
 	
@@ -52,21 +67,24 @@ func _physics_process(delta: float) -> void:
 
 
 func calculate_gravity(delta: float, vertical_velocity: float) -> float:
-		if vertical_velocity < 0.0:
-			previously_jumping = true
-			return vertical_velocity + (jump_gravity * delta)
-		
+	if vertical_velocity < 0.0:
+		previously_jumping = true
+		return vertical_velocity + (jump_gravity * delta)
+	
+	if vertical_velocity > 0.0:
 		if previously_jumping:
 			previously_jumping = false
-			previously_falling = true
-			
-			falling.emit()
 		
-		return vertical_velocity + (fall_gravity * delta)
+		if not previously_falling:
+			previously_falling = true
+			falling.emit()
+	
+	return vertical_velocity + (fall_gravity * delta)
 
 
 func calculate_jump(_delta: float, vertical_velocity: float) -> float:
 	var is_grounded := is_on_floor()
+	
 	if is_grounded or (jump_amount > 0) or (EXTRA_JUMPS == -1):
 		if Input.is_action_just_pressed('movement_jump'):
 			if not is_grounded:
@@ -86,8 +104,16 @@ func calculate_horizontal_movement(_delta: float, _horizontal_velocity: float) -
 	var direction := Input.get_axis("movement_left", "movement_right")
 	
 	if direction:
+		#if is_on_floor() and (not previously_walking):
+			#previously_walking = true
+			#walking.emit()
+		
 		return direction * PLAYER_SPEED
 	else:
+		#if is_on_floor() and previously_walking:
+			#previously_walking = false
+			#idle.emit()
+		
 		return move_toward(velocity.x, 0, PLAYER_SPEED)
 
 

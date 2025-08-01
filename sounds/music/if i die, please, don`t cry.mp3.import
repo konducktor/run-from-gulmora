@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://yhlcwrseolw"
+path="res://.godot/imported/if i die, please, don`t cry.mp3-6fdc14af927e629163d63fce69cc5e83.mp3str"
+
+[deps]
+
+source_file="res://sounds/music/if i die, please, don`t cry.mp3"
+dest_files=["res://.godot/imported/if i die, please, don`t cry.mp3-6fdc14af927e629163d63fce69cc5e83.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

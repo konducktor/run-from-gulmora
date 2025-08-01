@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://ctlyrlympirev" path="res://ux/main_menu/menu_button.gd" id="3_m2eq4"]
 [ext_resource type="Script" uid="uid://cn8bmgvld6mor" path="res://ux/main_menu/menu_texture_button.gd" id="5_33wq2"]
 [ext_resource type="Texture2D" uid="uid://dgqtvqow03sq6" path="res://ux/main_menu/ui_slider_handle.png" id="5_xpv0w"]
-[ext_resource type="AudioStream" uid="uid://yhlcwrseolw" path="res://sounds/if i die, please, don`t cry.mp3" id="6_fd84x"]
+[ext_resource type="AudioStream" uid="uid://yhlcwrseolw" path="res://sounds/music/if i die, please, don`t cry.mp3" id="6_fd84x"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ouk20"]
 

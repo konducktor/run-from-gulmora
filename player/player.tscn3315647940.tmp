@@ -192,9 +192,6 @@ JUMP = NodePath("Jump")
 stream = ExtResource("3_g6k8r")
 volume_db = -5.0
 
-[node name="Walking" type="AudioStreamPlayer" parent="Sounds"]
-volume_db = -5.0
-
 [node name="Visuals" type="Node2D" parent="." node_paths=PackedStringArray("ANIMATED_SPRITE", "PLAYER")]
 script = ExtResource("2_g1dw6")
 ANIMATED_SPRITE = NodePath("AnimatedSprite2D")

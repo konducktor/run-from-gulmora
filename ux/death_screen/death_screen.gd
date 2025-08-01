@@ -15,10 +15,9 @@ class_name DeathScreen
 
 func setup(meters: float, seconds: float) -> void:
 	METERS_LABEL.text = 'Meters: ' + str(meters)
+	
+	@warning_ignore("integer_division")
 	TIME_LABEL.text = 'Time: ' + str(int(seconds)/60) + ':' + str(fmod(seconds, 60.0))
-	
-	
-	
 
 
 
@@ -34,6 +33,7 @@ func _on_player_death():
 	visible = true
 
 	METERS_LABEL.text = 'Meters: ' + str(GAME_VALUES.meters)
+	@warning_ignore("integer_division")
 	TIME_LABEL.text = 'Time: ' + str(int(GAME_VALUES.time)/60) + ':' + str(fmod(GAME_VALUES.time, 60.0))
 	
 	position = Vector2(0.0, 1080.0)
