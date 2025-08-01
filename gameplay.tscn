@@ -55,8 +55,13 @@ position = Vector2(960, 1088)
 position = Vector2(960, 960)
 collision_mask = 14
 
-[node name="Monster" parent="." instance=ExtResource("6_cbffv")]
+[node name="Monster" parent="." node_paths=PackedStringArray("PLAYER") instance=ExtResource("6_cbffv")]
 position = Vector2(958, 1664)
+NORMAL_SPEED = 100.0
+SLOW_SPEED = 25.0
+FAST_SPEED = 600.0
+FAST_MIN_DISTANCE = 700.0
+PLAYER = NodePath("../Player")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 10
