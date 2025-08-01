@@ -195,7 +195,7 @@ player = NodePath("../..")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals"]
 sprite_frames = SubResource("SpriteFrames_x7c3f")
-animation = &"walking"
+animation = &"idle_1"
 autoplay = "idle_1"
 
 [connection signal="falling" from="." to="Visuals" method="_on_player_falling"]
