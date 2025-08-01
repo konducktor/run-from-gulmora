@@ -23,9 +23,8 @@ physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_safpt")
 sources/1 = SubResource("TileSetScenesCollectionSource_gjl0y")
 
-[node name="Level" type="Node2D" node_paths=PackedStringArray("next_level_trigger")]
+[node name="Level" type="Node2D"]
 script = ExtResource("1_akoer")
-next_level_trigger = NodePath("")
 
 [node name="Tiles" type="TileMapLayer" parent="."]
 use_parent_material = true
