@@ -34,5 +34,3 @@ tile_set = SubResource("TileSet_cwqvt")
 
 [node name="TutorialFinish" parent="." instance=ExtResource("6_xoq5y")]
 position = Vector2(965, 32)
-
-[connection signal="body_entered" from="Tiles/Spring" to="Tiles/Spring" method="_on_body_entered"]
