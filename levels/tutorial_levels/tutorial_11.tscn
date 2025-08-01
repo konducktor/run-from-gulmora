@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://eurxn62028bp" path="res://gameplay_elements/spike/spike.tscn" id="3_f2joh"]
 [ext_resource type="PackedScene" uid="uid://bggjd5duuwn5t" path="res://gameplay_elements/one-way-platform/one_way_platform.tscn" id="4_xe6yd"]
 [ext_resource type="PackedScene" uid="uid://b8esukmcwaxoj" path="res://gameplay_elements/spring/spring.tscn" id="5_2b57d"]
-[ext_resource type="Texture2D" uid="uid://5yv5ax2f3oti" path="res://levels/tutorial_levels/tutorial.png" id="6_7mf8w"]
+[ext_resource type="Texture2D" uid="uid://bricevu3ycyf2" path="res://levels/tutorial_levels/tutorial.png" id="6_7mf8w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_safpt"]
 texture = ExtResource("2_7mf8w")
@@ -33,7 +33,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAACAAAAEAAAAAAAAAACAAAAIAAAAAAAA
 tile_set = SubResource("TileSet_cwqvt")
 
 [node name="Tutorial" type="Sprite2D" parent="."]
-position = Vector2(772, 704)
+position = Vector2(762, 705)
 rotation = 0.0938994
-scale = Vector2(0.201525, 0.201525)
+scale = Vector2(0.552835, 0.552835)
 texture = ExtResource("6_7mf8w")

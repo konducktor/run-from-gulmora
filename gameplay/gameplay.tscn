@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://uos88rcjypfn" path="res://player/player.tscn" id="12_n6aft"]
 [ext_resource type="PackedScene" uid="uid://ypgd2rchig6s" path="res://monster/monster.tscn" id="13_2qs7h"]
 [ext_resource type="FontFile" uid="uid://di04vknxmp46b" path="res://ux/Daneehand Regular Cyr.ttf" id="14_wxx72"]
-[ext_resource type="Script" path="res://ux/gameplay_stats_ux.gd" id="15_2beay"]
+[ext_resource type="Script" uid="uid://dtydotpfe7we1" path="res://ux/gameplay_stats_ux.gd" id="15_2beay"]
 [ext_resource type="PackedScene" uid="uid://cwklp2uls81do" path="res://visuals/borders/borders.tscn" id="16_ni0ts"]
 
 [node name="Gameplay" type="Node2D" node_paths=PackedStringArray("CANVAS")]
