@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=4 uid="uid://cc8bnwe5xp12v"]
+[gd_scene load_steps=3 format=4 uid="uid://qw32436bubfc"]
 
 [ext_resource type="PackedScene" uid="uid://bwgimqktwg1dp" path="res://levels/level.tscn" id="1_41cqx"]
 [ext_resource type="PackedScene" uid="uid://dxayu1wpok0d0" path="res://gameplay_elements/pipe_old/pipe_end.tscn" id="2_w501j"]
 
-[node name="Level" instance=ExtResource("1_41cqx")]
+[node name="Level2" instance=ExtResource("1_41cqx")]
 
 [node name="PipeEnd" parent="." index="0" node_paths=PackedStringArray("other_pipe") instance=ExtResource("2_w501j")]
 position = Vector2(768, 694)
