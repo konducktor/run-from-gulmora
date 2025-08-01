@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" uid="uid://cm8i4olqljfqd" path="res://monster/monster.gd" id="1_gsx7y"]
 [ext_resource type="PackedScene" uid="uid://b7wmjvxkn8eus" path="res://monster/monster_hit.tscn" id="1_okp8s"]
-[ext_resource type="Texture2D" uid="uid://qagk3531rpwx" path="res://icon.svg" id="2_2k2s0"]
+[ext_resource type="Texture2D" uid="uid://dodqlhxtw5rs3" path="res://monster/art/Женек.png" id="2_2k2s0"]
 
 [node name="Monster" type="Node2D"]
 script = ExtResource("1_gsx7y")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.885344, 0.448835, 1.92523e-07, 1)
-scale = Vector2(15, 0.5)
+z_index = 7
+position = Vector2(0, -64)
 texture = ExtResource("2_2k2s0")
 
 [node name="MonsterHit" parent="." instance=ExtResource("1_okp8s")]
