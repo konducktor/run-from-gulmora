@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dtamhc3u844oa"]
+[gd_scene load_steps=19 format=3 uid="uid://dtamhc3u844oa"]
 
 [ext_resource type="Script" uid="uid://bvntop35l4m5u" path="res://global/gameplay.gd" id="1_bx64p"]
 [ext_resource type="PackedScene" uid="uid://ceblj6gvvm5c0" path="res://ux/death_screen/death_screen.tscn" id="2_63nix"]
@@ -17,6 +17,7 @@
 [ext_resource type="FontFile" uid="uid://di04vknxmp46b" path="res://ux/Daneehand Regular Cyr.ttf" id="14_wxx72"]
 [ext_resource type="Script" uid="uid://dtydotpfe7we1" path="res://ux/gameplay_stats_ux.gd" id="15_2beay"]
 [ext_resource type="PackedScene" uid="uid://cwklp2uls81do" path="res://visuals/borders/borders.tscn" id="16_ni0ts"]
+[ext_resource type="Texture2D" uid="uid://bkoiiv21cqyls" path="res://visuals/backgrounds/back_test.png" id="18_63nix"]
 
 [node name="Gameplay" type="Node2D" node_paths=PackedStringArray("CANVAS")]
 script = ExtResource("1_bx64p")
@@ -44,7 +45,7 @@ D_LETTER_LEVEL = ExtResource("8_47db2")
 FINAL_LEVEL = ExtResource("9_gh0v3")
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("REFERENCE_OBJECT")]
-position = Vector2(960, 537)
+position = Vector2(960, 576)
 limit_bottom = 1155
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
@@ -64,7 +65,7 @@ position = Vector2(960, 1856)
 NORMAL_SPEED = 250.0
 SLOW_SPEED = 50.0
 FAST_SPEED = 1000.0
-FAST_MIN_DISTANCE = 600.0
+FAST_MIN_DISTANCE = 700.0
 PLAYER = NodePath("../Player")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -105,3 +106,12 @@ text = "Time: 99:99"
 
 [node name="Borders" parent="." node_paths=PackedStringArray("player") instance=ExtResource("16_ni0ts")]
 player = NodePath("../Player")
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0, 0.75)
+repeat_size = Vector2(0, 1080)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+z_index = -2
+position = Vector2(960, 540)
+texture = ExtResource("18_63nix")

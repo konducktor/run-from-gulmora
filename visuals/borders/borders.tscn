@@ -35,11 +35,13 @@ shape = SubResource("RectangleShape2D_y6k8p")
 [node name="Parallax2D" type="Parallax2D" parent="."]
 scroll_scale = Vector2(1.2, 1.2)
 repeat_size = Vector2(0, 1080)
+repeat_times = 2
 
 [node name="RightBorder" type="Sprite2D" parent="Parallax2D"]
 z_index = 3
 position = Vector2(1678, 540)
 texture = ExtResource("3_y6k8p")
+offset = Vector2(0, 540)
 flip_h = true
 
 [node name="LeftBorder" type="Sprite2D" parent="Parallax2D"]
