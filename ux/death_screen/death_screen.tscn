@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://gxas6eq2ddoo" path="res://ux/death_screen/death_screen.gd" id="1_gsorh"]
 [ext_resource type="FontFile" uid="uid://di04vknxmp46b" path="res://ux/Daneehand Regular Cyr.ttf" id="1_ogq5k"]
 [ext_resource type="Script" uid="uid://ctlyrlympirev" path="res://ux/main_menu/menu_button.gd" id="2_glyeq"]
-[ext_resource type="Script" uid="uid://c7emvdhw4lsay" path="res://ux/death_screen/random_death_messages.gd" id="3_x4gom"]
+[ext_resource type="Script" path="res://ux/death_screen/random_death_messages.gd" id="3_x4gom"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_glyeq"]
 
