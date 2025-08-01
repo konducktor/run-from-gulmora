@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bvntop35l4m5u" path="res://global/gameplay.gd" id="1_bx64p"]
 [ext_resource type="PackedScene" uid="uid://ceblj6gvvm5c0" path="res://ux/death_screen/death_screen.tscn" id="2_63nix"]
-[ext_resource type="Script" path="res://gameplay/gameplay_values.gd" id="3_4vl10"]
+[ext_resource type="Script" uid="uid://demrlv7ihrymx" path="res://gameplay/gameplay_values.gd" id="3_4vl10"]
 [ext_resource type="Script" uid="uid://dod40gv4mo7kl" path="res://gameplay_elements/letter/letter_setup.gd" id="3_63nix"]
 [ext_resource type="Script" uid="uid://byvfvad6xuppm" path="res://levels/level_generator.gd" id="4_53nod"]
 [ext_resource type="PackedScene" uid="uid://df0v2abqki1gm" path="res://levels/letter_levels/A_letter_level.tscn" id="5_b2kny"]
@@ -15,24 +15,16 @@
 [ext_resource type="PackedScene" uid="uid://uos88rcjypfn" path="res://player/player.tscn" id="12_n6aft"]
 [ext_resource type="PackedScene" uid="uid://ypgd2rchig6s" path="res://monster/monster.tscn" id="13_2qs7h"]
 [ext_resource type="FontFile" uid="uid://di04vknxmp46b" path="res://ux/Daneehand Regular Cyr.ttf" id="14_wxx72"]
-[ext_resource type="Script" path="res://ux/gameplay_stats_ux.gd" id="15_2beay"]
+[ext_resource type="Script" uid="uid://dtydotpfe7we1" path="res://ux/gameplay_stats_ux.gd" id="15_2beay"]
 [ext_resource type="PackedScene" uid="uid://cwklp2uls81do" path="res://visuals/borders/borders.tscn" id="16_ni0ts"]
 
-[node name="Gameplay" type="Node2D" node_paths=PackedStringArray("CANVAS", "GAME_VALUES", "DEATH_SCREEN_TIMER")]
+[node name="Gameplay" type="Node2D" node_paths=PackedStringArray("CANVAS")]
 script = ExtResource("1_bx64p")
 CANVAS = NodePath("CanvasLayer")
-GAME_VALUES = NodePath("GameplayValues")
-DEATH_SCREEN_TIMER = NodePath("DeathScreenTimer")
-DEATH_SCREEN = ExtResource("2_63nix")
 
 [node name="GameplayValues" type="Node" parent="." node_paths=PackedStringArray("PLAYER")]
 script = ExtResource("3_4vl10")
 PLAYER = NodePath("../Player")
-
-[node name="DeathScreenTimer" type="Timer" parent="."]
-wait_time = 0.5
-one_shot = true
-ignore_time_scale = true
 
 [node name="LetterSetup" type="Node2D" parent="." node_paths=PackedStringArray("level_generator")]
 script = ExtResource("3_63nix")
@@ -76,6 +68,10 @@ PLAYER = NodePath("../Player")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 10
+
+[node name="DeathScreen" parent="CanvasLayer" node_paths=PackedStringArray("GAME_VALUES") instance=ExtResource("2_63nix")]
+visible = false
+GAME_VALUES = NodePath("../../GameplayValues")
 
 [node name="Stats" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("GAME_VALUES", "METERS_LABEL", "TIME_LABEL")]
 layout_mode = 3
