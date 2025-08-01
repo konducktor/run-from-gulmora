@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dga84sgb8gjup" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Script" uid="uid://baxjv5p6gbkoa" path="res://player/player_animation.gd" id="2_g1dw6"]
-[ext_resource type="Script" uid="uid://ds02tdcvlumrf" path="res://player/player_sounds.gd" id="2_qjkh3"]
+[ext_resource type="Script" path="res://player/player_sounds.gd" id="2_qjkh3"]
 [ext_resource type="AudioStream" uid="uid://bhvad6m8s624r" path="res://sounds/sfx/jump_placeholder.mp3" id="3_g6k8r"]
-[ext_resource type="Script" uid="uid://bq8iu54cwgcg4" path="res://player/player_death_animation.gd" id="3_yw30f"]
+[ext_resource type="Script" path="res://player/player_death_animation.gd" id="3_yw30f"]
 [ext_resource type="Texture2D" uid="uid://idssi6s1ehwo" path="res://player/art/player_cool.png" id="4_yw30f"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g1dw6"]
@@ -202,7 +202,7 @@ PLAYER = NodePath("..")
 
 [node name="DeathAnimation" type="Node2D" parent="Visuals" node_paths=PackedStringArray("collision_shape", "player")]
 script = ExtResource("3_yw30f")
-player_death_impact_velocity = Vector2(0, -1000)
+player_death_impact_velocity = Vector2(0, -2500)
 collision_shape = NodePath("../../CollisionShape2D")
 player = NodePath("../..")
 
