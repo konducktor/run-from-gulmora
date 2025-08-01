@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://ceblj6gvvm5c0"]
+[gd_scene load_steps=9 format=3 uid="uid://ceblj6gvvm5c0"]
 
 [ext_resource type="Script" uid="uid://gxas6eq2ddoo" path="res://ux/death_screen/death_screen.gd" id="1_gsorh"]
 [ext_resource type="FontFile" uid="uid://di04vknxmp46b" path="res://ux/Daneehand Regular Cyr.ttf" id="1_ogq5k"]
 [ext_resource type="Script" uid="uid://ctlyrlympirev" path="res://ux/main_menu/menu_button.gd" id="2_glyeq"]
+[ext_resource type="Script" uid="uid://c7emvdhw4lsay" path="res://ux/death_screen/random_death_messages.gd" id="3_x4gom"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_glyeq"]
 
@@ -72,10 +73,13 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("1_ogq5k")
-theme_override_font_sizes/font_size = 75
-text = "Game Over!"
+theme_override_font_sizes/font_size = 60
+text = "cool game over message"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
+script = ExtResource("3_x4gom")
+PHRASES = Array[String](["Game Over!", "Kicked the bucket", "Nice try (I have no idea if it's good or not)", "Next time it will work out", "The monster's name is gulmora. Cool name?", "This rabbit hole is deeper than you think", "Try again bro!", "Nt", "Give a good rating :3"])
 
 [node name="StatsContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
@@ -123,7 +127,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_glyeq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_gsorh")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_x4gom")
 theme_override_styles/normal = SubResource("StyleBoxFlat_66ltg")
-text = "Play Again
+text = "Restart
 "
 script = ExtResource("2_glyeq")
 
