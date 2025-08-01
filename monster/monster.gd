@@ -19,7 +19,10 @@ var current_speed : float
 
 
 func _ready() -> void:
-	new_speed_state(SPEED_STATES.STOP)
+	if GlobalValues.is_tutorial_finished:
+		new_speed_state(SPEED_STATES.NORMAL)
+	else:
+		new_speed_state(SPEED_STATES.STOP)
 	
 	GlobalSignals.monster_normal.connect(_on_normal)
 	GlobalSignals.monster_slowed.connect(_on_slowed)
@@ -58,7 +61,6 @@ func new_speed_state(new_state: SPEED_STATES):
 
 func _on_tutorial_finished():
 	#position.y = PLAYER.position.y + 640.0 # Расстояние по дефолту
-	
 	new_speed_state(SPEED_STATES.NORMAL)
 
 func _on_normal() -> void:

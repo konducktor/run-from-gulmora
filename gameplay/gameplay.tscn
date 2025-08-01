@@ -61,7 +61,7 @@ position = Vector2(960, 960)
 collision_mask = 14
 
 [node name="Monster" parent="." node_paths=PackedStringArray("PLAYER") instance=ExtResource("13_2qs7h")]
-position = Vector2(960, 1856)
+position = Vector2(960, 3456)
 NORMAL_SPEED = 250.0
 SLOW_SPEED = 50.0
 FAST_SPEED = 1000.0
@@ -107,11 +107,11 @@ text = "Time: 99:99"
 [node name="Borders" parent="." node_paths=PackedStringArray("player") instance=ExtResource("16_ni0ts")]
 player = NodePath("../Player")
 
-[node name="Parallax2D" type="Parallax2D" parent="."]
+[node name="Background" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0, 0.75)
 repeat_size = Vector2(0, 1080)
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
 z_index = -2
 position = Vector2(960, 540)
 texture = ExtResource("18_63nix")

@@ -5,10 +5,17 @@ class_name PlayerSounds
 @export var JUMP : AudioStreamPlayer
 @export var WALKING : AudioStreamPlayer
 
+var walking : bool
+
+
+func _process(delta: float) -> void:
+	if walking:
+		play_sound(WALKING, random_pitch())
+
 
 func _on_player_jumped() -> void:
 	play_sound(JUMP, random_pitch())
-	stop_sound(WALKING)
+	walking = false
 
 
 func _on_player_falling() -> void:
@@ -16,9 +23,9 @@ func _on_player_falling() -> void:
 
 
 func _on_player_walking() -> void:
-	play_sound(WALKING, random_pitch())
-	
+	walking = true
+
 
 
 func _on_player_idle() -> void:
-	stop_sound(WALKING)
+	walking = false

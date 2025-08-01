@@ -40,14 +40,14 @@ repeat_times = 2
 
 [node name="RightBorder" type="Sprite2D" parent="Parallax2D"]
 z_index = 3
-position = Vector2(1755, 540)
+position = Vector2(1691, 540)
 texture = ExtResource("3_y6k8p")
 offset = Vector2(0, 540)
 flip_h = true
 
 [node name="LeftBorder" type="Sprite2D" parent="Parallax2D"]
 z_index = 3
-position = Vector2(223, 540)
+position = Vector2(287, 540)
 texture = ExtResource("3_y6k8p")
 
 [connection signal="body_entered" from="RightBorder" to="RightBorder" method="_on_body_entered"]
