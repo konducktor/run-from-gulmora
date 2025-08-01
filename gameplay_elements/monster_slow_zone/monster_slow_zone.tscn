@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4e4u1228hili"]
+
+[ext_resource type="Script" uid="uid://uly0j3mcq5c8" path="res://gameplay_elements/monster_slow_zone/monster_slow_zone.gd" id="1_upcty"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ely6h"]
+size = Vector2(256, 512)
+
+[node name="MonsterSlowZone" type="Area2D"]
+script = ExtResource("1_upcty")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ely6h")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

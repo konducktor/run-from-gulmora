@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://eemdwk24aovb" path="res://main_menu/gmtk2025.png" id="1_lti8b"]
 [ext_resource type="Script" uid="uid://ys28y1n0g2id" path="res://main_menu/main_menu.gd" id="1_ouk20"]
-[ext_resource type="PackedScene" uid="uid://dtamhc3u844oa" path="res://gameplay.tscn" id="2_mae5d"]
+[ext_resource type="PackedScene" uid="uid://dtamhc3u844oa" path="res://gameplay/gameplay.tscn" id="2_mae5d"]
 [ext_resource type="FontFile" uid="uid://di04vknxmp46b" path="res://main_menu/Daneehand Regular Cyr.ttf" id="3_ao3db"]
 [ext_resource type="Script" uid="uid://ctlyrlympirev" path="res://main_menu/menu_button.gd" id="3_m2eq4"]
 [ext_resource type="Script" uid="uid://cn8bmgvld6mor" path="res://main_menu/menu_texture_button.gd" id="5_33wq2"]

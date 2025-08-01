@@ -1,0 +1,85 @@
+[gd_scene load_steps=17 format=3 uid="uid://dtamhc3u844oa"]
+
+[ext_resource type="Script" uid="uid://bvntop35l4m5u" path="res://global/gameplay.gd" id="1_bx64p"]
+[ext_resource type="Script" uid="uid://fqwu1ymifv24" path="res://gameplay/gameplay_mouse.gd" id="2_4vl10"]
+[ext_resource type="Script" uid="uid://dod40gv4mo7kl" path="res://gameplay_elements/letter/letter_setup.gd" id="3_63nix"]
+[ext_resource type="Script" uid="uid://byvfvad6xuppm" path="res://levels/level_generator.gd" id="4_53nod"]
+[ext_resource type="PackedScene" uid="uid://df0v2abqki1gm" path="res://levels/letter_levels/A_letter_level.tscn" id="5_b2kny"]
+[ext_resource type="PackedScene" uid="uid://c1lkuldvp0734" path="res://levels/letter_levels/B_letter_level.tscn" id="6_y3ygr"]
+[ext_resource type="PackedScene" uid="uid://daqxkd3qpb8bd" path="res://levels/letter_levels/C_letter_level.tscn" id="7_xmdrq"]
+[ext_resource type="PackedScene" uid="uid://ciofim6bqh6iw" path="res://levels/letter_levels/D_letter_level.tscn" id="8_47db2"]
+[ext_resource type="PackedScene" uid="uid://uf3x5rrl31qh" path="res://levels/final_level/final_level.tscn" id="9_gh0v3"]
+[ext_resource type="Script" uid="uid://dux2ueculjt2t" path="res://global/camera.gd" id="10_s60jr"]
+[ext_resource type="PackedScene" uid="uid://hqq6qxfhsob4" path="res://gameplay_elements/platform/platform.tscn" id="11_q2ml8"]
+[ext_resource type="PackedScene" uid="uid://uos88rcjypfn" path="res://player/player.tscn" id="12_n6aft"]
+[ext_resource type="PackedScene" uid="uid://ypgd2rchig6s" path="res://monster/monster.tscn" id="13_2qs7h"]
+[ext_resource type="FontFile" uid="uid://di04vknxmp46b" path="res://main_menu/Daneehand Regular Cyr.ttf" id="14_wxx72"]
+[ext_resource type="Script" uid="uid://dtydotpfe7we1" path="res://ux/meters_label.gd" id="15_2beay"]
+[ext_resource type="PackedScene" uid="uid://cwklp2uls81do" path="res://visuals/borders/borders.tscn" id="16_ni0ts"]
+
+[node name="Gameplay2" type="Node2D" node_paths=PackedStringArray("player_respawn_timer")]
+script = ExtResource("1_bx64p")
+player_respawn_timer = NodePath("PlayerRespawnTimer")
+
+[node name="PlayerRespawnTimer" type="Timer" parent="."]
+one_shot = true
+ignore_time_scale = true
+
+[node name="Mouse" type="Node" parent="."]
+script = ExtResource("2_4vl10")
+
+[node name="LetterSetup" type="Node2D" parent="." node_paths=PackedStringArray("level_generator")]
+script = ExtResource("3_63nix")
+level_generator = NodePath("../LevelGenerator")
+
+[node name="LevelGenerator" type="Node2D" parent="."]
+script = ExtResource("4_53nod")
+A_LEVEL_DIR = "res://levels/A_levels/"
+B_LEVEL_DIR = "res://levels/B_levels/"
+C_LEVEL_DIR = "res://levels/C_levels/"
+D_LEVEL_DIR = "res://levels/D_levels/"
+A_LETTER_LEVEL = ExtResource("5_b2kny")
+B_LETTER_LEVEL = ExtResource("6_y3ygr")
+C_LETTER_LEVEL = ExtResource("7_xmdrq")
+D_LETTER_LEVEL = ExtResource("8_47db2")
+FINAL_LEVEL = ExtResource("9_gh0v3")
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("REFERENCE_OBJECT")]
+position = Vector2(960, 537)
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+script = ExtResource("10_s60jr")
+REFERENCE_OBJECT = NodePath("../Player")
+OFFSET = 100.0
+
+[node name="Platform" parent="." instance=ExtResource("11_q2ml8")]
+position = Vector2(960, 1088)
+
+[node name="Player" parent="." instance=ExtResource("12_n6aft")]
+position = Vector2(960, 960)
+collision_mask = 14
+
+[node name="Monster" parent="." node_paths=PackedStringArray("PLAYER") instance=ExtResource("13_2qs7h")]
+position = Vector2(958, 1664)
+NORMAL_SPEED = 100.0
+SLOW_SPEED = 25.0
+FAST_SPEED = 600.0
+FAST_MIN_DISTANCE = 700.0
+PLAYER = NodePath("../Player")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="MetersLabel" type="Label" parent="CanvasLayer" node_paths=PackedStringArray("PLAYER")]
+offset_left = 24.0
+offset_top = 26.0
+offset_right = 415.0
+offset_bottom = 68.0
+theme_override_fonts/font = ExtResource("14_wxx72")
+theme_override_font_sizes/font_size = 50
+text = "Meters: миллион тысяч"
+script = ExtResource("15_2beay")
+PLAYER = NodePath("../../Player")
+
+[node name="Borders" parent="." node_paths=PackedStringArray("player") instance=ExtResource("16_ni0ts")]
+player = NodePath("../Player")

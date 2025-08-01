@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=4 uid="uid://daqxkd3qpb8bd"]
+[gd_scene load_steps=4 format=4 uid="uid://daqxkd3qpb8bd"]
 
 [ext_resource type="PackedScene" uid="uid://bwgimqktwg1dp" path="res://levels/level.tscn" id="1_4r7aq"]
 [ext_resource type="PackedScene" uid="uid://cgweq44ec2mce" path="res://gameplay_elements/letter/letter.tscn" id="2_3smpy"]
+[ext_resource type="PackedScene" uid="uid://c4e4u1228hili" path="res://gameplay_elements/monster_slow_zone/monster_slow_zone.tscn" id="3_3smpy"]
 
 [node name="Level" instance=ExtResource("1_4r7aq")]
 
@@ -10,3 +11,13 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAACAAAAEAAAAAAAAAACAAAAIAAAAAAAA
 
 [node name="Letter" parent="." index="2" instance=ExtResource("2_3smpy")]
 position = Vector2(1632, 480)
+
+[node name="MonsterSlowZone" parent="." index="3" instance=ExtResource("3_3smpy")]
+position = Vector2(1632, 512)
+
+[connection signal="body_entered" from="Tiles/Danger" to="Tiles/Danger" method="_on_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@88073" to="Tiles/@Area2D@88073" method="_on_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@88074" to="Tiles/@Area2D@88074" method="_on_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@88075" to="Tiles/@Area2D@88075" method="_on_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@88076" to="Tiles/@Area2D@88076" method="_on_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@88077" to="Tiles/@Area2D@88077" method="_on_body_entered"]
