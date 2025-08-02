@@ -39,6 +39,9 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if not ACTIVE:
+		return
+	
 	position.y += current_speed * delta * (-1.0)
 	
 	var distance_to_player := absf(PLAYER.position.y - position.y)

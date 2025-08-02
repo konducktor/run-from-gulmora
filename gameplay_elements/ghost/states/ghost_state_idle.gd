@@ -10,7 +10,7 @@ var ignore_range : bool
 func enter():
 	super()
 	
-	ignore_range = (player.position - ghost.start_position).length() < ghost.ANGER_RANGE
+	ignore_range = (ghost.get_local(player.position) - ghost.start_position).length() < ghost.ANGER_RANGE
 
 
 func update(delta: float) -> GhostState:
@@ -23,7 +23,8 @@ func update(delta: float) -> GhostState:
 	if ignore_range:
 		return
 	
-	if (player.position - ghost.start_position).length() < ghost.ANGER_RANGE:
+	#print(player.position, ghost.start_position)
+	if (ghost.get_local(player.position) - ghost.start_position).length() < ghost.ANGER_RANGE:
 		return ACTIVE_STATE
 	return null
 	

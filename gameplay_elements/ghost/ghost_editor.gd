@@ -10,6 +10,6 @@ func _ready() -> void:
 
 
 func _draw():
-	if Engine.is_editor_hint():
-		draw_circle(Vector2.ZERO, parent.ANGER_RANGE, Color.RED, false, 1.0)
-		draw_circle(Vector2.ZERO, parent.PASSIVE_RANGE, Color.GREEN, false, 1.0)
+	#if Engine.is_editor_hint():
+	draw_circle(Vector2.ZERO, parent.ANGER_RANGE, Color.RED, false, 1.0)
+	draw_circle(Vector2.ZERO, parent.PASSIVE_RANGE, Color.GREEN, false, 1.0)

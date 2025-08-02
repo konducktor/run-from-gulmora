@@ -21,12 +21,11 @@ func update(delta: float) -> GhostState:
 	if (current_target - ghost.position).length() < 3.0:
 		update_current_target()
 	
-	if (player.position - ghost.start_position).length() > ghost.PASSIVE_RANGE:
+	if (ghost.get_local(player.position) - ghost.start_position).length() > ghost.PASSIVE_RANGE:
 		return IDLE_STATE
 	return null
 
 
 func update_current_target():
-	current_target = player.position
+	current_target = ghost.get_local(player.position)
 	current_direction = (current_target - ghost.position).normalized()
-	print(current_target)

@@ -147,7 +147,7 @@ MONSTER = NodePath("Monster")
 
 [node name="Notification" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("4_txt2m")
-volume_db = -2.0
+volume_db = -5.0
 
 [node name="Monster" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("6_2jkjs")

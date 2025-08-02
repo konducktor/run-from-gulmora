@@ -13,7 +13,6 @@ var time : float
 
 
 func _ready() -> void:
-	print('FireballSpawner ready')
 	spawn_fireball() 
 	time = 0
 

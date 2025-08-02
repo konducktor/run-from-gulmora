@@ -1,13 +1,16 @@
 extends Node
 class_name GhostState
 
+
 signal entered
 signal exited
+
 
 var player : Player
 var ghost : Ghost
 
 var self_state_current : bool
+
 
 func enter() -> void:
 	entered.emit()
