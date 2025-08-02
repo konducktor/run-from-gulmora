@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://cwklp2uls81do" path="res://visuals/borders/borders.tscn" id="16_ni0ts"]
 [ext_resource type="PackedScene" uid="uid://trp1q0aft7pi" path="res://ux/notifications/notification.tscn" id="18_b2kny"]
 [ext_resource type="PackedScene" uid="uid://dmg3i5v15f3fa" path="res://ux/pause/pause.tscn" id="18_q2ml8"]
-[ext_resource type="Script" path="res://sounds/gameplay_music.gd" id="19_y3ygr"]
+[ext_resource type="Script" uid="uid://hcnvum7jq1yt" path="res://sounds/gameplay_music.gd" id="19_y3ygr"]
 [ext_resource type="PackedScene" uid="uid://buyndscm6akd2" path="res://visuals/background/background.tscn" id="20_b2kny"]
 [ext_resource type="AudioStream" uid="uid://ijaf8ira3nyi" path="res://sounds/music/so hot.mp3" id="20_xmdrq"]
 [ext_resource type="AudioStream" uid="uid://dyntc7dyna3pl" path="res://sounds/music/so wet.mp3" id="21_s60jr"]
@@ -60,6 +60,7 @@ level_generator = NodePath("../LevelGenerator")
 
 [node name="LevelGenerator" type="Node2D" parent="."]
 script = ExtResource("4_53nod")
+LEVELS_IN_LAYER = 1
 TUTORIAL_DIR = "res://levels/tutorial_levels/"
 A_LEVEL_DIR = "res://levels/A_levels/"
 B_LEVEL_DIR = "res://levels/B_levels/"

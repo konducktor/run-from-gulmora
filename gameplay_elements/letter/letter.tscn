@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://cgweq44ec2mce"]
 
-[ext_resource type="Texture2D" uid="uid://c64etftqqhbyj" path="res://gameplay_elements/letter/art/L_letter.png" id="1_edkgh"]
+[ext_resource type="Texture2D" uid="uid://c64etftqqhbyj" path="res://gameplay_elements/letter/art/L.png" id="1_edkgh"]
 [ext_resource type="Script" uid="uid://bewkgt0sd4i2h" path="res://gameplay_elements/letter/letter.gd" id="1_hxa6d"]
-[ext_resource type="Texture2D" uid="uid://p673ehvwajtp" path="res://gameplay_elements/letter/art/O_letter.png" id="3_b5b0c"]
+[ext_resource type="Texture2D" uid="uid://p673ehvwajtp" path="res://gameplay_elements/letter/art/O.png" id="3_b5b0c"]
 [ext_resource type="Texture2D" uid="uid://dxbclix2yeism" path="res://gameplay_elements/letter/art/P.png" id="4_vrgli"]
 [ext_resource type="Script" uid="uid://518g8mvrc4m0" path="res://gameplay_elements/letter/sfx/letter_sounds.gd" id="5_xw0v6"]
 [ext_resource type="AudioStream" uid="uid://c1n2nuhgflr5u" path="res://gameplay_elements/letter/sfx/letter_collect.ogg" id="6_riiat"]

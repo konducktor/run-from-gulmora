@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c64etftqqhbyj"
-path="res://.godot/imported/L_letter.png-92222a80ac387f9258d2070998b530f7.ctex"
+uid="uid://p673ehvwajtp"
+path="res://.godot/imported/O.png-aad441746020647c48a0291f46d53712.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gameplay_elements/letter/art/L_letter.png"
-dest_files=["res://.godot/imported/L_letter.png-92222a80ac387f9258d2070998b530f7.ctex"]
+source_file="res://gameplay_elements/letter/art/O.png"
+dest_files=["res://.godot/imported/O.png-aad441746020647c48a0291f46d53712.ctex"]
 
 [params]
 
