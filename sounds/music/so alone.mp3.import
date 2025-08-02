@@ -2,7 +2,7 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-uid="uid://eksi3rs5shn4"
+uid="uid://dyhle4xwr78k6"
 path="res://.godot/imported/so alone.mp3-2ecd315182c14eed1458560019e226ad.mp3str"
 
 [deps]
@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/so alone.mp3-2ecd315182c14eed1458560019e226ad
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

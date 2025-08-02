@@ -154,7 +154,6 @@ func pick_level_from_level_array(level_array: Array[PackedScene]) -> PackedScene
 func update_current_level_layer(custom: LEVEL_LAYERS = -1) -> void:
 	if custom != -1:
 		current_level_layer = custom
-		#print(current_level_layer)
 		return
 	
 	match current_level_layer:

@@ -2,7 +2,7 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-uid="uid://yhlcwrseolw"
+uid="uid://qgrixw6eshsc"
 path="res://.godot/imported/if i die, please, don`t cry.mp3-6fdc14af927e629163d63fce69cc5e83.mp3str"
 
 [deps]
@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/if i die, please, don`t cry.mp3-6fdc14af927e6
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

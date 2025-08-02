@@ -11,7 +11,7 @@ enum Direction {UP, DOWN, LEFT, RIGHT}
 #@export var cooldown_timer: Timer
 
 func _on_body_entered(body: Node2D) -> void:
-	print(is_instance_valid(other_pipe))
+	#print(is_instance_valid(other_pipe))
 	
 	if not body.is_in_group('Player') or not is_instance_valid(other_pipe): #or not cooldown_timer.is_stopped() or not other_pipe.cooldown_timer.is_stopped():
 		return

@@ -23,7 +23,6 @@ func update(delta: float) -> GhostState:
 	if ignore_range:
 		return
 	
-	#print(player.position, ghost.start_position)
 	if (ghost.get_local(player.position) - ghost.start_position).length() < ghost.ANGER_RANGE:
 		return ACTIVE_STATE
 	return null

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dtamhc3u844oa"]
+[gd_scene load_steps=26 format=3 uid="uid://dtamhc3u844oa"]
 
 [ext_resource type="Script" uid="uid://bvntop35l4m5u" path="res://global/gameplay.gd" id="1_bx64p"]
 [ext_resource type="Script" uid="uid://d3asyxqei0o6m" path="res://gameplay/mouse.gd" id="2_53nod"]
@@ -19,7 +19,12 @@
 [ext_resource type="Script" uid="uid://dtydotpfe7we1" path="res://ux/gameplay_stats_ux.gd" id="15_2beay"]
 [ext_resource type="PackedScene" uid="uid://cwklp2uls81do" path="res://visuals/borders/borders.tscn" id="16_ni0ts"]
 [ext_resource type="PackedScene" uid="uid://trp1q0aft7pi" path="res://ux/notifications/notification.tscn" id="18_b2kny"]
+[ext_resource type="Script" uid="uid://hcnvum7jq1yt" path="res://sounds/gameplay_music.gd" id="19_y3ygr"]
 [ext_resource type="PackedScene" uid="uid://buyndscm6akd2" path="res://visuals/background/background.tscn" id="20_b2kny"]
+[ext_resource type="AudioStream" uid="uid://ijaf8ira3nyi" path="res://sounds/music/so hot.mp3" id="20_xmdrq"]
+[ext_resource type="AudioStream" uid="uid://dyntc7dyna3pl" path="res://sounds/music/so wet.mp3" id="21_s60jr"]
+[ext_resource type="AudioStream" uid="uid://dyhle4xwr78k6" path="res://sounds/music/so alone.mp3" id="22_q2ml8"]
+[ext_resource type="AudioStream" uid="uid://c1tks48l4mhxl" path="res://sounds/music/so strange.mp3" id="23_n6aft"]
 
 [node name="Gameplay" type="Node2D"]
 script = ExtResource("1_bx64p")
@@ -115,6 +120,20 @@ theme_override_font_sizes/font_size = 50
 text = "Time: 99:99"
 
 [node name="Notification" parent="CanvasLayer" instance=ExtResource("18_b2kny")]
+
+[node name="Music" type="Node" parent="." node_paths=PackedStringArray("PLAYER_1", "PLAYER_2")]
+script = ExtResource("19_y3ygr")
+SOUNDTRACKS = Array[AudioStream]([ExtResource("20_xmdrq"), ExtResource("21_s60jr"), ExtResource("22_q2ml8"), ExtResource("23_n6aft")])
+TRANSITION_TIME = 0.5
+PLAYER_1 = NodePath("AudioStreamPlayer1")
+PLAYER_2 = NodePath("AudioStreamPlayer2")
+
+[node name="AudioStreamPlayer1" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("20_xmdrq")
+bus = &"Music"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Music"]
+bus = &"Music"
 
 [node name="Visual" type="Node2D" parent="."]
 
