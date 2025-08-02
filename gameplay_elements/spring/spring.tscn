@@ -11,7 +11,8 @@ size = Vector2(128, 64)
 [node name="Spring" type="Area2D"]
 collision_layer = 16
 script = ExtResource("1_6jmmg")
-STRING_STRENGTH = 3000.0
+STRING_STRENGTH = 2900.0
+PLAYER_START_OFFSET = Vector2(0, -70)
 
 [node name="Sounds" type="Node" parent="." node_paths=PackedStringArray("ACTIVATED")]
 script = ExtResource("2_jfa5b")

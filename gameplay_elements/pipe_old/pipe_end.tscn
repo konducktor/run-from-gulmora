@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxayu1wpok0d0"]
+[gd_scene load_steps=7 format=3 uid="uid://dxayu1wpok0d0"]
 
-[ext_resource type="Texture2D" uid="uid://buxoapfjfa5kv" path="res://gameplay_elements/pipe_old/pipe_placeholder.png" id="1_jhjqq"]
+[ext_resource type="Texture2D" uid="uid://buxoapfjfa5kv" path="res://gameplay_elements/pipe_old/art/pipe_placeholder.png" id="1_jhjqq"]
 [ext_resource type="Script" uid="uid://dirywd4f0hny4" path="res://gameplay_elements/pipe_old/pipe_end.gd" id="2_4b1cl"]
+[ext_resource type="Script" uid="uid://b1mvebqlxupts" path="res://gameplay_elements/pipe_old/sfx/pipe_sounds.gd" id="2_mffgp"]
+[ext_resource type="AudioStream" uid="uid://bf4ojhg40gqgg" path="res://gameplay_elements/pipe_old/sfx/pipe.ogg" id="3_2rv5d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t2tlw"]
 size = Vector2(45, 104)
@@ -11,6 +13,13 @@ size = Vector2(187, 94)
 
 [node name="PipeEnd" type="Node2D"]
 script = ExtResource("2_4b1cl")
+
+[node name="Sound" type="Node" parent="." node_paths=PackedStringArray("PIPE")]
+script = ExtResource("2_mffgp")
+PIPE = NodePath("Pipe")
+
+[node name="Pipe" type="AudioStreamPlayer" parent="Sound"]
+stream = ExtResource("3_2rv5d")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(93, 7.62939e-06)
@@ -32,3 +41,4 @@ position = Vector2(124.5, 0)
 shape = SubResource("RectangleShape2D_stckw")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Sound" method="_on_area_2d_body_entered"]
