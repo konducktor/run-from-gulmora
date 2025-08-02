@@ -31,24 +31,6 @@ script = ExtResource("2_53nod")
 script = ExtResource("3_4vl10")
 PLAYER = NodePath("../Player")
 
-[node name="LetterSetup" type="Node2D" parent="." node_paths=PackedStringArray("level_generator")]
-script = ExtResource("3_63nix")
-level_generator = NodePath("../LevelGenerator")
-
-[node name="LevelGenerator" type="Node2D" parent="."]
-script = ExtResource("4_53nod")
-DISABLE_TUTORIAL = true
-TUTORIAL_DIR = "res://levels/tutorial_levels/"
-A_LEVEL_DIR = "res://levels/A_levels/"
-B_LEVEL_DIR = "res://levels/B_levels/"
-C_LEVEL_DIR = "res://levels/C_levels/"
-D_LEVEL_DIR = "res://levels/D_levels/"
-A_LETTER_LEVEL = ExtResource("5_b2kny")
-B_LETTER_LEVEL = ExtResource("6_y3ygr")
-C_LETTER_LEVEL = ExtResource("7_xmdrq")
-D_LETTER_LEVEL = ExtResource("8_47db2")
-FINAL_LEVEL = ExtResource("9_gh0v3")
-
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("REFERENCE_OBJECT")]
 position = Vector2(960, 576)
 limit_bottom = 1155
@@ -65,9 +47,25 @@ position = Vector2(960, 1088)
 position = Vector2(960, 960)
 collision_mask = 14
 
+[node name="LetterSetup" type="Node2D" parent="." node_paths=PackedStringArray("level_generator")]
+script = ExtResource("3_63nix")
+level_generator = NodePath("../LevelGenerator")
+
+[node name="LevelGenerator" type="Node2D" parent="."]
+script = ExtResource("4_53nod")
+TUTORIAL_DIR = "res://levels/tutorial_levels/"
+A_LEVEL_DIR = "res://levels/A_levels/"
+B_LEVEL_DIR = "res://levels/B_levels/"
+C_LEVEL_DIR = "res://levels/C_levels/"
+D_LEVEL_DIR = "res://levels/D_levels/"
+A_LETTER_LEVEL = ExtResource("5_b2kny")
+B_LETTER_LEVEL = ExtResource("6_y3ygr")
+C_LETTER_LEVEL = ExtResource("7_xmdrq")
+D_LETTER_LEVEL = ExtResource("8_47db2")
+FINAL_LEVEL = ExtResource("9_gh0v3")
+
 [node name="Monster" parent="." node_paths=PackedStringArray("PLAYER") instance=ExtResource("13_2qs7h")]
 position = Vector2(960, 3456)
-ACTIVE = false
 NORMAL_SPEED = 250.0
 SLOW_SPEED = 50.0
 FAST_SPEED = 600.0

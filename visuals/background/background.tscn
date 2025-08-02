@@ -6,15 +6,22 @@
 
 [node name="Background" type="Node2D"]
 
-[node name="LayerSwitcher" parent="." node_paths=PackedStringArray("SPRITES") instance=ExtResource("1_rtpuw")]
-SPRITES = [NodePath("../Parallax/Sprite2D")]
-LAYER_ASSETS = Array[Texture2D]([ExtResource("2_onm2c"), ExtResource("3_4dlxx"), ExtResource("2_onm2c"), ExtResource("2_onm2c")])
+[node name="LayerSwitcher" parent="." node_paths=PackedStringArray("MAIN_SPRITES", "TRANSITION_SPRITES") instance=ExtResource("1_rtpuw")]
+MAIN_SPRITES = [NodePath("../Parallax/Main")]
+TRANSITION_SPRITES = [NodePath("../Parallax/Transition")]
+LAYER_ASSETS = Array[Texture2D]([ExtResource("2_onm2c"), ExtResource("3_4dlxx"), ExtResource("2_onm2c"), ExtResource("2_onm2c"), null])
 
 [node name="Parallax" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0, 0.75)
 repeat_size = Vector2(0, 1080)
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax"]
-z_index = -2
+[node name="Transition" type="Sprite2D" parent="Parallax"]
+visible = false
+z_index = -4
+position = Vector2(960, 540)
+texture = ExtResource("2_onm2c")
+
+[node name="Main" type="Sprite2D" parent="Parallax"]
+z_index = -5
 position = Vector2(960, 540)
 texture = ExtResource("2_onm2c")

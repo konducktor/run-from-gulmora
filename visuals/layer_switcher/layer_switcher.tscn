@@ -4,3 +4,4 @@
 
 [node name="LayerSwitcher" type="Node2D"]
 script = ExtResource("1_lpcgw")
+TRANSITION_TIME = 0.5
