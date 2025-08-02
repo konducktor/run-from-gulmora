@@ -15,9 +15,9 @@ var meters : float:
 		var clamped_value = clamp((-value + meters_offset) * 0.003, 0, INF)
 		meters = snapped(clamped_value, 0.01)
 
-var time : float:
+var time : int:
 	set(value):
-		time = snapped(value, 0.1)
+		time = snapped(value, 1)
 
 
 func _ready() -> void:

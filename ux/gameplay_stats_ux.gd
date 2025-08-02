@@ -8,7 +8,7 @@ extends Control
 
 
 func _process(_delta: float) -> void:
-	METERS_LABEL.text = 'Meters: ' + str(GAME_VALUES.meters)
+	METERS_LABEL.text = 'Height: ' + str(GAME_VALUES.meters) + 'm'
 	
 	@warning_ignore("integer_division")
-	TIME_LABEL.text = 'Time: ' + str(int(GAME_VALUES.time)/60) + ':' + str(fmod(GAME_VALUES.time, 60.0))
+	TIME_LABEL.text = 'Time: ' + str(GAME_VALUES.time/60) + ':' + str(GAME_VALUES.time % 60)

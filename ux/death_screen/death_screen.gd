@@ -14,11 +14,11 @@ class_name DeathScreen
 @export var TIME_LABEL : Label
 
 
-func setup(meters: float, seconds: float) -> void:
-	METERS_LABEL.text = 'Meters: ' + str(meters)
+func setup(meters: float, seconds: int) -> void:
+	METERS_LABEL.text = 'Height: ' + str(meters) + 'm'
 	
 	@warning_ignore("integer_division")
-	TIME_LABEL.text = 'Time: ' + str(int(seconds)/60) + ':' + str(fmod(seconds, 60.0))
+	TIME_LABEL.text = 'Time: ' + str(seconds/60) + ':' + str(seconds % 60)
 
 
 
