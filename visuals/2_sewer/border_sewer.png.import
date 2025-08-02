@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://s500ltvksl1e"
-path="res://.godot/imported/border_hell.png-a4a33a68be365758438d31e8a64f7eda.ctex"
+uid="uid://dabq3pss81fvk"
+path="res://.godot/imported/border_sewer.png-080feb45f7b6062c1de3821891690338.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://visuals/hell/border_hell.png"
-dest_files=["res://.godot/imported/border_hell.png-a4a33a68be365758438d31e8a64f7eda.ctex"]
+source_file="res://visuals/2_sewer/border_sewer.png"
+dest_files=["res://.godot/imported/border_sewer.png-080feb45f7b6062c1de3821891690338.ctex"]
 
 [params]
 

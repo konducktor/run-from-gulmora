@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://e7f8fyg3vqbf"
-path="res://.godot/imported/background_sewer.png-54ade53caf2eaf29722a3c4466130e37.ctex"
+uid="uid://s500ltvksl1e"
+path="res://.godot/imported/border_hell.png-a4fff4f711e2d4c5c851dedc8b68439b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://visuals/sewer/background_sewer.png"
-dest_files=["res://.godot/imported/background_sewer.png-54ade53caf2eaf29722a3c4466130e37.ctex"]
+source_file="res://visuals/1_hell/border_hell.png"
+dest_files=["res://.godot/imported/border_hell.png-a4fff4f711e2d4c5c851dedc8b68439b.ctex"]
 
 [params]
 

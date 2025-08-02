@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://w54pequ3mld4"
-path="res://.godot/imported/background_hell.png-888bd9b8e27607c25387eb72c7692100.ctex"
+uid="uid://qlg8r4ichtrk"
+path="res://.godot/imported/background_hell.png-c02dd42f5ce1f97b03c276b82fbf6775.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://visuals/hell/background_hell.png"
-dest_files=["res://.godot/imported/background_hell.png-888bd9b8e27607c25387eb72c7692100.ctex"]
+source_file="res://visuals/1_hell/background_hell.png"
+dest_files=["res://.godot/imported/background_hell.png-c02dd42f5ce1f97b03c276b82fbf6775.ctex"]
 
 [params]
 

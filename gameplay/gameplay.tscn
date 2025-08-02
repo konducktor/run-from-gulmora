@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dtamhc3u844oa"]
+[gd_scene load_steps=21 format=3 uid="uid://dtamhc3u844oa"]
 
 [ext_resource type="Script" uid="uid://bvntop35l4m5u" path="res://global/gameplay.gd" id="1_bx64p"]
 [ext_resource type="Script" uid="uid://d3asyxqei0o6m" path="res://gameplay/mouse.gd" id="2_53nod"]
@@ -18,7 +18,8 @@
 [ext_resource type="FontFile" uid="uid://di04vknxmp46b" path="res://ux/Daneehand Regular Cyr.ttf" id="14_wxx72"]
 [ext_resource type="Script" uid="uid://dtydotpfe7we1" path="res://ux/gameplay_stats_ux.gd" id="15_2beay"]
 [ext_resource type="PackedScene" uid="uid://cwklp2uls81do" path="res://visuals/borders/borders.tscn" id="16_ni0ts"]
-[ext_resource type="Texture2D" uid="uid://e7f8fyg3vqbf" path="res://visuals/sewer/background_sewer.png" id="19_53nod"]
+[ext_resource type="PackedScene" uid="uid://trp1q0aft7pi" path="res://ux/notifications/notification.tscn" id="18_b2kny"]
+[ext_resource type="PackedScene" uid="uid://buyndscm6akd2" path="res://visuals/background/background.tscn" id="20_b2kny"]
 
 [node name="Gameplay" type="Node2D"]
 script = ExtResource("1_bx64p")
@@ -97,26 +98,27 @@ offset_bottom = 93.0
 
 [node name="MetersLabel" type="Label" parent="CanvasLayer/Stats/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
 theme_override_fonts/font = ExtResource("14_wxx72")
 theme_override_font_sizes/font_size = 50
 text = "Meters: миллион тысяч"
 
 [node name="TimeLabel" type="Label" parent="CanvasLayer/Stats/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
 theme_override_fonts/font = ExtResource("14_wxx72")
 theme_override_font_sizes/font_size = 50
 text = "Time: 99:99"
+
+[node name="Notification" parent="CanvasLayer" instance=ExtResource("18_b2kny")]
 
 [node name="Visual" type="Node2D" parent="."]
 
 [node name="Borders" parent="Visual" node_paths=PackedStringArray("player") instance=ExtResource("16_ni0ts")]
 player = NodePath("../../Player")
 
-[node name="Background" type="Parallax2D" parent="Visual"]
-scroll_scale = Vector2(0, 0.75)
-repeat_size = Vector2(0, 1080)
-
-[node name="Sprite2D" type="Sprite2D" parent="Visual/Background"]
-z_index = -2
-position = Vector2(960, 540)
-texture = ExtResource("19_53nod")
+[node name="Background" parent="Visual" instance=ExtResource("20_b2kny")]

@@ -1,0 +1,161 @@
+[gd_scene load_steps=10 format=3 uid="uid://trp1q0aft7pi"]
+
+[ext_resource type="Script" uid="uid://bee6srjhmvano" path="res://notifications.gd" id="1_4mc8c"]
+[ext_resource type="Texture2D" uid="uid://d3lgjcm3skny8" path="res://ux/notifications/art/notification_overlay_back.png" id="2_2jkjs"]
+[ext_resource type="FontFile" uid="uid://di04vknxmp46b" path="res://ux/Daneehand Regular Cyr.ttf" id="2_i1nkq"]
+[ext_resource type="Script" uid="uid://cenyx3e5aam5u" path="res://ux/notifications/sfx/notification_sounds.gd" id="3_2jkjs"]
+[ext_resource type="AudioStream" uid="uid://djkyw8ctkm71t" path="res://ux/notifications/sfx/announcement.ogg" id="4_txt2m"]
+[ext_resource type="AudioStream" uid="uid://7rvh53nhs4w3" path="res://ux/notifications/sfx/monster_notification.ogg" id="6_2jkjs"]
+
+[sub_resource type="Animation" id="Animation_jtsel"]
+resource_name = "notification"
+length = 3.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 3, 3.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Label:theme_override_font_sizes/font_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [80, 100]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/TextureRect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 2.9, 3.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_mgmj5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Label:theme_override_font_sizes/font_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [80]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/TextureRect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ihi1e"]
+_data = {
+&"RESET": SubResource("Animation_mgmj5"),
+&"notification": SubResource("Animation_jtsel")
+}
+
+[node name="Notification" type="Control" node_paths=PackedStringArray("MAIN_LABEL", "ANIMATION", "SOUNDS")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4mc8c")
+MAIN_LABEL = NodePath("Control/Label")
+ANIMATION = NodePath("AnimationPlayer")
+SOUNDS = NodePath("Sounds")
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_top = 192.0
+offset_right = 1920.0
+offset_bottom = 288.0
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -540.0
+offset_right = 540.0
+offset_bottom = 96.0
+grow_horizontal = 2
+texture = ExtResource("2_2jkjs")
+
+[node name="Label" type="Label" parent="Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -608.0
+offset_right = 608.0
+offset_bottom = 96.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_fonts/font = ExtResource("2_i1nkq")
+theme_override_font_sizes/font_size = 80
+text = "Notification text!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sounds" type="Node" parent="." node_paths=PackedStringArray("NOTIFICATION", "MONSTER")]
+script = ExtResource("3_2jkjs")
+NOTIFICATION = NodePath("Notification")
+MONSTER = NodePath("Monster")
+
+[node name="Notification" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("4_txt2m")
+volume_db = -2.0
+
+[node name="Monster" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("6_2jkjs")
+volume_db = -4.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ihi1e")
+}
+
+[connection signal="notified" from="." to="Sounds" method="_on_notification_notified"]

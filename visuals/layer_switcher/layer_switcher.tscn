@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjci11dyaeiot"]
+
+[ext_resource type="Script" uid="uid://bhucyjkcernxs" path="res://visuals/layer_switcher/layer_switcher.gd" id="1_lpcgw"]
+
+[node name="LayerSwitcher" type="Node2D"]
+script = ExtResource("1_lpcgw")
