@@ -20,6 +20,7 @@ signal walking
 
 @export_group('References')
 @export var COYOTE_TIMER : Timer
+@export var STUNNED_TIMER : Timer
 
 
 @onready var jump_velocity : float = ((2.0 * JUMP_HEIGHT) / JUMP_PEAK_TIME) * -1.0
@@ -27,7 +28,7 @@ signal walking
 @onready var fall_gravity : float = ((-2.0 * JUMP_HEIGHT) / (JUMP_FALL_TIME ** 2)) * -1.0
 
 var jump_amount : int
-var has_died : bool
+var stunned : bool
 
 var can_release : bool
 
@@ -38,7 +39,7 @@ var previously_grounded : bool
 
 func _ready():
 	can_release = true
-	has_died = false
+	stunned = false
 	previously_walking = false
 	GlobalSignals.player_died.connect(_on_death)
 
@@ -67,7 +68,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.y = calculate_gravity(delta, velocity.y)
 	
-	if not has_died:
+	if not stunned:
 		velocity.x = calculate_horizontal_movement(delta, velocity.x)
 		velocity.y = calculate_jump(delta, velocity.y)
 	
@@ -127,7 +128,7 @@ func calculate_horizontal_movement(_delta: float, _horizontal_velocity: float) -
 
 
 func _on_death():
-	has_died = true
+	stunned = true
 
 func reset_extra_jumps():
 	jump_amount = EXTRA_JUMPS

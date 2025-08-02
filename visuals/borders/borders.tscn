@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://wm8d2jkoik0c" path="res://visuals/borders/border.gd" id="1_enlri"]
 [ext_resource type="Script" uid="uid://d3ky5fcclj483" path="res://visuals/borders/borders_logic.gd" id="1_y6k8p"]
-[ext_resource type="Texture2D" uid="uid://dabq3pss81fvk" path="res://visuals/borders/art/border_sewer.png" id="3_y6k8p"]
+[ext_resource type="Texture2D" uid="uid://s500ltvksl1e" path="res://visuals/hell/border_hell.png" id="3_y6k8p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y6k8p"]
 size = Vector2(416, 192)

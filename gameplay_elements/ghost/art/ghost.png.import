@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://e7f8fyg3vqbf"
-path="res://.godot/imported/sewer_background.png-5c50779bb0b0ddce93cce0c9b9cd6e05.ctex"
+uid="uid://bqvvd37r2vmkv"
+path="res://.godot/imported/ghost.png-a7c8cbe99b422dff06c799d7d200fdca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://visuals/backgrounds/sewer_background.png"
-dest_files=["res://.godot/imported/sewer_background.png-5c50779bb0b0ddce93cce0c9b9cd6e05.ctex"]
+source_file="res://gameplay_elements/ghost/art/ghost.png"
+dest_files=["res://.godot/imported/ghost.png-a7c8cbe99b422dff06c799d7d200fdca.ctex"]
 
 [params]
 

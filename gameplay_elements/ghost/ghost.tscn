@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3 uid="uid://di1tbxrtr3467"]
+
+[ext_resource type="Texture2D" uid="uid://bqvvd37r2vmkv" path="res://gameplay_elements/ghost/art/ghost.png" id="1_2uhf4"]
+[ext_resource type="Script" uid="uid://nyae8kk0ioh7" path="res://gameplay_elements/ghost/ghost.gd" id="1_njrju"]
+[ext_resource type="Script" uid="uid://p24pcsduvhcb" path="res://gameplay_elements/ghost/ghost_editor.gd" id="2_siwcv"]
+[ext_resource type="PackedScene" uid="uid://bplerfmc38va2" path="res://gameplay_elements/danger/danger.tscn" id="3_y8ata"]
+[ext_resource type="Script" uid="uid://c1qo5i66pa17t" path="res://gameplay_elements/ghost/states/ghost_state_machine.gd" id="4_f3ecn"]
+[ext_resource type="Script" uid="uid://c18aw0bbqjnxl" path="res://gameplay_elements/ghost/states/ghost_state_idle.gd" id="5_8g54a"]
+[ext_resource type="Script" uid="uid://bf7sntw8bgi82" path="res://gameplay_elements/ghost/states/ghost_state_active.gd" id="6_y8ata"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jp7xg"]
+radius = 32.0
+
+[node name="Ghost" type="Node2D" node_paths=PackedStringArray("STATE_MACHINE")]
+script = ExtResource("1_njrju")
+SPEED = 300.0
+ANGER_RANGE = 400.0
+PASSIVE_RANGE = 1000.0
+STATE_MACHINE = NodePath("StateMachine")
+
+[node name="Editor" type="Node2D" parent="."]
+script = ExtResource("2_siwcv")
+
+[node name="Danger" parent="." instance=ExtResource("3_y8ata")]
+
+[node name="CollisionShape2D" parent="Danger" index="0"]
+shape = SubResource("CircleShape2D_jp7xg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+texture = ExtResource("1_2uhf4")
+
+[node name="StateMachine" type="Node2D" parent="." node_paths=PackedStringArray("INITIAL_STATE")]
+script = ExtResource("4_f3ecn")
+INITIAL_STATE = NodePath("Idle")
+
+[node name="Idle" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("ACTIVE_STATE")]
+script = ExtResource("5_8g54a")
+ACTIVE_STATE = NodePath("../Active")
+
+[node name="Active" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("IDLE_STATE")]
+script = ExtResource("6_y8ata")
+IDLE_STATE = NodePath("../Idle")
+
+[editable path="Danger"]
