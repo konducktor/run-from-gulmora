@@ -60,7 +60,7 @@ level_generator = NodePath("../LevelGenerator")
 
 [node name="LevelGenerator" type="Node2D" parent="."]
 script = ExtResource("4_53nod")
-LEVELS_IN_LAYER = 1
+LEVELS_IN_LAYER = 15
 TUTORIAL_DIR = "res://levels/tutorial_levels/"
 A_LEVEL_DIR = "res://levels/A_levels/"
 B_LEVEL_DIR = "res://levels/B_levels/"
