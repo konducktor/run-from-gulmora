@@ -33,6 +33,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAACAAAAEAAAAAAAAAACAAAAIAAAAAAAA
 tile_set = SubResource("TileSet_cwqvt")
 
 [node name="Tutorial" type="Sprite2D" parent="."]
+z_index = -1
 position = Vector2(762, 705)
 rotation = 0.0938994
 scale = Vector2(0.552835, 0.552835)

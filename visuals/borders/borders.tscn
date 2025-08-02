@@ -14,8 +14,9 @@ script = ExtResource("1_y6k8p")
 right_border = NodePath("RightBorder")
 left_border = NodePath("LeftBorder")
 
-[node name="LayerSwitcher" parent="." node_paths=PackedStringArray("SPRITES") instance=ExtResource("2_h6e43")]
-SPRITES = [NodePath("../Parallax2D/RightBorder"), NodePath("../Parallax2D/LeftBorder")]
+[node name="LayerSwitcher" parent="." node_paths=PackedStringArray("MAIN_SPRITES", "TRANSITION_SPRITES") instance=ExtResource("2_h6e43")]
+MAIN_SPRITES = [NodePath("../Parallax2D/RightBorder"), NodePath("../Parallax2D/LeftBorder")]
+TRANSITION_SPRITES = [NodePath("../Parallax2D/RightBorderTransition"), NodePath("../Parallax2D/LeftBorderTransition")]
 LAYER_ASSETS = Array[Texture2D]([ExtResource("3_y6k8p"), ExtResource("4_81vgq"), ExtResource("3_y6k8p"), ExtResource("3_y6k8p")])
 
 [node name="RightBorder" type="Area2D" parent="." node_paths=PackedStringArray("sprite")]
@@ -53,6 +54,18 @@ flip_h = true
 
 [node name="LeftBorder" type="Sprite2D" parent="Parallax2D"]
 z_index = 3
+position = Vector2(287, 540)
+texture = ExtResource("3_y6k8p")
+
+[node name="RightBorderTransition" type="Sprite2D" parent="Parallax2D"]
+z_index = 4
+position = Vector2(1691, 540)
+texture = ExtResource("3_y6k8p")
+offset = Vector2(0, 540)
+flip_h = true
+
+[node name="LeftBorderTransition" type="Sprite2D" parent="Parallax2D"]
+z_index = 4
 position = Vector2(287, 540)
 texture = ExtResource("3_y6k8p")
 
