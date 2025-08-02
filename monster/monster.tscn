@@ -1,11 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://ypgd2rchig6s"]
+[gd_scene load_steps=7 format=3 uid="uid://ypgd2rchig6s"]
 
 [ext_resource type="Script" uid="uid://cm8i4olqljfqd" path="res://monster/monster.gd" id="1_gsx7y"]
 [ext_resource type="PackedScene" uid="uid://b7wmjvxkn8eus" path="res://monster/monster_hit.tscn" id="1_okp8s"]
 [ext_resource type="Texture2D" uid="uid://dodqlhxtw5rs3" path="res://monster/art/Женек.png" id="2_2k2s0"]
+[ext_resource type="Script" uid="uid://kbc5c4vyca71" path="res://monster/sfx/monster_sounds.gd" id="2_j7lgj"]
+[ext_resource type="AudioStream" uid="uid://b8a76pbapl62w" path="res://monster/sfx/monster_eat.ogg" id="3_23j4v"]
+[ext_resource type="AudioStream" uid="uid://bun30dg27mudj" path="res://monster/sfx/monster_ambient.ogg" id="4_ck3l0"]
 
 [node name="Monster" type="Node2D"]
 script = ExtResource("1_gsx7y")
+
+[node name="Sounds" type="Node" parent="." node_paths=PackedStringArray("MONSTER_EAT")]
+script = ExtResource("2_j7lgj")
+MONSTER_EAT = NodePath("AudioStreamPlayer")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("3_23j4v")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 7
@@ -13,3 +23,15 @@ position = Vector2(0, -64)
 texture = ExtResource("2_2k2s0")
 
 [node name="MonsterHit" parent="." instance=ExtResource("1_okp8s")]
+position = Vector2(0, 64)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ck3l0")
+volume_db = 10.0
+autoplay = true
+max_distance = 1400.0
+attenuation = 4.0
+bus = &"SFX"
+parameters/looping = true
+
+[connection signal="body_entered" from="MonsterHit" to="Sounds" method="_on_monster_hit_body_entered"]

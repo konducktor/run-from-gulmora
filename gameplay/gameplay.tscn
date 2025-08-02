@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://dtamhc3u844oa"]
+[gd_scene load_steps=20 format=3 uid="uid://dtamhc3u844oa"]
 
 [ext_resource type="Script" uid="uid://bvntop35l4m5u" path="res://global/gameplay.gd" id="1_bx64p"]
+[ext_resource type="Script" uid="uid://d3asyxqei0o6m" path="res://gameplay/mouse.gd" id="2_53nod"]
 [ext_resource type="PackedScene" uid="uid://ceblj6gvvm5c0" path="res://ux/death_screen/death_screen.tscn" id="2_63nix"]
-[ext_resource type="Script" path="res://gameplay/gameplay_values.gd" id="3_4vl10"]
+[ext_resource type="Script" uid="uid://demrlv7ihrymx" path="res://gameplay/gameplay_values.gd" id="3_4vl10"]
 [ext_resource type="Script" uid="uid://dod40gv4mo7kl" path="res://gameplay_elements/letter/letter_setup.gd" id="3_63nix"]
 [ext_resource type="Script" uid="uid://byvfvad6xuppm" path="res://levels/level_generator.gd" id="4_53nod"]
 [ext_resource type="PackedScene" uid="uid://df0v2abqki1gm" path="res://levels/letter_levels/A_letter_level.tscn" id="5_b2kny"]
@@ -17,11 +18,13 @@
 [ext_resource type="FontFile" uid="uid://di04vknxmp46b" path="res://ux/Daneehand Regular Cyr.ttf" id="14_wxx72"]
 [ext_resource type="Script" uid="uid://dtydotpfe7we1" path="res://ux/gameplay_stats_ux.gd" id="15_2beay"]
 [ext_resource type="PackedScene" uid="uid://cwklp2uls81do" path="res://visuals/borders/borders.tscn" id="16_ni0ts"]
-[ext_resource type="Texture2D" uid="uid://bkoiiv21cqyls" path="res://visuals/backgrounds/back_test.png" id="18_63nix"]
+[ext_resource type="Texture2D" uid="uid://e7f8fyg3vqbf" path="res://visuals/backgrounds/sewer_background.png" id="19_53nod"]
 
-[node name="Gameplay" type="Node2D" node_paths=PackedStringArray("CANVAS")]
+[node name="Gameplay" type="Node2D"]
 script = ExtResource("1_bx64p")
-CANVAS = NodePath("CanvasLayer")
+
+[node name="Mouse" type="Node" parent="."]
+script = ExtResource("2_53nod")
 
 [node name="GameplayValues" type="Node" parent="." node_paths=PackedStringArray("PLAYER")]
 script = ExtResource("3_4vl10")
@@ -33,6 +36,7 @@ level_generator = NodePath("../LevelGenerator")
 
 [node name="LevelGenerator" type="Node2D" parent="."]
 script = ExtResource("4_53nod")
+DISABLE_TUTORIAL = true
 TUTORIAL_DIR = "res://levels/tutorial_levels/"
 A_LEVEL_DIR = "res://levels/A_levels/"
 B_LEVEL_DIR = "res://levels/B_levels/"
@@ -65,7 +69,7 @@ position = Vector2(960, 3456)
 NORMAL_SPEED = 250.0
 SLOW_SPEED = 50.0
 FAST_SPEED = 1000.0
-FAST_MIN_DISTANCE = 700.0
+FAST_MIN_DISTANCE = 1500.0
 PLAYER = NodePath("../Player")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -114,4 +118,4 @@ repeat_size = Vector2(0, 1080)
 [node name="Sprite2D" type="Sprite2D" parent="Background"]
 z_index = -2
 position = Vector2(960, 540)
-texture = ExtResource("18_63nix")
+texture = ExtResource("19_53nod")

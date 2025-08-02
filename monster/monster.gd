@@ -1,12 +1,16 @@
 extends Node2D
 
 
+@export var ACTIVE : bool = true
+
+@export_group("Balancing")
 @export var NORMAL_SPEED : float
 @export var SLOW_SPEED : float
 
 @export var FAST_SPEED : float
 @export var FAST_MIN_DISTANCE : float
 
+@export_group("References")
 @export var PLAYER : Player
 
 
@@ -19,6 +23,9 @@ var current_speed : float
 
 
 func _ready() -> void:
+	if not ACTIVE:
+		return
+	
 	if GlobalValues.is_tutorial_finished:
 		new_speed_state(SPEED_STATES.NORMAL)
 	else:

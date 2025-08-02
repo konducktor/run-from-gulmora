@@ -4,10 +4,11 @@ class_name Player
 
 signal jumped
 signal falling
+signal fall
 signal idle
 signal walking
 
-
+@export_group('Balancing')
 @export var PLAYER_SPEED : float
 
 @export var EXTRA_JUMPS : int
@@ -16,6 +17,9 @@ signal walking
 @export var JUMP_HEIGHT : float
 @export var JUMP_PEAK_TIME : float
 @export var JUMP_FALL_TIME : float
+
+@export_group('References')
+@export var COYOTE_TIMER : Timer
 
 
 @onready var jump_velocity : float = ((2.0 * JUMP_HEIGHT) / JUMP_PEAK_TIME) * -1.0
@@ -28,6 +32,7 @@ var has_died : bool
 var previously_jumping : bool
 var previously_falling : bool
 var previously_walking : bool
+var previously_grounded : bool
 
 func _ready():
 	has_died = false
@@ -39,12 +44,14 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		if previously_falling:
 			previously_falling = false
+			fall.emit()
 			
 			if velocity.x == 0:
 				idle.emit()
 			else:
 				walking.emit()
 		
+		previously_grounded = true
 		jump_amount = EXTRA_JUMPS
 		
 		if (velocity.x == 0) and previously_walking:
@@ -77,18 +84,26 @@ func calculate_gravity(delta: float, vertical_velocity: float) -> float:
 		
 		if not previously_falling:
 			previously_falling = true
+			
+			if previously_grounded:
+				COYOTE_TIMER.start()
+			
 			falling.emit()
 	
 	return vertical_velocity + (fall_gravity * delta)
 
 
 func calculate_jump(_delta: float, vertical_velocity: float) -> float:
-	var is_grounded := is_on_floor()
+	print(COYOTE_TIMER.is_stopped())
+	var is_grounded : bool = (is_on_floor() or (not COYOTE_TIMER.is_stopped()))
 	
 	if is_grounded or (jump_amount > 0) or (EXTRA_JUMPS == -1):
 		if Input.is_action_just_pressed('movement_jump'):
 			if not is_grounded:
 				jump_amount -= 1
+			
+			previously_grounded = false
+			COYOTE_TIMER.stop()
 			
 			jumped.emit()
 			return jump_velocity
@@ -104,16 +119,8 @@ func calculate_horizontal_movement(_delta: float, _horizontal_velocity: float) -
 	var direction := Input.get_axis("movement_left", "movement_right")
 	
 	if direction:
-		#if is_on_floor() and (not previously_walking):
-			#previously_walking = true
-			#walking.emit()
-		
 		return direction * PLAYER_SPEED
 	else:
-		#if is_on_floor() and previously_walking:
-			#previously_walking = false
-			#idle.emit()
-		
 		return move_toward(velocity.x, 0, PLAYER_SPEED)
 
 

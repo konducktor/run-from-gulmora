@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8esukmcwaxoj"]
+[gd_scene load_steps=6 format=3 uid="uid://b8esukmcwaxoj"]
 
 [ext_resource type="Script" uid="uid://bilnok5unqpkv" path="res://gameplay_elements/spring/spring.gd" id="1_6jmmg"]
 [ext_resource type="Texture2D" uid="uid://d2lgwrcy1sbtg" path="res://gameplay_elements/spring/spring.png" id="1_knx1u"]
+[ext_resource type="Script" uid="uid://biv2dnge0xmjn" path="res://gameplay_elements/spring/sound/spring_sounds.gd" id="2_jfa5b"]
+[ext_resource type="AudioStream" uid="uid://bq2s8hpfmq2a8" path="res://gameplay_elements/spring/sound/spring.ogg" id="3_v0i11"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6jmmg"]
 size = Vector2(128, 64)
@@ -11,6 +13,14 @@ collision_layer = 16
 script = ExtResource("1_6jmmg")
 STRING_STRENGTH = 3000.0
 
+[node name="Sounds" type="Node" parent="." node_paths=PackedStringArray("ACTIVATED")]
+script = ExtResource("2_jfa5b")
+ACTIVATED = NodePath("Activated")
+
+[node name="Activated" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("3_v0i11")
+max_polyphony = 3
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_knx1u")
 
@@ -18,3 +28,4 @@ texture = ExtResource("1_knx1u")
 shape = SubResource("RectangleShape2D_6jmmg")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="." to="Sounds" method="_on_spring_body_entered"]

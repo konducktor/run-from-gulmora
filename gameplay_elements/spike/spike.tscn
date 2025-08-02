@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://eurxn62028bp"]
+[gd_scene load_steps=8 format=3 uid="uid://eurxn62028bp"]
 
 [ext_resource type="PackedScene" uid="uid://bplerfmc38va2" path="res://gameplay_elements/danger/danger.tscn" id="1_d7nel"]
 [ext_resource type="Texture2D" uid="uid://bp1la3fyih7wg" path="res://gameplay_elements/spike/art/spike_1.png" id="2_d7nel"]
+[ext_resource type="Script" uid="uid://csrfk27svste0" path="res://gameplay_elements/spike/sfx/spike-sounds.gd" id="2_foddt"]
 [ext_resource type="Script" uid="uid://30ba7wssp6m2" path="res://visuals/randomize_asset.gd" id="3_b3f1o"]
+[ext_resource type="AudioStream" uid="uid://b622i6tefti7b" path="res://gameplay_elements/spike/sfx/spike_death.ogg" id="3_m2kd2"]
 [ext_resource type="Texture2D" uid="uid://13ylvutm2kig" path="res://gameplay_elements/spike/art/spike_2.png" id="4_tcgug"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d7nel"]
@@ -10,12 +12,22 @@ radius = 12.0416
 
 [node name="Danger" instance=ExtResource("1_d7nel")]
 
-[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+[node name="Sounds" type="Node" parent="." index="0" node_paths=PackedStringArray("DEATH")]
+script = ExtResource("2_foddt")
+DEATH = NodePath("AudioStreamPlayer")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sounds" index="0"]
+stream = ExtResource("3_m2kd2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
 z_index = 1
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_d7nel")
 script = ExtResource("3_b3f1o")
 ASSETS = Array[Texture2D]([ExtResource("2_d7nel"), ExtResource("4_tcgug")])
 
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" parent="." index="2"]
+position = Vector2(0, 15)
 shape = SubResource("CircleShape2D_d7nel")
+
+[connection signal="body_entered" from="." to="Sounds" method="_on_danger_body_entered"]

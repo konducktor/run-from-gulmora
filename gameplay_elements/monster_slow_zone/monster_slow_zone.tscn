@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4e4u1228hili"]
+[gd_scene load_steps=5 format=3 uid="uid://c4e4u1228hili"]
 
 [ext_resource type="Script" uid="uid://uly0j3mcq5c8" path="res://gameplay_elements/monster_slow_zone/monster_slow_zone.gd" id="1_upcty"]
+[ext_resource type="Script" uid="uid://dgotsfn8p7hpc" path="res://gameplay_elements/monster_slow_zone/sfx/monster_slow_zone_sound.gd" id="2_7pqbr"]
+[ext_resource type="AudioStream" uid="uid://xbrkbarpt38a" path="res://gameplay_elements/monster_slow_zone/sfx/find secret poom.mp3" id="3_e16qv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ely6h"]
 size = Vector2(256, 512)
@@ -11,5 +13,13 @@ script = ExtResource("1_upcty")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ely6h")
 
+[node name="MonsterSlowZoneSound" type="Node" parent="." node_paths=PackedStringArray("ENTER")]
+script = ExtResource("2_7pqbr")
+ENTER = NodePath("AudioStreamPlayer")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MonsterSlowZoneSound"]
+stream = ExtResource("3_e16qv")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="." to="MonsterSlowZoneSound" method="_on_monster_slow_zone_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

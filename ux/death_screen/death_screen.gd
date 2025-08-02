@@ -9,6 +9,7 @@ class_name DeathScreen
 @export_group("References")
 @export var GAME_VALUES : GameValues
 @export var START_TIMER : Timer
+@export var SOUNDS : GameSounds
 @export var METERS_LABEL : Label
 @export var TIME_LABEL : Label
 
@@ -35,6 +36,8 @@ func _on_player_death():
 	METERS_LABEL.text = 'Meters: ' + str(GAME_VALUES.meters)
 	@warning_ignore("integer_division")
 	TIME_LABEL.text = 'Time: ' + str(int(GAME_VALUES.time)/60) + ':' + str(fmod(GAME_VALUES.time, 60.0))
+	
+	SOUNDS.poopoo()
 	
 	position = Vector2(0.0, 1080.0)
 	create_tween().tween_property(self, 'position', Vector2.ONE, ENTER_TIME).set_trans(ENTER_TYPE)

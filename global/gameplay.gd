@@ -1,11 +1,6 @@
 extends Node2D
 
-@export var CANVAS : CanvasLayer
-
-func _ready() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
-	
-	GlobalSignals.player_died.connect(_on_player_death)
-
-func _on_player_death() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed('restart'):
+			if get_tree():
+				get_tree().reload_current_scene()

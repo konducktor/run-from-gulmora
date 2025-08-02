@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://ceblj6gvvm5c0"]
+[gd_scene load_steps=12 format=3 uid="uid://ceblj6gvvm5c0"]
 
 [ext_resource type="Script" uid="uid://gxas6eq2ddoo" path="res://ux/death_screen/death_screen.gd" id="1_gsorh"]
 [ext_resource type="FontFile" uid="uid://di04vknxmp46b" path="res://ux/Daneehand Regular Cyr.ttf" id="1_ogq5k"]
+[ext_resource type="Script" uid="uid://v88qiol0mp2w" path="res://ux/death_screen/sfx/death_screen_sounds.gd" id="2_8m7d8"]
 [ext_resource type="Script" uid="uid://ctlyrlympirev" path="res://ux/main_menu/menu_button.gd" id="2_glyeq"]
-[ext_resource type="Script" path="res://ux/death_screen/random_death_messages.gd" id="3_x4gom"]
-[ext_resource type="Texture2D" uid="uid://bothqswtfiq41" path="res://ux/death_screen/asset.png" id="5_66ltg"]
+[ext_resource type="AudioStream" uid="uid://buws42cvlokgi" path="res://ux/death_screen/sfx/game_over.ogg" id="3_t3h4q"]
+[ext_resource type="Script" uid="uid://c7emvdhw4lsay" path="res://ux/death_screen/random_death_messages.gd" id="3_x4gom"]
+[ext_resource type="Texture2D" uid="uid://bothqswtfiq41" path="res://ux/death_screen/art/asset.png" id="5_66ltg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_glyeq"]
 
@@ -38,7 +40,7 @@ shadow_color = Color(0.205117, 0.205117, 0.205117, 0.6)
 shadow_size = 5
 shadow_offset = Vector2(0, 2.335)
 
-[node name="DeathScreen" type="Control" node_paths=PackedStringArray("START_TIMER", "METERS_LABEL", "TIME_LABEL")]
+[node name="DeathScreen" type="Control" node_paths=PackedStringArray("START_TIMER", "SOUNDS", "METERS_LABEL", "TIME_LABEL")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -51,8 +53,16 @@ script = ExtResource("1_gsorh")
 ENTER_TYPE = 5
 ENTER_TIME = 1.0
 START_TIMER = NodePath("StartTimer")
+SOUNDS = NodePath("Sounds")
 METERS_LABEL = NodePath("Panel/StatsContainer/MetersLabel")
 TIME_LABEL = NodePath("Panel/StatsContainer/TimeLabel")
+
+[node name="Sounds" type="Node" parent="." node_paths=PackedStringArray("POOPOO")]
+script = ExtResource("2_8m7d8")
+POOPOO = NodePath("AudioStreamPlayer")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("3_t3h4q")
 
 [node name="StartTimer" type="Timer" parent="."]
 wait_time = 0.5
@@ -151,7 +161,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_glyeq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_gsorh")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_x4gom")
 theme_override_styles/normal = SubResource("StyleBoxFlat_66ltg")
-text = "Restart
+text = "Restart [R]
 "
 script = ExtResource("2_glyeq")
 
