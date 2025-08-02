@@ -21,7 +21,11 @@ func _ready() -> void:
 	start_position = position
 	parent = get_parent()
 	
-	STATE_MACHINE.init(player, self)
+	
+	if STATE_MACHINE:
+		STATE_MACHINE.init(player, self)
+	else:
+		self.queue_free()
 
 
 func get_local(pos: Vector2):

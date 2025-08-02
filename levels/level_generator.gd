@@ -9,6 +9,7 @@ class_name LevelGenerator
 @export_group("Debugging")
 @export var DISABLE_TUTORIAL : bool = false
 @export var GENERATE_LETTERS_FASTER : bool = false
+@export var STARTING_LAYER : LEVEL_LAYERS = LEVEL_LAYERS.A_LEVEL
 
 @export_group("Layer directories")
 @export var TUTORIAL_DIR : String
@@ -23,7 +24,7 @@ class_name LevelGenerator
 @export var C_LETTER_LEVEL : PackedScene
 @export var D_LETTER_LEVEL : PackedScene
 
-@export_group("")
+@export_group("Other")
 @export var FINAL_LEVEL : PackedScene
 
 
@@ -52,6 +53,8 @@ var current_letter_level : PackedScene
 func _ready() -> void:
 	is_generating_letter_levels = false
 	
+	update_current_level_layer(STARTING_LAYER)
+	
 	if GENERATE_LETTERS_FASTER:
 		generate_letter_level_index_in_layer()
 		new_lap()
@@ -62,7 +65,6 @@ func _ready() -> void:
 	levels_played = 0
 	layer_levels_generated = 0
 	current_level_index = 0
-	current_level_layer = LEVEL_LAYERS.A_LEVEL
 	
 	A_levels = get_all_levels(A_LEVEL_DIR)
 	B_levels = get_all_levels(B_LEVEL_DIR)
@@ -148,7 +150,13 @@ func pick_level_from_level_array(level_array: Array[PackedScene]) -> PackedScene
 	return level_array[level_id]
 
 
-func update_current_level_layer() -> void:
+@warning_ignore("int_as_enum_without_cast", "int_as_enum_without_match")
+func update_current_level_layer(custom: LEVEL_LAYERS = -1) -> void:
+	if custom != -1:
+		current_level_layer = custom
+		#print(current_level_layer)
+		return
+	
 	match current_level_layer:
 		LEVEL_LAYERS.A_LEVEL:
 			current_level_layer = LEVEL_LAYERS.B_LEVEL
