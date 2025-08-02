@@ -8,7 +8,7 @@ extends Node2D
 @export var SPRITE : Sprite2D
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not ACTIVE_STATE.self_state_current:
 		SPRITE.rotation_degrees = 0.0
 		return

@@ -3,7 +3,7 @@ class_name LevelGenerator
 
 
 
-@export var LEVELS_IN_LAYER : int = 5
+@export var LEVELS_IN_LAYER : int = 10
 @export var MAX_LEVELS_LOADED : int = 3
 
 @export_group("Debugging")

@@ -1,14 +1,14 @@
 [gd_scene load_steps=3 format=4 uid="uid://cv78j5t7yheqk"]
 
 [ext_resource type="PackedScene" uid="uid://bwgimqktwg1dp" path="res://levels/level.tscn" id="1_ydm3w"]
-[ext_resource type="PackedScene" uid="uid://dxayu1wpok0d0" path="res://gameplay_elements/pipe_old/pipe_end.tscn" id="2_056l0"]
+[ext_resource type="PackedScene" uid="uid://dxayu1wpok0d0" path="res://gameplay_elements/pipe/pipe.tscn" id="2_056l0"]
 
 [node name="Level" instance=ExtResource("1_ydm3w")]
 
-[node name="PipeEnd" parent="." index="0" node_paths=PackedStringArray("other_pipe") instance=ExtResource("2_056l0")]
+[node name="PipeEnd" parent="." index="0" node_paths=PackedStringArray("OTHER_PIPE") instance=ExtResource("2_056l0")]
 position = Vector2(608, 475)
 rotation = -1.57079
-other_pipe = NodePath("../PipeEnd2")
+OTHER_PIPE = NodePath("../PipeEnd2")
 
 [node name="PipeEnd2" parent="." index="1" instance=ExtResource("2_056l0")]
 position = Vector2(1280, 284)

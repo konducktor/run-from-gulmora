@@ -1,23 +1,23 @@
 [gd_scene load_steps=3 format=4 uid="uid://2atm6vb4o2gk"]
 
 [ext_resource type="PackedScene" uid="uid://bwgimqktwg1dp" path="res://levels/level.tscn" id="1_evxfy"]
-[ext_resource type="PackedScene" uid="uid://dxayu1wpok0d0" path="res://gameplay_elements/pipe_old/pipe_end.tscn" id="2_uujut"]
+[ext_resource type="PackedScene" uid="uid://dxayu1wpok0d0" path="res://gameplay_elements/pipe/pipe.tscn" id="2_uujut"]
 
 [node name="Level2" instance=ExtResource("1_evxfy")]
 
-[node name="PipeEnd" parent="." index="0" node_paths=PackedStringArray("other_pipe") instance=ExtResource("2_uujut")]
+[node name="PipeEnd" parent="." index="0" node_paths=PackedStringArray("OTHER_PIPE") instance=ExtResource("2_uujut")]
 position = Vector2(640, 735)
 rotation = -1.57079
-other_pipe = NodePath("../PipeEnd2")
+OTHER_PIPE = NodePath("../PipeEnd2")
 
 [node name="PipeEnd2" parent="." index="1" instance=ExtResource("2_uujut")]
 position = Vector2(1280, 98)
 rotation = 1.5708
 
-[node name="PipeEnd3" parent="." index="2" node_paths=PackedStringArray("other_pipe") instance=ExtResource("2_uujut")]
+[node name="PipeEnd3" parent="." index="2" node_paths=PackedStringArray("OTHER_PIPE") instance=ExtResource("2_uujut")]
 position = Vector2(1280, 735)
 rotation = -1.57079
-other_pipe = NodePath("../PipeEnd4")
+OTHER_PIPE = NodePath("../PipeEnd4")
 
 [node name="PipeEnd4" parent="." index="3" instance=ExtResource("2_uujut")]
 position = Vector2(640, 98)
