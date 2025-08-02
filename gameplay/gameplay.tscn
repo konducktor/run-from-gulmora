@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://dtamhc3u844oa"]
 
 [ext_resource type="Script" uid="uid://bvntop35l4m5u" path="res://global/gameplay.gd" id="1_bx64p"]
-[ext_resource type="Script" uid="uid://d3asyxqei0o6m" path="res://gameplay/mouse.gd" id="2_53nod"]
+[ext_resource type="Script" path="res://gameplay/mouse.gd" id="2_53nod"]
 [ext_resource type="PackedScene" uid="uid://ceblj6gvvm5c0" path="res://ux/death_screen/death_screen.tscn" id="2_63nix"]
 [ext_resource type="Script" uid="uid://demrlv7ihrymx" path="res://gameplay/gameplay_values.gd" id="3_4vl10"]
 [ext_resource type="Script" uid="uid://dod40gv4mo7kl" path="res://gameplay_elements/letter/letter_setup.gd" id="3_63nix"]

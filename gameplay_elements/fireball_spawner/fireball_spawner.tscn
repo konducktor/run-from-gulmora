@@ -6,6 +6,7 @@
 
 [node name="FireballSpawner" type="Node2D"]
 script = ExtResource("1_1wmap")
+COOLDOWN = 1.2
 PROTOTYPE = ExtResource("2_8xquu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

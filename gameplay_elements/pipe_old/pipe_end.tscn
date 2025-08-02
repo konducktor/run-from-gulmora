@@ -13,6 +13,7 @@ size = Vector2(187, 94)
 
 [node name="PipeEnd" type="Node2D"]
 script = ExtResource("2_4b1cl")
+pipe_impact_velocity = 900.0
 
 [node name="Sound" type="Node" parent="." node_paths=PackedStringArray("PIPE")]
 script = ExtResource("2_mffgp")
@@ -39,6 +40,9 @@ collision_layer = 15
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(124.5, 0)
 shape = SubResource("RectangleShape2D_stckw")
+
+[node name="CooldownTimer" type="Timer" parent="."]
+wait_time = 0.2
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Sound" method="_on_area_2d_body_entered"]

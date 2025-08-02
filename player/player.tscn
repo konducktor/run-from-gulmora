@@ -171,7 +171,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("COYOTE_TIMER", "STUNNED_TIMER") groups=["Player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("COYOTE_TIMER") groups=["Player"]]
 collision_mask = 30
 script = ExtResource("1_rkbax")
 PLAYER_SPEED = 800.0
@@ -180,7 +180,6 @@ JUMP_HEIGHT = 300.0
 JUMP_PEAK_TIME = 0.3
 JUMP_FALL_TIME = 0.25
 COYOTE_TIMER = NodePath("CoyoteTimer")
-STUNNED_TIMER = NodePath("")
 
 [node name="CoyoteTimer" type="Timer" parent="."]
 wait_time = 0.2
