@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://v88qiol0mp2w" path="res://ux/death_screen/sfx/death_screen_sounds.gd" id="2_8m7d8"]
 [ext_resource type="Script" uid="uid://ctlyrlympirev" path="res://ux/main_menu/menu_button.gd" id="2_glyeq"]
 [ext_resource type="AudioStream" uid="uid://buws42cvlokgi" path="res://ux/death_screen/sfx/game_over.ogg" id="3_t3h4q"]
-[ext_resource type="Script" path="res://ux/death_screen/random_death_messages.gd" id="3_x4gom"]
+[ext_resource type="Script" uid="uid://c7emvdhw4lsay" path="res://ux/death_screen/random_death_messages.gd" id="3_x4gom"]
 [ext_resource type="Texture2D" uid="uid://bothqswtfiq41" path="res://ux/death_screen/art/asset.png" id="5_66ltg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_glyeq"]
