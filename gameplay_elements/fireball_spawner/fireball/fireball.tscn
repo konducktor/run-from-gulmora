@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7vexska38it0"]
+
+[ext_resource type="Texture2D" uid="uid://di5tq34a2iqnd" path="res://gameplay_elements/fireball_spawner/fireball/fireball.png" id="1_qme56"]
+[ext_resource type="Script" uid="uid://bt5f3ywdoa8ww" path="res://gameplay_elements/fireball_spawner/fireball/fireball.gd" id="1_tugjg"]
+[ext_resource type="PackedScene" uid="uid://bplerfmc38va2" path="res://gameplay_elements/danger/danger.tscn" id="3_d4gsd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ehapx"]
+radius = 27.0
+
+[node name="Fireball" type="Node2D" groups=["Fireball"]]
+script = ExtResource("1_tugjg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-32, 0)
+texture = ExtResource("1_qme56")
+
+[node name="Danger" parent="." instance=ExtResource("3_d4gsd")]
+
+[node name="CollisionShape2D" parent="Danger" index="0"]
+shape = SubResource("CircleShape2D_ehapx")
+
+[editable path="Danger"]

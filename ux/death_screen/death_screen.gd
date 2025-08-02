@@ -14,14 +14,6 @@ class_name DeathScreen
 @export var TIME_LABEL : Label
 
 
-func setup(meters: float, seconds: int) -> void:
-	METERS_LABEL.text = 'Height: ' + str(meters) + 'm'
-	
-	@warning_ignore("integer_division")
-	TIME_LABEL.text = 'Time: ' + str(seconds/60) + ':' + str(seconds % 60)
-
-
-
 func _ready() -> void:
 	visible = false
 	GlobalSignals.player_died.connect(_on_player_death)
@@ -33,9 +25,9 @@ func _on_player_death():
 	
 	visible = true
 
-	METERS_LABEL.text = 'Meters: ' + str(GAME_VALUES.meters)
+	METERS_LABEL.text = 'Height: ' + str(GAME_VALUES.meters) + 'm'
 	@warning_ignore("integer_division")
-	TIME_LABEL.text = 'Time: ' + str(int(GAME_VALUES.time)/60) + ':' + str(fmod(GAME_VALUES.time, 60.0))
+	TIME_LABEL.text = 'Time: ' + str(GAME_VALUES.time/60) + ':' + str(GAME_VALUES.time % 60) + 's'
 	
 	SOUNDS.poopoo()
 	

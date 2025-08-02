@@ -11,4 +11,4 @@ func _process(_delta: float) -> void:
 	METERS_LABEL.text = 'Height: ' + str(GAME_VALUES.meters) + 'm'
 	
 	@warning_ignore("integer_division")
-	TIME_LABEL.text = 'Time: ' + str(GAME_VALUES.time/60) + ':' + str(GAME_VALUES.time % 60)
+	TIME_LABEL.text = 'Time: ' + str(GAME_VALUES.time/60) + ':' + str(GAME_VALUES.time % 60)  + 's'

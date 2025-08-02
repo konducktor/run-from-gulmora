@@ -3,7 +3,7 @@ extends Node
 var letter_count : int
 var is_tutorial_finished : bool
 
-func freeze_time(time_scale: float = 0.007, duration: float = 0.3) -> void:
+func freeze_time(time_scale: float = 0.01, duration: float = 0.3) -> void:
 	var prev_time_scale = Engine.time_scale
 	
 	Engine.time_scale = time_scale

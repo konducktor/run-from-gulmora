@@ -33,7 +33,7 @@ func _process(delta: float) -> void:
 	
 	time_real += delta
 	
-	time = time_real
+	time = int(time_real)
 	meters = PLAYER.position.y
 
 func _on_player_death():

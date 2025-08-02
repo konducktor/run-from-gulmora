@@ -36,6 +36,7 @@ level_generator = NodePath("../LevelGenerator")
 
 [node name="LevelGenerator" type="Node2D" parent="."]
 script = ExtResource("4_53nod")
+DISABLE_TUTORIAL = true
 TUTORIAL_DIR = "res://levels/tutorial_levels/"
 A_LEVEL_DIR = "res://levels/A_levels/"
 B_LEVEL_DIR = "res://levels/B_levels/"
@@ -67,8 +68,8 @@ collision_mask = 14
 position = Vector2(960, 3456)
 NORMAL_SPEED = 250.0
 SLOW_SPEED = 50.0
-FAST_SPEED = 1000.0
-FAST_MIN_DISTANCE = 1500.0
+FAST_SPEED = 600.0
+FAST_MIN_DISTANCE = 1400.0
 PLAYER = NodePath("../Player")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
