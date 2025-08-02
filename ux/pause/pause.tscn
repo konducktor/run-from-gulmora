@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmg3i5v15f3fa"]
+
+[ext_resource type="Script" uid="uid://dha7qt5w5gjs6" path="res://ux/pause/pause.gd" id="1_l481r"]
+[ext_resource type="PackedScene" uid="uid://dyyu3xxnrqfo1" path="res://ux/settings/settings.tscn" id="1_vl5qj"]
+[ext_resource type="FontFile" uid="uid://di04vknxmp46b" path="res://ux/Daneehand Regular Cyr.ttf" id="2_l481r"]
+
+[node name="Pause" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l481r")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -187.0
+offset_right = 256.0
+offset_bottom = 187.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 96.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_l481r")
+theme_override_font_sizes/font_size = 50
+text = "Pausing HARD.."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Settings" parent="Panel" instance=ExtResource("1_vl5qj")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = -246.0
+offset_right = -64.0
+offset_bottom = 0.0
+grow_vertical = 0

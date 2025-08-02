@@ -148,10 +148,12 @@ MONSTER = NodePath("Monster")
 [node name="Notification" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("4_txt2m")
 volume_db = -5.0
+bus = &"SFX"
 
 [node name="Monster" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("6_2jkjs")
 volume_db = -4.0
+bus = &"SFX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
