@@ -36,6 +36,8 @@ var D_levels : Array[PackedScene]
 var random_generator = RandomNumberGenerator.new()
 
 var current_level_index : int
+var layer_levels_generated : int
+var levels_played : int
 
 enum LEVEL_LAYERS {
 	A_LEVEL = 0, B_LEVEL = 1, C_LEVEL = 2, D_LEVEL = 3
@@ -57,6 +59,8 @@ func _ready() -> void:
 	if DISABLE_TUTORIAL:
 		GlobalValues.is_tutorial_finished = true
 	
+	levels_played = 0
+	layer_levels_generated = 0
 	current_level_index = 0
 	current_level_layer = LEVEL_LAYERS.A_LEVEL
 	
@@ -66,6 +70,7 @@ func _ready() -> void:
 	D_levels = get_all_levels(D_LEVEL_DIR)
 	
 	if not GlobalValues.is_tutorial_finished:
+		levels_played -= 1
 		tutorial_levels = get_all_levels(TUTORIAL_DIR)
 		
 		for tutorial_level in tutorial_levels:
@@ -79,6 +84,10 @@ func _ready() -> void:
 
 func _on_next_level() -> void:
 	generate_next_level()
+	
+	levels_played += 1
+	if (levels_played % LEVELS_IN_LAYER == 0) and (levels_played > 0):
+		GlobalSignals.new_layer_reached.emit(current_level_layer)
 	
 	if get_child_count() > (MAX_LEVELS_LOADED-1):
 		get_child(0).queue_free()
@@ -98,13 +107,14 @@ func generate_next_level(custom_level: PackedScene = null) -> Level:
 		next_level = current_letter_level
 	else:
 		next_level = pick_level_from_level_array(level_array)
+		layer_levels_generated += 1
 	
 	var level_positopn := Vector2(0, -17*64*current_level_index)
 	var added_level : Level = add_level_to_scene(next_level, level_positopn)
 	
 	current_level_index += 1
 	
-	if current_level_index % LEVELS_IN_LAYER == 0:
+	if (layer_levels_generated % LEVELS_IN_LAYER == 0) and (layer_levels_generated > 0):
 		generate_letter_level_index_in_layer()
 		update_current_level_layer()
 	
@@ -171,7 +181,6 @@ func new_lap() -> void:
 
 func generate_letter_level_index_in_layer() -> void:
 	letter_level_index_in_layer = random_generator.randi_range(0, LEVELS_IN_LAYER-1)
-	
 	
 	match current_level_layer:
 		LEVEL_LAYERS.A_LEVEL:

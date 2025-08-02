@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://dtamhc3u844oa"]
 
 [ext_resource type="Script" uid="uid://bvntop35l4m5u" path="res://global/gameplay.gd" id="1_bx64p"]
-[ext_resource type="Script" path="res://gameplay/mouse.gd" id="2_53nod"]
+[ext_resource type="Script" uid="uid://d3asyxqei0o6m" path="res://gameplay/mouse.gd" id="2_53nod"]
 [ext_resource type="PackedScene" uid="uid://ceblj6gvvm5c0" path="res://ux/death_screen/death_screen.tscn" id="2_63nix"]
 [ext_resource type="Script" uid="uid://demrlv7ihrymx" path="res://gameplay/gameplay_values.gd" id="3_4vl10"]
 [ext_resource type="Script" uid="uid://dod40gv4mo7kl" path="res://gameplay_elements/letter/letter_setup.gd" id="3_63nix"]
@@ -18,7 +18,7 @@
 [ext_resource type="FontFile" uid="uid://di04vknxmp46b" path="res://ux/Daneehand Regular Cyr.ttf" id="14_wxx72"]
 [ext_resource type="Script" uid="uid://dtydotpfe7we1" path="res://ux/gameplay_stats_ux.gd" id="15_2beay"]
 [ext_resource type="PackedScene" uid="uid://cwklp2uls81do" path="res://visuals/borders/borders.tscn" id="16_ni0ts"]
-[ext_resource type="Texture2D" uid="uid://e7f8fyg3vqbf" path="res://visuals/sewer/sewer_background.png" id="19_53nod"]
+[ext_resource type="Texture2D" uid="uid://e7f8fyg3vqbf" path="res://visuals/sewer/background_sewer.png" id="19_53nod"]
 
 [node name="Gameplay" type="Node2D"]
 script = ExtResource("1_bx64p")
