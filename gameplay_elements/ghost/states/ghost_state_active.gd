@@ -8,6 +8,8 @@ var player_caught : bool
 var current_target : Vector2
 var current_direction : Vector2
 
+var velocity : Vector2
+
 func enter() -> void:
 	super()
 	player_caught = false
@@ -15,7 +17,8 @@ func enter() -> void:
 
 
 func update(delta: float) -> GhostState:
-	var velocity = current_direction * ghost.SPEED * delta
+	velocity = current_direction * ghost.SPEED * delta
+	
 	ghost.position += velocity
 	
 	if (current_target - ghost.position).length() < 3.0:

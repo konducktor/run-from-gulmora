@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7vexska38it0"]
+[gd_scene load_steps=8 format=3 uid="uid://b7vexska38it0"]
 
 [ext_resource type="Texture2D" uid="uid://di5tq34a2iqnd" path="res://gameplay_elements/fireball_spawner/fireball/fireball.png" id="1_qme56"]
 [ext_resource type="Script" uid="uid://bt5f3ywdoa8ww" path="res://gameplay_elements/fireball_spawner/fireball/fireball.gd" id="1_tugjg"]
 [ext_resource type="PackedScene" uid="uid://bplerfmc38va2" path="res://gameplay_elements/danger/danger.tscn" id="3_d4gsd"]
+[ext_resource type="AudioStream" uid="uid://dn3f2lorhdll8" path="res://gameplay_elements/fireball_spawner/fireball/sfx/fireball_proximity.ogg" id="4_4gb0d"]
+[ext_resource type="Script" uid="uid://dbkc87b3mu3hl" path="res://gameplay_elements/fireball_spawner/fireball/fireball_sounds.gd" id="4_x21l2"]
+[ext_resource type="AudioStream" uid="uid://dndu32tusor7c" path="res://gameplay_elements/fireball_spawner/fireball/sfx/fireball_death.ogg" id="5_o7abi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ehapx"]
 radius = 27.0
@@ -19,5 +22,21 @@ texture = ExtResource("1_qme56")
 
 [node name="CollisionShape2D" parent="Danger" index="0"]
 shape = SubResource("CircleShape2D_ehapx")
+
+[node name="Sounds" type="Node2D" parent="." node_paths=PackedStringArray("DEATH")]
+script = ExtResource("4_x21l2")
+DEATH = NodePath("Death")
+
+[node name="Death" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("5_o7abi")
+
+[node name="Proximity" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("4_4gb0d")
+volume_db = -3.0
+autoplay = true
+max_distance = 500.0
+parameters/looping = true
+
+[connection signal="body_entered" from="Danger" to="Sounds" method="_on_danger_body_entered"]
 
 [editable path="Danger"]

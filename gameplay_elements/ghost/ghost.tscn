@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://di1tbxrtr3467"]
+[gd_scene load_steps=13 format=3 uid="uid://di1tbxrtr3467"]
 
 [ext_resource type="Texture2D" uid="uid://bqvvd37r2vmkv" path="res://gameplay_elements/ghost/art/ghost.png" id="1_2uhf4"]
 [ext_resource type="Script" uid="uid://nyae8kk0ioh7" path="res://gameplay_elements/ghost/ghost.gd" id="1_njrju"]
@@ -7,6 +7,10 @@
 [ext_resource type="Script" uid="uid://c1qo5i66pa17t" path="res://gameplay_elements/ghost/states/ghost_state_machine.gd" id="4_f3ecn"]
 [ext_resource type="Script" uid="uid://c18aw0bbqjnxl" path="res://gameplay_elements/ghost/states/ghost_state_idle.gd" id="5_8g54a"]
 [ext_resource type="Script" uid="uid://bf7sntw8bgi82" path="res://gameplay_elements/ghost/states/ghost_state_active.gd" id="6_y8ata"]
+[ext_resource type="Script" uid="uid://cnm4eljx212ke" path="res://gameplay_elements/ghost/ghost_visual.gd" id="7_jp7xg"]
+[ext_resource type="Script" uid="uid://b0wjl6em8a08e" path="res://gameplay_elements/ghost/ghost_sounds.gd" id="7_u321h"]
+[ext_resource type="AudioStream" uid="uid://0i2nv37e0tkj" path="res://gameplay_elements/ghost/sfx/ghost_death.ogg" id="8_1h73h"]
+[ext_resource type="AudioStream" uid="uid://62qyyfkw3ygf" path="res://gameplay_elements/ghost/sfx/ghost_proximity.ogg" id="9_alnux"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jp7xg"]
 radius = 32.0
@@ -26,10 +30,6 @@ script = ExtResource("2_siwcv")
 [node name="CollisionShape2D" parent="Danger" index="0"]
 shape = SubResource("CircleShape2D_jp7xg")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = 2
-texture = ExtResource("1_2uhf4")
-
 [node name="StateMachine" type="Node2D" parent="." node_paths=PackedStringArray("INITIAL_STATE")]
 script = ExtResource("4_f3ecn")
 INITIAL_STATE = NodePath("Idle")
@@ -41,5 +41,33 @@ ACTIVE_STATE = NodePath("../Active")
 [node name="Active" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("IDLE_STATE")]
 script = ExtResource("6_y8ata")
 IDLE_STATE = NodePath("../Idle")
+
+[node name="Sounds" type="Node2D" parent="." node_paths=PackedStringArray("DEATH")]
+script = ExtResource("7_u321h")
+DEATH = NodePath("Death")
+
+[node name="Death" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("8_1h73h")
+bus = &"SFX"
+
+[node name="Proximity" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("9_alnux")
+volume_db = 10.0
+autoplay = true
+max_distance = 750.0
+attenuation = 0.3
+bus = &"SFX"
+parameters/looping = true
+
+[node name="Visual" type="Node2D" parent="." node_paths=PackedStringArray("ACTIVE_STATE", "SPRITE")]
+script = ExtResource("7_jp7xg")
+ACTIVE_STATE = NodePath("../StateMachine/Active")
+SPRITE = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="Visual"]
+z_index = 2
+texture = ExtResource("1_2uhf4")
+
+[connection signal="body_entered" from="Danger" to="Sounds" method="_on_danger_body_entered"]
 
 [editable path="Danger"]
