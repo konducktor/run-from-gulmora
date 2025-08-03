@@ -15,8 +15,3 @@ texture = ExtResource("2_rs68e")
 [node name="Ladder2" type="Sprite2D" parent="Deco" index="1"]
 position = Vector2(1355, 389)
 texture = ExtResource("2_rs68e")
-
-[connection signal="body_entered" from="Tiles/Danger" to="Tiles/Danger" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/Danger" to="Tiles/Danger/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@65530" to="Tiles/@Area2D@65530" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@65530" to="Tiles/@Area2D@65530/Sounds" method="_on_danger_body_entered"]

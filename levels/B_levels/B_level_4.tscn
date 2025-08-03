@@ -27,12 +27,3 @@ texture = ExtResource("3_xxnjr")
 position = Vector2(1280, 192)
 texture = ExtResource("3_xxnjr")
 flip_h = true
-
-[connection signal="body_entered" from="Tiles/Danger" to="Tiles/Danger" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/Danger" to="Tiles/Danger/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@69080" to="Tiles/@Area2D@69080" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@69080" to="Tiles/@Area2D@69080/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@69081" to="Tiles/@Area2D@69081" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@69081" to="Tiles/@Area2D@69081/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@69082" to="Tiles/@Area2D@69082" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@69082" to="Tiles/@Area2D@69082/Sounds" method="_on_danger_body_entered"]

@@ -30,12 +30,3 @@ tile_map_data = PackedByteArray("AAAAAAAABgAAAAAAAAAAAAEABgAAAAEAAAAAAAIABgAAAAE
 [node name="Ladder" type="Sprite2D" parent="Deco" index="0"]
 position = Vector2(992, 640)
 texture = ExtResource("3_lcjrt")
-
-[connection signal="body_entered" from="Tiles/Danger" to="Tiles/Danger" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/Danger" to="Tiles/Danger/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@73988" to="Tiles/@Area2D@73988" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@73988" to="Tiles/@Area2D@73988/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@73989" to="Tiles/@Area2D@73989" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@73989" to="Tiles/@Area2D@73989/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@73990" to="Tiles/@Area2D@73990" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@73990" to="Tiles/@Area2D@73990/Sounds" method="_on_danger_body_entered"]
