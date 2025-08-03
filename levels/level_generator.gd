@@ -56,7 +56,7 @@ func _ready() -> void:
 	
 	if GENERATE_LETTERS_FASTER:
 		generate_letter_level_index_in_layer()
-		new_lap()
+		GlobalValues.is_generating_letter_levels = true
 	
 	if DISABLE_TUTORIAL:
 		GlobalValues.is_tutorial_finished = true
@@ -90,6 +90,9 @@ func _on_next_level() -> void:
 	
 	if (levels_played % LEVELS_IN_LAYER == 0) and (levels_played > 0):
 		GlobalSignals.new_layer_reached.emit(current_level_layer)
+		
+		if current_level_layer == LEVEL_LAYERS.A_LEVEL:
+			GlobalSignals.new_lap_started.emit()
 	
 	if get_child_count() > (MAX_LEVELS_LOADED-1):
 		get_child(0).queue_free()
@@ -167,7 +170,6 @@ func update_current_level_layer(custom: LEVEL_LAYERS = -1) -> void:
 			current_level_layer = LEVEL_LAYERS.D_LEVEL
 		LEVEL_LAYERS.D_LEVEL:
 			current_level_layer = LEVEL_LAYERS.A_LEVEL
-			new_lap()
 
 
 func get_all_levels(directory_path: String) -> Array[PackedScene]:
@@ -186,10 +188,6 @@ func get_all_levels(directory_path: String) -> Array[PackedScene]:
 	return output
 
 
-func new_lap() -> void:
-	GlobalSignals.new_lap_started.emit()
-
-
 func generate_letter_level_index_in_layer() -> void:
 	letter_level_index_in_layer = random_generator.randi_range(0, LEVELS_IN_LAYER-1)
 	
@@ -205,4 +203,5 @@ func generate_letter_level_index_in_layer() -> void:
 
 
 func generate_final_level() -> void:
+	print('generate_next_level(FINAL_LEVEL)')
 	generate_next_level(FINAL_LEVEL)
