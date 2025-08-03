@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://bwgimqktwg1dp"]
+[gd_scene load_steps=22 format=4 uid="uid://bwgimqktwg1dp"]
 
 [ext_resource type="Texture2D" uid="uid://bwlaympteebee" path="res://gameplay_elements/platform/block.png" id="1_80vhd"]
 [ext_resource type="Script" uid="uid://d1d7dlfpksgqn" path="res://levels/level.gd" id="1_hjsbj"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dums2b7iw6i8a" path="res://visuals/1_hell/tiles_hell.png" id="9_rtcij"]
 [ext_resource type="Texture2D" uid="uid://d12l5xls8eqrv" path="res://visuals/4_void/tiles_void.png" id="10_ukwr8"]
 [ext_resource type="Texture2D" uid="uid://bf43yd6lhixk4" path="res://visuals/3_graveyard/31e07bf1-f2b7-4c5b-94b8-db1852a6b74c.png" id="11_pb8y7"]
+[ext_resource type="Texture2D" uid="uid://13okqngb5ww0" path="res://visuals/extra/new_tiles.png" id="12_hy0rb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_safpt"]
 texture = ExtResource("1_80vhd")
@@ -137,6 +138,14 @@ texture_region_size = Vector2i(64, 64)
 3:2/0 = 0
 3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mxp4k"]
+texture = ExtResource("12_hy0rb")
+texture_region_size = Vector2i(80, 80)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
 [sub_resource type="TileSet" id="TileSet_cwqvt"]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 2
@@ -146,6 +155,7 @@ sources/2 = SubResource("TileSetAtlasSource_rtcij")
 sources/3 = SubResource("TileSetAtlasSource_ukwr8")
 sources/4 = SubResource("TileSetAtlasSource_pb8y7")
 sources/5 = SubResource("TileSetAtlasSource_hy0rb")
+sources/6 = SubResource("TileSetAtlasSource_mxp4k")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hjsbj"]
 size = Vector2(1919.75, 64)

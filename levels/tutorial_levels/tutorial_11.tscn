@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bggjd5duuwn5t" path="res://gameplay_elements/one-way-platform/one_way_platform.tscn" id="4_xe6yd"]
 [ext_resource type="PackedScene" uid="uid://b8esukmcwaxoj" path="res://gameplay_elements/spring/spring.tscn" id="5_2b57d"]
 [ext_resource type="Texture2D" uid="uid://bricevu3ycyf2" path="res://levels/tutorial_levels/tutorial.png" id="6_7mf8w"]
-[ext_resource type="Texture2D" uid="uid://dums2b7iw6i8a" path="res://visuals/eb75a887-3521-4f46-a33c-4232210c93c3.png" id="6_f2joh"]
+[ext_resource type="Texture2D" uid="uid://dums2b7iw6i8a" path="res://visuals/1_hell/tiles_hell.png" id="6_f2joh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_safpt"]
 texture = ExtResource("2_7mf8w")
@@ -68,3 +68,5 @@ position = Vector2(762, 705)
 rotation = 0.0938994
 scale = Vector2(0.552835, 0.552835)
 texture = ExtResource("6_7mf8w")
+
+[node name="Extra" type="Node2D" parent="."]
