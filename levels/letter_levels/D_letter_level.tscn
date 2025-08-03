@@ -14,10 +14,3 @@ position = Vector2(288, 480)
 
 [node name="MonsterSlowZone" parent="." index="3" instance=ExtResource("3_ld0g1")]
 position = Vector2(288, 498)
-
-[connection signal="body_entered" from="Tiles/Danger" to="Tiles/Danger" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/Danger" to="Tiles/Danger/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@41357" to="Tiles/@Area2D@41357" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@41357" to="Tiles/@Area2D@41357/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@41367" to="Tiles/@Area2D@41367" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@41367" to="Tiles/@Area2D@41367/Sounds" method="_on_danger_body_entered"]
