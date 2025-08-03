@@ -21,6 +21,10 @@ signal hyped
 @export var JUMP_PEAK_TIME : float
 @export var JUMP_FALL_TIME : float
 
+@export var JUMP_BUFFER_TIME: float = .1
+
+var jump_buffer : bool = false
+
 @export_group('References')
 @export var COYOTE_TIMER : Timer
 @export var STUNNED_TIMER : Timer
@@ -101,12 +105,15 @@ func calculate_gravity(delta: float, vertical_velocity: float) -> float:
 
 
 func calculate_jump(_delta: float, vertical_velocity: float) -> float:
-	var is_grounded : bool = (is_on_floor() or (not COYOTE_TIMER.is_stopped()))
+	var is_grounded : bool = (is_on_floor() or (not COYOTE_TIMER.is_stopped()) or jump_buffer)
 	
 	if is_grounded or (jump_amount > 0) or (EXTRA_JUMPS == -1):
 		if Input.is_action_just_pressed('movement_jump'):
 			if not is_grounded:
 				jump_amount -= 1
+				if jump_amount == 0:
+					jump_buffer = true
+					get_tree().create_timer(JUMP_BUFFER_TIME).timeout.connect(on_jump_buffer_timeout)
 			
 			previously_grounded = false
 			COYOTE_TIMER.stop()
@@ -140,3 +147,6 @@ func disable_release(duration=0.1):
 	can_release = false
 	await get_tree().create_timer(duration, true, false, true).timeout
 	can_release = true
+
+func on_jump_buffer_timeout() -> void:
+	jump_buffer = false
