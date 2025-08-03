@@ -26,7 +26,7 @@ texture = ExtResource("7_f72l3")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_myd1k"]
 texture = ExtResource("7_f72l3")
 
-[node name="Menu" type="Control" node_paths=PackedStringArray("settings_panel", "main_panel", "button_anim_timer")]
+[node name="Menu" type="Control" node_paths=PackedStringArray("settings_panel", "main_panel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -37,7 +37,6 @@ script = ExtResource("1_ouk20")
 gameplay_scene = ExtResource("2_4b2jh")
 settings_panel = NodePath("Control/Panel2")
 main_panel = NodePath("Control")
-button_anim_timer = NodePath("ButtonAnimTimer")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -175,9 +174,6 @@ autoplay = true
 attenuation = 1e-05
 panning_strength = 0.0
 bus = &"Music"
-
-[node name="ButtonAnimTimer" type="Timer" parent="."]
-wait_time = 0.16
 
 [connection signal="pressed" from="GMTKLogo" to="." method="_on_gmtk_logo_pressed"]
 [connection signal="pressed" from="Control/Play" to="." method="_on_start_pressed"]
