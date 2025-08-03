@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dtamhc3u844oa"]
+[gd_scene load_steps=27 format=3 uid="uid://dtamhc3u844oa"]
 
 [ext_resource type="Script" uid="uid://bvntop35l4m5u" path="res://global/gameplay.gd" id="1_bx64p"]
 [ext_resource type="Script" uid="uid://d3asyxqei0o6m" path="res://gameplay/mouse.gd" id="2_53nod"]
@@ -7,7 +7,6 @@
 [ext_resource type="Script" uid="uid://dod40gv4mo7kl" path="res://gameplay_elements/letter/letter_setup.gd" id="3_63nix"]
 [ext_resource type="Script" uid="uid://byvfvad6xuppm" path="res://levels/level_generator.gd" id="4_53nod"]
 [ext_resource type="PackedScene" uid="uid://df0v2abqki1gm" path="res://levels/letter_levels/A_letter_level.tscn" id="5_b2kny"]
-[ext_resource type="PackedScene" uid="uid://bqsh4nv2m2e5d" path="res://visuals/overlay_particles/overlay_particles.tscn" id="5_n6aft"]
 [ext_resource type="PackedScene" uid="uid://c1lkuldvp0734" path="res://levels/letter_levels/B_letter_level.tscn" id="6_y3ygr"]
 [ext_resource type="PackedScene" uid="uid://daqxkd3qpb8bd" path="res://levels/letter_levels/C_letter_level.tscn" id="7_xmdrq"]
 [ext_resource type="PackedScene" uid="uid://ciofim6bqh6iw" path="res://levels/letter_levels/D_letter_level.tscn" id="8_47db2"]
@@ -61,6 +60,7 @@ level_generator = NodePath("../LevelGenerator")
 
 [node name="LevelGenerator" type="Node2D" parent="."]
 script = ExtResource("4_53nod")
+LEVELS_IN_LAYER = 2
 DISABLE_TUTORIAL = true
 GENERATE_LETTERS_FASTER = true
 TUTORIAL_DIR = "res://levels/tutorial_levels/"
@@ -76,7 +76,6 @@ FINAL_LEVEL = ExtResource("9_gh0v3")
 
 [node name="Monster" parent="." node_paths=PackedStringArray("PLAYER") instance=ExtResource("13_2qs7h")]
 position = Vector2(960, 3456)
-ACTIVE = false
 NORMAL_SPEED = 250.0
 SLOW_SPEED = 50.0
 FAST_SPEED = 600.0
@@ -120,10 +119,6 @@ theme_override_constants/shadow_offset_y = 2
 theme_override_fonts/font = ExtResource("14_wxx72")
 theme_override_font_sizes/font_size = 50
 text = "Time: 99:99"
-
-[node name="OverlayParticles" parent="CanvasLayer" node_paths=PackedStringArray("PARTICLES") instance=ExtResource("5_n6aft")]
-position = Vector2(960, 576)
-PARTICLES = [null, NodePath("Rain"), null, null]
 
 [node name="Notification" parent="CanvasLayer" instance=ExtResource("18_b2kny")]
 

@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://b8esukmcwaxoj" path="res://gameplay_elements/spring/spring.tscn" id="5_safpt"]
 [ext_resource type="PackedScene" uid="uid://biewwxre508mg" path="res://gameplay_elements/fireball_spawner/fireball_spawner.tscn" id="6_gjl0y"]
 [ext_resource type="PackedScene" uid="uid://di1tbxrtr3467" path="res://gameplay_elements/ghost/ghost.tscn" id="7_vnv7o"]
-[ext_resource type="Texture2D" uid="uid://d53iyq4dn4r5" path="res://visuals/blocks.jpg" id="8_d5x7l"]
-[ext_resource type="Texture2D" uid="uid://dums2b7iw6i8a" path="res://visuals/eb75a887-3521-4f46-a33c-4232210c93c3.png" id="9_rtcij"]
-[ext_resource type="Texture2D" uid="uid://d12l5xls8eqrv" path="res://visuals/tileset (1).png" id="10_ukwr8"]
+[ext_resource type="Texture2D" uid="uid://d53iyq4dn4r5" path="res://visuals/2_sewer/tiles_sewer.jpg" id="8_d5x7l"]
+[ext_resource type="Texture2D" uid="uid://dums2b7iw6i8a" path="res://visuals/1_hell/tiles_hell.png" id="9_rtcij"]
+[ext_resource type="Texture2D" uid="uid://d12l5xls8eqrv" path="res://visuals/4_void/tiles_void.png" id="10_ukwr8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_safpt"]
 texture = ExtResource("1_80vhd")

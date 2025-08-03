@@ -18,6 +18,7 @@ DEATH = NodePath("AudioStreamPlayer")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sounds" index="0"]
 stream = ExtResource("3_m2kd2")
+bus = &"SFX"
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="1"]
 z_index = 1

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dums2b7iw6i8a"
-path="res://.godot/imported/eb75a887-3521-4f46-a33c-4232210c93c3.png-c2adca25c9a039d3bd608e1ec6eadde2.ctex"
+path="res://.godot/imported/tiles_hell.png-f6b14e7222bc4814ee7b6fa358166814.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://visuals/eb75a887-3521-4f46-a33c-4232210c93c3.png"
-dest_files=["res://.godot/imported/eb75a887-3521-4f46-a33c-4232210c93c3.png-c2adca25c9a039d3bd608e1ec6eadde2.ctex"]
+source_file="res://visuals/1_hell/tiles_hell.png"
+dest_files=["res://.godot/imported/tiles_hell.png-f6b14e7222bc4814ee7b6fa358166814.ctex"]
 
 [params]
 

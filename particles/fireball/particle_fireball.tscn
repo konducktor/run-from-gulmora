@@ -2,10 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://jw3p5m4a6wrq" path="res://particles/art/circle_particle_little.png" id="1_docb1"]
 
-[sub_resource type="Gradient" id="Gradient_7722d"]
-colors = PackedColorArray(0, 0, 0, 1, 0.180005, 0.180005, 0.180005, 1)
+[sub_resource type="Gradient" id="Gradient_docb1"]
+offsets = PackedFloat32Array(0.00957854, 1)
+colors = PackedColorArray(0.101868, 0.101868, 0.101868, 1, 0.18, 0.18, 0.18, 0)
 
-[node name="particle_fireball" type="CPUParticles2D"]
+[node name="ParticleFireball" type="CPUParticles2D"]
+z_index = 2
 rotation = 0.000803786
 amount = 20
 texture = ExtResource("1_docb1")
@@ -13,6 +15,10 @@ speed_scale = 3.0
 randomness = 0.2
 emission_shape = 3
 emission_rect_extents = Vector2(1, 20)
+spread = 180.0
 gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
 scale_amount_min = 0.3
-color_ramp = SubResource("Gradient_7722d")
+scale_amount_max = 0.5
+color_ramp = SubResource("Gradient_docb1")

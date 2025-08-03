@@ -19,6 +19,7 @@ ENTER = NodePath("AudioStreamPlayer")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MonsterSlowZoneSound"]
 stream = ExtResource("3_e16qv")
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="." to="MonsterSlowZoneSound" method="_on_monster_slow_zone_body_entered"]

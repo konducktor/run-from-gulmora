@@ -21,6 +21,7 @@ ACTIVATED = NodePath("Activated")
 [node name="Activated" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("3_v0i11")
 max_polyphony = 3
+bus = &"SFX"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_knx1u")

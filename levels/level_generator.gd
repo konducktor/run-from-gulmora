@@ -2,7 +2,6 @@ extends Node2D
 class_name LevelGenerator
 
 
-
 @export var LEVELS_IN_LAYER : int = 10
 @export var MAX_LEVELS_LOADED : int = 3
 
@@ -34,15 +33,17 @@ var B_levels : Array[PackedScene]
 var C_levels : Array[PackedScene]
 var D_levels : Array[PackedScene]
 
+
 var random_generator = RandomNumberGenerator.new()
+
+enum LEVEL_LAYERS {
+	A_LEVEL = 0, B_LEVEL = 1, C_LEVEL = 2, D_LEVEL = 3
+}
 
 var current_level_index : int
 var layer_levels_generated : int
 var levels_played : int
 
-enum LEVEL_LAYERS {
-	A_LEVEL = 0, B_LEVEL = 1, C_LEVEL = 2, D_LEVEL = 3
-}
 var current_level_layer : LEVEL_LAYERS
 
 var is_generating_letter_levels : bool
@@ -88,6 +89,7 @@ func _on_next_level() -> void:
 	generate_next_level()
 	
 	levels_played += 1
+	
 	if (levels_played % LEVELS_IN_LAYER == 0) and (levels_played > 0):
 		GlobalSignals.new_layer_reached.emit(current_level_layer)
 	
@@ -107,6 +109,7 @@ func generate_next_level(custom_level: PackedScene = null) -> Level:
 		(current_level_index % LEVELS_IN_LAYER) == letter_level_index_in_layer
 	):
 		next_level = current_letter_level
+		layer_levels_generated += 1
 	else:
 		next_level = pick_level_from_level_array(level_array)
 		layer_levels_generated += 1
@@ -117,8 +120,8 @@ func generate_next_level(custom_level: PackedScene = null) -> Level:
 	current_level_index += 1
 	
 	if (layer_levels_generated % LEVELS_IN_LAYER == 0) and (layer_levels_generated > 0):
-		generate_letter_level_index_in_layer()
 		update_current_level_layer()
+		generate_letter_level_index_in_layer()
 	
 	return added_level
 
@@ -174,6 +177,9 @@ func get_all_levels(directory_path: String) -> Array[PackedScene]:
 	var dir = DirAccess.open(directory_path)
 	if dir:
 		for file_name in dir.get_files():
+			if file_name.get_extension() == "remap":
+				file_name = file_name.replace(".remap", "")
+			
 			if file_name.get_extension() == "tscn":
 				var full_path = directory_path.path_join(file_name)
 				output.append(load(full_path))

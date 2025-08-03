@@ -3,6 +3,10 @@ extends Node
 
 @export var PLAYER_DEATH_IMPACT_VELOCITY : Vector2
 
+@export_group("Particles")
+@export var LANDING_PARTICLE : CPUParticles2D
+@export var STEP_PARTICLE : CPUParticles2D
+
 @export_group("References")
 @export var ANIMATED_SPRITE : AnimatedSprite2D
 @export var COLLISION : CollisionShape2D
@@ -21,7 +25,13 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	var player_velocity : Vector2 = PLAYER.velocity
+	
 	ANIMATED_SPRITE.flip_h = (player_velocity.x < 0.0)
+	
+	if (animation_state == ANIMATED_STATES.GROUNDED) and (player_velocity.x != 0):
+		STEP_PARTICLE.emitting = true
+	else:
+		STEP_PARTICLE.emitting = false
 
 
 func _on_player_idle() -> void:
@@ -69,3 +79,7 @@ func _on_player_hyped() -> void:
 	
 	animation_state = ANIMATED_STATES.HYPED
 	ANIMATED_SPRITE.play('hyped')
+
+
+func _on_player_fall() -> void:
+	LANDING_PARTICLE.emitting = true

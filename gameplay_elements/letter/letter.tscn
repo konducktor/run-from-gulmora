@@ -121,6 +121,7 @@ COLLECT = NodePath("AudioStreamPlayer")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("6_riiat")
+bus = &"SFX"
 
 [node name="Visual" type="Node2D" parent="." node_paths=PackedStringArray("ANIMATION_PLAYER", "BACKDROP")]
 script = ExtResource("7_riiat")

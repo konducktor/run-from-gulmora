@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://uos88rcjypfn"]
+[gd_scene load_steps=34 format=3 uid="uid://uos88rcjypfn"]
 
 [ext_resource type="Script" uid="uid://dga84sgb8gjup" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Script" uid="uid://baxjv5p6gbkoa" path="res://player/player_animation.gd" id="2_g1dw6"]
@@ -7,6 +7,8 @@
 [ext_resource type="AudioStream" uid="uid://dh3e5n01yleng" path="res://player/sfx/step.mp3" id="4_boad6"]
 [ext_resource type="AudioStream" uid="uid://d3gqqdcwijcvo" path="res://player/sfx/fall.ogg" id="4_hg6s5"]
 [ext_resource type="Texture2D" uid="uid://idssi6s1ehwo" path="res://player/art/player_cool.png" id="4_yw30f"]
+[ext_resource type="PackedScene" uid="uid://dq3r4xqwkdxtf" path="res://particles/step/particle_step.tscn" id="8_hg6s5"]
+[ext_resource type="PackedScene" uid="uid://cqecyv580s38v" path="res://particles/landing/particle_landing.tscn" id="8_rgyib"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g1dw6"]
 radius = 26.0
@@ -246,9 +248,11 @@ volume_db = -10.0
 max_polyphony = 2
 bus = &"SFX"
 
-[node name="Visuals" type="Node2D" parent="." node_paths=PackedStringArray("ANIMATED_SPRITE", "COLLISION", "PLAYER")]
+[node name="Visuals" type="Node2D" parent="." node_paths=PackedStringArray("LANDING_PARTICLE", "STEP_PARTICLE", "ANIMATED_SPRITE", "COLLISION", "PLAYER")]
 script = ExtResource("2_g1dw6")
 PLAYER_DEATH_IMPACT_VELOCITY = Vector2(0, -2000)
+LANDING_PARTICLE = NodePath("ParticleLanding")
+STEP_PARTICLE = NodePath("ParticleStep")
 ANIMATED_SPRITE = NodePath("AnimatedSprite2D")
 COLLISION = NodePath("../CollisionShape2D")
 PLAYER = NodePath("..")
@@ -258,7 +262,16 @@ sprite_frames = SubResource("SpriteFrames_x7c3f")
 animation = &"walking"
 autoplay = "idle_1"
 
+[node name="ParticleStep" parent="Visuals" instance=ExtResource("8_hg6s5")]
+position = Vector2(0, 56)
+amount = 5
+lifetime = 2.0
+
+[node name="ParticleLanding" parent="Visuals" instance=ExtResource("8_rgyib")]
+position = Vector2(0, 64)
+
 [connection signal="fall" from="." to="Sounds" method="_on_player_fall"]
+[connection signal="fall" from="." to="Visuals" method="_on_player_fall"]
 [connection signal="falling" from="." to="Sounds" method="_on_player_falling"]
 [connection signal="falling" from="." to="Visuals" method="_on_player_falling"]
 [connection signal="hyped" from="." to="Visuals" method="_on_player_hyped"]

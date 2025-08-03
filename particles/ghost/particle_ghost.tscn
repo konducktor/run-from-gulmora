@@ -5,7 +5,7 @@
 [sub_resource type="Gradient" id="Gradient_7722d"]
 colors = PackedColorArray(0, 0, 0, 1, 0.180005, 0.180005, 0.180005, 1)
 
-[node name="particle_ghost" type="CPUParticles2D"]
+[node name="ParticleGhost" type="CPUParticles2D"]
 rotation = 0.000803786
 amount = 20
 texture = ExtResource("1_w5jdg")

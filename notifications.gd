@@ -28,7 +28,6 @@ func _on_new_layer_reached(_layer: int) -> void:
 	notify("New layer reached!")
 
 func _on_new_lap_started() -> void:
-	#notify("Loop")
 	pass
 
 func _on_letter_collected() -> void:
@@ -41,9 +40,6 @@ func _on_letter_collected() -> void:
 	
 	notify(texts[letters_collected])
 	letters_collected += 1
-
-#func _on_new_layer_reached() -> void:
-	#pass
 
 
 func notify(text: String) -> void:

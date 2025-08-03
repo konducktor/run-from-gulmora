@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqsh4nv2m2e5d"]
+
+[ext_resource type="Script" uid="uid://cgg26ntyj5eao" path="res://visuals/overlay_particles/overlay_particles.gd" id="1_123qy"]
+[ext_resource type="PackedScene" uid="uid://dgtchwtkoa68j" path="res://particles/rain/rain.tscn" id="2_kp7wo"]
+
+[node name="OverlayParticles" type="Node2D" node_paths=PackedStringArray("PARTICLES")]
+script = ExtResource("1_123qy")
+PARTICLES = [null, NodePath("Rain"), null, null]
+
+[node name="Rain" parent="." instance=ExtResource("2_kp7wo")]
+position = Vector2(0, -576)
+emitting = false
+preprocess = 0.5
+initial_velocity_max = 2500.0

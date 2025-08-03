@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=4 uid="uid://df0v2abqki1gm"]
+[gd_scene load_steps=5 format=4 uid="uid://df0v2abqki1gm"]
 
 [ext_resource type="PackedScene" uid="uid://bwgimqktwg1dp" path="res://levels/level.tscn" id="1_dtuyd"]
 [ext_resource type="PackedScene" uid="uid://cgweq44ec2mce" path="res://gameplay_elements/letter/letter.tscn" id="2_lpp0i"]
 [ext_resource type="PackedScene" uid="uid://c4e4u1228hili" path="res://gameplay_elements/monster_slow_zone/monster_slow_zone.tscn" id="3_lpp0i"]
+[ext_resource type="PackedScene" uid="uid://buxgxciwhv2ht" path="res://particles/secret_room/secret_room.tscn" id="4_6lyhn"]
 
 [node name="Level" instance=ExtResource("1_dtuyd")]
 
@@ -14,3 +15,6 @@ position = Vector2(1632, 480)
 
 [node name="MonsterSlowZone" parent="." index="3" instance=ExtResource("3_lpp0i")]
 position = Vector2(1630, 517)
+
+[node name="SecretRoomParticle" parent="." index="4" instance=ExtResource("4_6lyhn")]
+position = Vector2(1417, 608)

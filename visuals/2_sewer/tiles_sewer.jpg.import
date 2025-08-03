@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d53iyq4dn4r5"
-path="res://.godot/imported/blocks.jpg-cf1861bd48faf68df90b06d516e17134.ctex"
+path="res://.godot/imported/tiles_sewer.jpg-95f5b4e792429ee129418558a5f0df35.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://visuals/blocks.jpg"
-dest_files=["res://.godot/imported/blocks.jpg-cf1861bd48faf68df90b06d516e17134.ctex"]
+source_file="res://visuals/2_sewer/tiles_sewer.jpg"
+dest_files=["res://.godot/imported/tiles_sewer.jpg-95f5b4e792429ee129418558a5f0df35.ctex"]
 
 [params]
 

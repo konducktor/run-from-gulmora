@@ -63,6 +63,7 @@ POOPOO = NodePath("AudioStreamPlayer")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("3_t3h4q")
+bus = &"SFX"
 
 [node name="StartTimer" type="Timer" parent="."]
 wait_time = 0.5
