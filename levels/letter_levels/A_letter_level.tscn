@@ -18,7 +18,7 @@ position = Vector2(1632, 480)
 position = Vector2(1630, 517)
 
 [node name="SecretRoomParticle" parent="." index="4" instance=ExtResource("4_6lyhn")]
-position = Vector2(1417, 608)
+position = Vector2(1408, 608)
 
 [node name="Chain" type="Sprite2D" parent="Deco" index="0"]
 position = Vector2(1376, 788)

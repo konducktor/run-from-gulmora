@@ -105,16 +105,13 @@ func generate_next_level(custom_level: PackedScene = null) -> Level:
 	
 	if custom_level:
 		next_level = custom_level
-		print('custom_level')
 	elif (
 		GlobalValues.is_generating_letter_levels and
 		(current_level_index % LEVELS_IN_LAYER) == letter_level_index_in_layer
 	):
-		print('current_letter_level')
 		next_level = current_letter_level
 		layer_levels_generated += 1
 	else:
-		print('pick_level_from_level_array(level_array)')
 		next_level = pick_level_from_level_array(level_array)
 		layer_levels_generated += 1
 	

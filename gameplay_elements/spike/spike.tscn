@@ -28,7 +28,7 @@ script = ExtResource("3_b3f1o")
 ASSETS = Array[Texture2D]([ExtResource("2_d7nel"), ExtResource("4_tcgug")])
 
 [node name="CollisionShape2D" parent="." index="2"]
-position = Vector2(0, 15)
+position = Vector2(0, 18)
 shape = SubResource("CircleShape2D_d7nel")
 
 [connection signal="body_entered" from="." to="Sounds" method="_on_danger_body_entered"]
