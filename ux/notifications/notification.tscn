@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://trp1q0aft7pi"]
 
-[ext_resource type="Script" uid="uid://bee6srjhmvano" path="res://notifications.gd" id="1_4mc8c"]
+[ext_resource type="Script" uid="uid://bee6srjhmvano" path="res://ux/notifications/notifications.gd" id="1_4mc8c"]
 [ext_resource type="Texture2D" uid="uid://d3lgjcm3skny8" path="res://ux/notifications/art/notification_overlay_back.png" id="2_2jkjs"]
 [ext_resource type="FontFile" uid="uid://di04vknxmp46b" path="res://ux/Daneehand Regular Cyr.ttf" id="2_i1nkq"]
 [ext_resource type="Script" uid="uid://cenyx3e5aam5u" path="res://ux/notifications/sfx/notification_sounds.gd" id="3_2jkjs"]

@@ -38,7 +38,7 @@ func _on_letter_collected() -> void:
 		'L O O P',
 	]
 	
-	notify(texts[letters_collected])
+	notify(texts[letters_collected % len(texts)])
 	letters_collected += 1
 
 
