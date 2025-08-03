@@ -106,7 +106,7 @@ _data = {
 &"collected": SubResource("Animation_hbmmt")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_hxa6d"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_a2bqv"]
 radius = 128.0
 
 [node name="Letter" type="Area2D" node_paths=PackedStringArray("collison_shape", "sprite") groups=["Letter"]]
@@ -144,7 +144,7 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_hxa6d")
+shape = SubResource("CircleShape2D_a2bqv")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="." to="Sounds" method="_on_letter_body_entered"]
