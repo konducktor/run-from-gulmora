@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsx61sp54i8br"]
+
+[ext_resource type="Texture2D" uid="uid://blgydpdqygmfw" path="res://particles/art/circle_particle_tiny.png" id="1_8qalj"]
+
+[sub_resource type="Gradient" id="Gradient_igr1q"]
+colors = PackedColorArray(0, 0, 0, 1, 0.288518, 0.288518, 0.288518, 0)
+
+[node name="particle_pipe" type="CPUParticles2D"]
+amount = 10
+texture = ExtResource("1_8qalj")
+explosiveness = 0.8
+emission_shape = 3
+emission_rect_extents = Vector2(3, 5)
+gravity = Vector2(50, 0)
+scale_amount_min = 0.3
+scale_amount_max = 0.6
+color_ramp = SubResource("Gradient_igr1q")
