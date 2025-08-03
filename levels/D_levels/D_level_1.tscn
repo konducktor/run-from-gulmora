@@ -23,12 +23,3 @@ tile_map_data = PackedByteArray("AAAAAAAABgAAAAAAAAAAAAEABgAAAAEAAAAAAAIABgAAAAE
 [node name="Lines" type="Sprite2D" parent="." index="5"]
 position = Vector2(1028, 317)
 texture = ExtResource("3_mff0i")
-
-[connection signal="body_entered" from="Tiles/Danger" to="Tiles/Danger" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/Danger" to="Tiles/Danger/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@38933" to="Tiles/@Area2D@38933" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@38933" to="Tiles/@Area2D@38933/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@38945" to="Tiles/@Area2D@38945" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@38945" to="Tiles/@Area2D@38945/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@38950" to="Tiles/@Area2D@38950" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@38950" to="Tiles/@Area2D@38950/Sounds" method="_on_danger_body_entered"]

@@ -12,14 +12,3 @@ tile_map_data = PackedByteArray("AAAAAAAABgAAAAAAAAAAAAEABgAAAAEAAAAAAAIABgAAAAE
 position = Vector2(528, 565)
 rotation = -1.57079
 texture = ExtResource("2_u4huo")
-
-[connection signal="body_entered" from="Tiles/Danger" to="Tiles/Danger" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/Danger" to="Tiles/Danger/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@96166" to="Tiles/@Area2D@96166" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@96166" to="Tiles/@Area2D@96166/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/Spring" to="Tiles/Spring" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/Spring" to="Tiles/Spring/Sounds" method="_on_spring_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@96170" to="Tiles/@Area2D@96170" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@96170" to="Tiles/@Area2D@96170/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@96171" to="Tiles/@Area2D@96171" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@96171" to="Tiles/@Area2D@96171/Sounds" method="_on_danger_body_entered"]

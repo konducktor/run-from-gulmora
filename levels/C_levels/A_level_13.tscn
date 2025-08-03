@@ -27,14 +27,3 @@ texture = ExtResource("4_0oji3")
 position = Vector2(1215, 670)
 texture = ExtResource("4_0oji3")
 flip_h = true
-
-[connection signal="body_entered" from="Tiles/Spring" to="Tiles/Spring" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/Spring" to="Tiles/Spring/Sounds" method="_on_spring_body_entered"]
-[connection signal="body_entered" from="Tiles/Danger" to="Tiles/Danger" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/Danger" to="Tiles/Danger/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@97003" to="Tiles/@Area2D@97003" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@97003" to="Tiles/@Area2D@97003/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@97004" to="Tiles/@Area2D@97004" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@97004" to="Tiles/@Area2D@97004/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@97005" to="Tiles/@Area2D@97005" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@97005" to="Tiles/@Area2D@97005/Sounds" method="_on_danger_body_entered"]

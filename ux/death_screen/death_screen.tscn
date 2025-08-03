@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ceblj6gvvm5c0"]
+[gd_scene load_steps=13 format=3 uid="uid://ceblj6gvvm5c0"]
 
 [ext_resource type="Script" uid="uid://gxas6eq2ddoo" path="res://ux/death_screen/death_screen.gd" id="1_gsorh"]
 [ext_resource type="FontFile" uid="uid://di04vknxmp46b" path="res://ux/Daneehand Regular Cyr.ttf" id="1_ogq5k"]
@@ -7,38 +7,19 @@
 [ext_resource type="AudioStream" uid="uid://buws42cvlokgi" path="res://ux/death_screen/sfx/game_over.ogg" id="3_t3h4q"]
 [ext_resource type="Script" uid="uid://c7emvdhw4lsay" path="res://ux/death_screen/random_death_messages.gd" id="3_x4gom"]
 [ext_resource type="Texture2D" uid="uid://bothqswtfiq41" path="res://ux/death_screen/art/asset.png" id="5_66ltg"]
+[ext_resource type="Texture2D" uid="uid://65p641x8c6w1" path="res://ux/main_menu/button.png" id="7_3rolg"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_glyeq"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xjv7j"]
+texture = ExtResource("7_3rolg")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gsorh"]
-bg_color = Color(0.843184, 0.843184, 0.843184, 1)
-corner_radius_top_left = 32
-corner_radius_top_right = 32
-corner_radius_bottom_right = 32
-corner_radius_bottom_left = 32
-shadow_color = Color(0.205117, 0.205117, 0.205117, 0.6)
-shadow_size = 5
-shadow_offset = Vector2(0, 2.335)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_134l7"]
+texture = ExtResource("7_3rolg")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4gom"]
-bg_color = Color(0.625597, 0.625597, 0.625597, 1)
-corner_radius_top_left = 32
-corner_radius_top_right = 32
-corner_radius_bottom_right = 32
-corner_radius_bottom_left = 32
-shadow_color = Color(0.205117, 0.205117, 0.205117, 0.6)
-shadow_size = 5
-shadow_offset = Vector2(0, 2.335)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mpxhx"]
+texture = ExtResource("7_3rolg")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_66ltg"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 32
-corner_radius_top_right = 32
-corner_radius_bottom_right = 32
-corner_radius_bottom_left = 32
-shadow_color = Color(0.205117, 0.205117, 0.205117, 0.6)
-shadow_size = 5
-shadow_offset = Vector2(0, 2.335)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wnf02"]
+texture = ExtResource("7_3rolg")
 
 [node name="DeathScreen" type="Control" node_paths=PackedStringArray("START_TIMER", "SOUNDS", "METERS_LABEL", "TIME_LABEL")]
 layout_mode = 3
@@ -145,10 +126,10 @@ layout_mode = 2
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 96.0
-offset_top = -160.0
-offset_right = -96.0
-offset_bottom = -64.0
+offset_left = 17.0
+offset_top = -177.0
+offset_right = -16.0
+offset_bottom = -47.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
@@ -158,10 +139,10 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_ogq5k")
 theme_override_font_sizes/font_size = 80
-theme_override_styles/focus = SubResource("StyleBoxEmpty_glyeq")
-theme_override_styles/hover = SubResource("StyleBoxFlat_gsorh")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_x4gom")
-theme_override_styles/normal = SubResource("StyleBoxFlat_66ltg")
+theme_override_styles/focus = SubResource("StyleBoxTexture_xjv7j")
+theme_override_styles/hover = SubResource("StyleBoxTexture_134l7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mpxhx")
+theme_override_styles/normal = SubResource("StyleBoxTexture_wnf02")
 text = "Restart [R]
 "
 script = ExtResource("2_glyeq")

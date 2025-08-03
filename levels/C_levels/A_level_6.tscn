@@ -21,16 +21,3 @@ texture = ExtResource("3_lsgqd")
 [node name="Leans" type="Sprite2D" parent="Deco" index="1"]
 position = Vector2(1051, 598)
 texture = ExtResource("4_02831")
-
-[connection signal="body_entered" from="Tiles/Danger" to="Tiles/Danger" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/Danger" to="Tiles/Danger/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@89843" to="Tiles/@Area2D@89843" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@89843" to="Tiles/@Area2D@89843/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@89844" to="Tiles/@Area2D@89844" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@89844" to="Tiles/@Area2D@89844/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@89845" to="Tiles/@Area2D@89845" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@89845" to="Tiles/@Area2D@89845/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@89846" to="Tiles/@Area2D@89846" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@89846" to="Tiles/@Area2D@89846/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@89847" to="Tiles/@Area2D@89847" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@89847" to="Tiles/@Area2D@89847/Sounds" method="_on_danger_body_entered"]

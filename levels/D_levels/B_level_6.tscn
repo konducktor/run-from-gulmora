@@ -13,20 +13,3 @@ position = Vector2(796, 422)
 rotation = 0.653672
 scale = Vector2(1, 1.25403)
 texture = ExtResource("2_jc2e0")
-
-[connection signal="body_entered" from="Tiles/Danger" to="Tiles/Danger" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/Danger" to="Tiles/Danger/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@41593" to="Tiles/@Area2D@41593" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@41593" to="Tiles/@Area2D@41593/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@41594" to="Tiles/@Area2D@41594" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@41594" to="Tiles/@Area2D@41594/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@41595" to="Tiles/@Area2D@41595" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@41595" to="Tiles/@Area2D@41595/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@41605" to="Tiles/@Area2D@41605" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@41605" to="Tiles/@Area2D@41605/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@41606" to="Tiles/@Area2D@41606" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@41606" to="Tiles/@Area2D@41606/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@41607" to="Tiles/@Area2D@41607" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@41607" to="Tiles/@Area2D@41607/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@41608" to="Tiles/@Area2D@41608" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@41608" to="Tiles/@Area2D@41608/Sounds" method="_on_danger_body_entered"]

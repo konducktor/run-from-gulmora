@@ -15,10 +15,3 @@ tile_map_data = PackedByteArray("AAAAAAAABgAAAAEAAAAAAAEABgAAAAAAAAAAAAIABgAAAAA
 [node name="Leans" type="Sprite2D" parent="." index="4"]
 position = Vector2(1376, 512)
 texture = ExtResource("3_t5f8j")
-
-[connection signal="activated" from="Tiles/Spring" to="Tiles/Spring/Visual" method="_on_spring_activated"]
-[connection signal="body_entered" from="Tiles/Spring" to="Tiles/Spring" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/Spring" to="Tiles/Spring/Sounds" method="_on_spring_body_entered"]
-[connection signal="activated" from="Tiles/@Area2D@23920" to="Tiles/@Area2D@23920/Visual" method="_on_spring_activated"]
-[connection signal="body_entered" from="Tiles/@Area2D@23920" to="Tiles/@Area2D@23920" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@23920" to="Tiles/@Area2D@23920/Sounds" method="_on_spring_body_entered"]

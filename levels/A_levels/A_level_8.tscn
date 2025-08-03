@@ -12,6 +12,3 @@ tile_map_data = PackedByteArray("AAAAAAAAAwABAAEAAAAAAAEAAwABAAEAAAAAAAIAAwABAAE
 position = Vector2(620, 469)
 rotation = -0.0216656
 texture = ExtResource("2_st800")
-
-[connection signal="body_entered" from="Tiles/Spring" to="Tiles/Spring" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/Spring" to="Tiles/Spring/Sounds" method="_on_spring_body_entered"]

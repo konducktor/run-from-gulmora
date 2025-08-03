@@ -12,8 +12,3 @@ tile_map_data = PackedByteArray("AAAAAAAAAwABAAEAAAAAAAEAAwABAAEAAAAAAAIAAwABAAE
 position = Vector2(920, 520)
 rotation = 1.8326
 texture = ExtResource("2_q22gc")
-
-[connection signal="body_entered" from="Tiles/Danger" to="Tiles/Danger" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/Danger" to="Tiles/Danger/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@89271" to="Tiles/@Area2D@89271" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@89271" to="Tiles/@Area2D@89271/Sounds" method="_on_danger_body_entered"]

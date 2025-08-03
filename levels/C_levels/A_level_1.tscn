@@ -11,22 +11,3 @@ tile_map_data = PackedByteArray("AAAAAAAABgAAAAEAAAAAAAEABgAAAAAAAAAAAAIABgAAAAE
 [node name="Leans" type="Sprite2D" parent="Deco" index="0"]
 position = Vector2(1312, 512)
 texture = ExtResource("2_118l1")
-
-[connection signal="body_entered" from="Tiles/Spring" to="Tiles/Spring" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/Spring" to="Tiles/Spring/Sounds" method="_on_spring_body_entered"]
-[connection signal="body_entered" from="Tiles/Danger" to="Tiles/Danger" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/Danger" to="Tiles/Danger/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@86018" to="Tiles/@Area2D@86018" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@86018" to="Tiles/@Area2D@86018/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@86019" to="Tiles/@Area2D@86019" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@86019" to="Tiles/@Area2D@86019/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@86022" to="Tiles/@Area2D@86022" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@86022" to="Tiles/@Area2D@86022/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@86023" to="Tiles/@Area2D@86023" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@86023" to="Tiles/@Area2D@86023/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@86024" to="Tiles/@Area2D@86024" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@86024" to="Tiles/@Area2D@86024/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@86025" to="Tiles/@Area2D@86025" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@86025" to="Tiles/@Area2D@86025/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@86026" to="Tiles/@Area2D@86026" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@86026" to="Tiles/@Area2D@86026/Sounds" method="_on_danger_body_entered"]
