@@ -118,6 +118,7 @@ _data = {
 script = ExtResource("1_5uwby")
 AUDIO_PLAYER = NodePath("AudioStreamPlayer")
 ANIMATION_PLAYER = NodePath("AnimationPlayer")
+MAIN_MENU = null
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_s541x")

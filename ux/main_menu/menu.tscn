@@ -51,7 +51,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ouk20")
-gameplay_scene = ExtResource("2_4fcg6")
+gameplay_scene = null
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
