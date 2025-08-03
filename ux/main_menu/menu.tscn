@@ -35,7 +35,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ouk20")
 gameplay_scene = ExtResource("2_4b2jh")
-settings_panel = NodePath("Panel2")
+settings_panel = NodePath("Control/Panel2")
 main_panel = NodePath("Control")
 button_anim_timer = NodePath("ButtonAnimTimer")
 
@@ -78,10 +78,10 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 40.0
-offset_top = 546.0
-offset_right = 644.0
-offset_bottom = 656.0
+offset_left = 121.0
+offset_top = 551.0
+offset_right = 725.0
+offset_bottom = 661.0
 grow_vertical = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -98,121 +98,32 @@ text = "Play
 "
 script = ExtResource("3_m2eq4")
 
-[node name="Settings" type="Button" parent="Control"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 40.0
-offset_top = 707.0
-offset_right = 644.0
-offset_bottom = 817.0
-grow_vertical = 2
-size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_ao3db")
-theme_override_font_sizes/font_size = 80
-theme_override_styles/focus = SubResource("StyleBoxTexture_0j60j")
-theme_override_styles/hover = SubResource("StyleBoxTexture_fi21v")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nmfkd")
-theme_override_styles/normal = SubResource("StyleBoxTexture_myd1k")
-text = "Settings
-"
-script = ExtResource("3_m2eq4")
-
-[node name="Quit" type="Button" parent="Control"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 40.0
-offset_top = 868.0
-offset_right = 644.0
-offset_bottom = 978.0
-grow_vertical = 2
-size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_ao3db")
-theme_override_font_sizes/font_size = 80
-theme_override_styles/focus = SubResource("StyleBoxTexture_0j60j")
-theme_override_styles/hover = SubResource("StyleBoxTexture_fi21v")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nmfkd")
-theme_override_styles/normal = SubResource("StyleBoxTexture_myd1k")
-text = "Quit
-"
-script = ExtResource("3_m2eq4")
-
-[node name="Panel2" type="Panel" parent="."]
+[node name="Panel2" type="Panel" parent="Control"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -256.0
-offset_top = -187.0
-offset_right = 256.0
-offset_bottom = 254.0
+offset_left = 152.0
+offset_top = 694.0
+offset_right = 664.0
+offset_bottom = 950.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Panel2"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 96.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("3_ao3db")
-theme_override_font_sizes/font_size = 50
-text = "Pausing HARD.."
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Settings" parent="Panel2" instance=ExtResource("7_4fcg6")]
+[node name="Settings" parent="Control/Panel2" instance=ExtResource("7_4fcg6")]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0
-anchor_top = 1.0
+anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 64.0
-offset_top = -345.0
+offset_top = 25.0
 offset_right = -64.0
-offset_bottom = -99.0
+offset_bottom = 0.0
 grow_vertical = 0
-
-[node name="Back" type="Button" parent="Panel2"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -238.0
-offset_top = -129.0
-offset_right = 238.0
-offset_bottom = -20.0
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_ao3db")
-theme_override_font_sizes/font_size = 80
-theme_override_styles/focus = SubResource("StyleBoxTexture_0j60j")
-theme_override_styles/hover = SubResource("StyleBoxTexture_fi21v")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nmfkd")
-theme_override_styles/normal = SubResource("StyleBoxTexture_myd1k")
-text = "Back"
-script = ExtResource("3_m2eq4")
 
 [node name="Name" type="Label" parent="."]
 visible = false
@@ -270,6 +181,3 @@ wait_time = 0.16
 
 [connection signal="pressed" from="GMTKLogo" to="." method="_on_gmtk_logo_pressed"]
 [connection signal="pressed" from="Control/Play" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Control/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="Control/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="Panel2/Back" to="." method="_on_settings_back_pressed"]

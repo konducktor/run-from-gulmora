@@ -1,5 +1,6 @@
 extends Node2D
 
+@export var LINK: String
 
 @export var AUDIO_PLAYER : AudioStreamPlayer
 @export var ANIMATION_PLAYER : AnimationPlayer
@@ -9,6 +10,10 @@ extends Node2D
 func _ready() -> void:
 	AUDIO_PLAYER.play()
 	ANIMATION_PLAYER.play("credits")
+	
+	await ANIMATION_PLAYER.animation_finished
+	
+	OS.shell_open(LINK)
 
 
 func _on_menu_pressed() -> void:
