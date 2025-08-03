@@ -2,6 +2,9 @@ extends Area2D
 class_name Letter
 
 
+signal collected
+
+
 @export var letter_textures : Array[Texture2D]
 
 @export_group("References")
@@ -26,6 +29,6 @@ func _on_body_entered(body: Node2D) -> void:
 		return
 	
 	collison_shape.set_deferred('disabled', true)
-	sprite.visible = false
 	
-	GlobalSignals.letter_collected.emit()
+	body.hyped.emit()
+	collected.emit()

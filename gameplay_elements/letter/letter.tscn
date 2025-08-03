@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cgweq44ec2mce"]
+[gd_scene load_steps=17 format=3 uid="uid://cgweq44ec2mce"]
 
 [ext_resource type="Texture2D" uid="uid://c64etftqqhbyj" path="res://gameplay_elements/letter/art/L.png" id="1_edkgh"]
 [ext_resource type="Script" uid="uid://bewkgt0sd4i2h" path="res://gameplay_elements/letter/letter.gd" id="1_hxa6d"]
@@ -6,6 +6,105 @@
 [ext_resource type="Texture2D" uid="uid://dxbclix2yeism" path="res://gameplay_elements/letter/art/P.png" id="4_vrgli"]
 [ext_resource type="Script" uid="uid://518g8mvrc4m0" path="res://gameplay_elements/letter/sfx/letter_sounds.gd" id="5_xw0v6"]
 [ext_resource type="AudioStream" uid="uid://c1n2nuhgflr5u" path="res://gameplay_elements/letter/sfx/letter_collect.ogg" id="6_riiat"]
+[ext_resource type="Script" uid="uid://btu6sif17sjfg" path="res://gameplay_elements/letter/letter_visual.gd" id="7_riiat"]
+[ext_resource type="Texture2D" uid="uid://d01afj2sqsycc" path="res://gameplay_elements/letter/art/lettersplash.png" id="8_a2bqv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_irjop"]
+atlas = ExtResource("8_a2bqv")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnqqp"]
+atlas = ExtResource("8_a2bqv")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wld4g"]
+atlas = ExtResource("8_a2bqv")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u0h2t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_irjop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fnqqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wld4g")
+}],
+"loop": false,
+"name": &"collected",
+"speed": 9.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"main",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_a2bqv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visual/Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_hbmmt"]
+resource_name = "collected"
+length = 1.5
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visual/Backdrop")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"collected"],
+"method": &"play"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visual/Sprite2D:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.8, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visual/Backdrop:scale")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.8, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.5, 1.5), Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hrfwh"]
+_data = {
+&"RESET": SubResource("Animation_a2bqv"),
+&"collected": SubResource("Animation_hbmmt")
+}
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hxa6d"]
 radius = 31.7805
@@ -14,7 +113,7 @@ radius = 31.7805
 script = ExtResource("1_hxa6d")
 letter_textures = Array[Texture2D]([ExtResource("1_edkgh"), ExtResource("3_b5b0c"), ExtResource("3_b5b0c"), ExtResource("4_vrgli")])
 collison_shape = NodePath("CollisionShape2D")
-sprite = NodePath("Sprite2D")
+sprite = NodePath("Visual/Sprite2D")
 
 [node name="Sounds" type="Node" parent="." node_paths=PackedStringArray("COLLECT")]
 script = ExtResource("5_xw0v6")
@@ -23,11 +122,29 @@ COLLECT = NodePath("AudioStreamPlayer")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("6_riiat")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Visual" type="Node2D" parent="." node_paths=PackedStringArray("ANIMATION_PLAYER", "BACKDROP")]
+script = ExtResource("7_riiat")
+ANIMATION_PLAYER = NodePath("AnimationPlayer")
+BACKDROP = NodePath("Backdrop")
+
+[node name="Backdrop" type="AnimatedSprite2D" parent="Visual"]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_u0h2t")
+animation = &"main"
+autoplay = "main"
+
+[node name="Sprite2D" type="Sprite2D" parent="Visual"]
 texture = ExtResource("1_edkgh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Visual"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_hrfwh")
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_hxa6d")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="." to="Sounds" method="_on_letter_body_entered"]
+[connection signal="collected" from="." to="Visual" method="_on_letter_collected"]

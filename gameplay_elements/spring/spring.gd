@@ -12,3 +12,5 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	body.position += PLAYER_START_OFFSET
 	body.velocity.y = STRING_STRENGTH * (-1.0)
+	
+	body.jumped.emit()

@@ -18,7 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalSignals="*res://global/global_signals.gd"
-GlobalValues="*res://global/global_values.gd"
+GlobalValues="*res://gameplay_elements/letter/sfx/global_values.gd"
 
 [debug]
 

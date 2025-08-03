@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://uos88rcjypfn"]
+[gd_scene load_steps=32 format=3 uid="uid://uos88rcjypfn"]
 
 [ext_resource type="Script" uid="uid://dga84sgb8gjup" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Script" uid="uid://baxjv5p6gbkoa" path="res://player/player_animation.gd" id="2_g1dw6"]
@@ -19,6 +19,22 @@ region = Rect2(2176, 0, 128, 128)
 [sub_resource type="AtlasTexture" id="AtlasTexture_g6k8r"]
 atlas = ExtResource("4_yw30f")
 region = Rect2(2048, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7qer"]
+atlas = ExtResource("4_yw30f")
+region = Rect2(2304, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4c7l"]
+atlas = ExtResource("4_yw30f")
+region = Rect2(2432, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_knn7v"]
+atlas = ExtResource("4_yw30f")
+region = Rect2(2560, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pqkx"]
+atlas = ExtResource("4_yw30f")
+region = Rect2(2688, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_boad6"]
 atlas = ExtResource("4_yw30f")
@@ -100,6 +116,23 @@ animations = [{
 }],
 "loop": true,
 "name": &"fall",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7qer")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4c7l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_knn7v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7pqkx")
+}],
+"loop": true,
+"name": &"hyped",
 "speed": 12.0
 }, {
 "frames": [{
@@ -222,12 +255,13 @@ PLAYER = NodePath("..")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals"]
 sprite_frames = SubResource("SpriteFrames_x7c3f")
-animation = &"idle_1"
+animation = &"walking"
 autoplay = "idle_1"
 
 [connection signal="fall" from="." to="Sounds" method="_on_player_fall"]
 [connection signal="falling" from="." to="Sounds" method="_on_player_falling"]
 [connection signal="falling" from="." to="Visuals" method="_on_player_falling"]
+[connection signal="hyped" from="." to="Visuals" method="_on_player_hyped"]
 [connection signal="idle" from="." to="Sounds" method="_on_player_idle"]
 [connection signal="idle" from="." to="Visuals" method="_on_player_idle"]
 [connection signal="jumped" from="." to="Sounds" method="_on_player_jumped"]

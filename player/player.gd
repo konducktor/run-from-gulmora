@@ -8,6 +8,9 @@ signal fall
 signal idle
 signal walking
 
+signal hyped
+
+
 @export_group('Balancing')
 @export var PLAYER_SPEED : float
 
