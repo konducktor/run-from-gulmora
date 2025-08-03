@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c51ls85x7kc4n"
-path="res://.godot/imported/leans.png-c51003421ec22717b52c2dd667302b04.ctex"
+uid="uid://bcmhgrrgt5cei"
+path="res://.godot/imported/chain-2.png-3326be477c876dcd919370649b6505ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://visuals/extra/deco/leans.png"
-dest_files=["res://.godot/imported/leans.png-c51003421ec22717b52c2dd667302b04.ctex"]
+source_file="res://visuals/1_hell/chain-2.png"
+dest_files=["res://.godot/imported/chain-2.png-3326be477c876dcd919370649b6505ab.ctex"]
 
 [params]
 

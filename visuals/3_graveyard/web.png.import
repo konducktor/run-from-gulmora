@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drw3j4bfy2xqp"
-path="res://.godot/imported/chain.png-9bf1731097d0d808dff15e143abae266.ctex"
+uid="uid://bbbqjls4jbo7i"
+path="res://.godot/imported/web.png-dfbd4638aec127280070c99101a6d48e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://visuals/extra/deco/chain.png"
-dest_files=["res://.godot/imported/chain.png-9bf1731097d0d808dff15e143abae266.ctex"]
+source_file="res://visuals/3_graveyard/web.png"
+dest_files=["res://.godot/imported/web.png-dfbd4638aec127280070c99101a6d48e.ctex"]
 
 [params]
 

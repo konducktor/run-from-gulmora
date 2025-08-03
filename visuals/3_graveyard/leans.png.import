@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbbqjls4jbo7i"
-path="res://.godot/imported/web.png-c45f6f788d5846df5c6f3070a8cc4822.ctex"
+uid="uid://c51ls85x7kc4n"
+path="res://.godot/imported/leans.png-1582aafc8c8f5f5b975265359f7206eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://visuals/extra/deco/web.png"
-dest_files=["res://.godot/imported/web.png-c45f6f788d5846df5c6f3070a8cc4822.ctex"]
+source_file="res://visuals/3_graveyard/leans.png"
+dest_files=["res://.godot/imported/leans.png-1582aafc8c8f5f5b975265359f7206eb.ctex"]
 
 [params]
 

@@ -23,4 +23,6 @@ position = Vector2(960, 1056)
 shape = SubResource("RectangleShape2D_hjsbj")
 debug_color = Color(0, 0.640942, 0.342146, 0.42)
 
+[node name="Deco" type="CanvasGroup" parent="."]
+
 [connection signal="body_entered" from="NextLevelTrigger" to="." method="_on_next_level_trigger_body_entered"]

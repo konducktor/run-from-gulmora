@@ -1,11 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://ctc6d4ijvr737"]
+[gd_scene load_steps=8 format=3 uid="uid://ctc6d4ijvr737"]
 
 [ext_resource type="Script" uid="uid://0tnja8pg6rbw" path="res://credits/credits.gd" id="1_5uwby"]
-[ext_resource type="PackedScene" uid="uid://oy076h1ap0o0" path="res://ux/main_menu/menu.tscn" id="2_24bn4"]
 [ext_resource type="FontFile" uid="uid://di04vknxmp46b" path="res://ux/Daneehand Regular Cyr.ttf" id="2_o7wt1"]
 [ext_resource type="AudioStream" uid="uid://qgrixw6eshsc" path="res://sounds/music/if i die, please, don`t cry.mp3" id="2_s541x"]
 [ext_resource type="PackedScene" uid="uid://b474styuody33" path="res://credits/credits_person.tscn" id="4_bacv1"]
-[ext_resource type="Script" uid="uid://ctlyrlympirev" path="res://ux/main_menu/menu_button.gd" id="5_24bn4"]
 
 [sub_resource type="Animation" id="Animation_lj7uq"]
 length = 0.001
@@ -109,18 +107,6 @@ tracks/5/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Control/Menu:modulate")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(5, 5.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o7wt1"]
 _data = {
@@ -128,43 +114,10 @@ _data = {
 &"credits": SubResource("Animation_5uwby")
 }
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eo3r1"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1yjav"]
-bg_color = Color(0.843184, 0.843184, 0.843184, 1)
-corner_radius_top_left = 32
-corner_radius_top_right = 32
-corner_radius_bottom_right = 32
-corner_radius_bottom_left = 32
-shadow_color = Color(0.205117, 0.205117, 0.205117, 0.6)
-shadow_size = 5
-shadow_offset = Vector2(0, 2.335)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bvn8s"]
-bg_color = Color(0.625597, 0.625597, 0.625597, 1)
-corner_radius_top_left = 32
-corner_radius_top_right = 32
-corner_radius_bottom_right = 32
-corner_radius_bottom_left = 32
-shadow_color = Color(0.205117, 0.205117, 0.205117, 0.6)
-shadow_size = 5
-shadow_offset = Vector2(0, 2.335)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8fr6"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 32
-corner_radius_top_right = 32
-corner_radius_bottom_right = 32
-corner_radius_bottom_left = 32
-shadow_color = Color(0.205117, 0.205117, 0.205117, 0.6)
-shadow_size = 5
-shadow_offset = Vector2(0, 2.335)
-
 [node name="Credits" type="Node2D" node_paths=PackedStringArray("AUDIO_PLAYER", "ANIMATION_PLAYER")]
 script = ExtResource("1_5uwby")
 AUDIO_PLAYER = NodePath("AudioStreamPlayer")
 ANIMATION_PLAYER = NodePath("AnimationPlayer")
-MAIN_MENU = ExtResource("2_24bn4")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_s541x")
@@ -206,9 +159,9 @@ vertical_alignment = 1
 
 [node name="MadeBy" type="Control" parent="Control"]
 anchors_preset = 0
-offset_top = -19.0
+offset_top = 49.0
 offset_right = 40.0
-offset_bottom = 21.0
+offset_bottom = 89.0
 
 [node name="MadeByLabel" type="Label" parent="Control/MadeBy"]
 modulate = Color(1, 1, 1, 0)
@@ -242,10 +195,19 @@ offset_right = 654.0
 offset_bottom = 345.0
 
 [node name="Label" parent="Control/MadeBy/People/CreditsPerson" index="1"]
-offset_left = -104.0
-offset_top = -36.0
-offset_right = 135.0
-offset_bottom = 69.0
+offset_left = -175.104
+offset_top = -100.909
+offset_right = 63.896
+offset_bottom = 4.09108
+text = "GAMMA"
+
+[node name="Label2" parent="Control/MadeBy/People/CreditsPerson" index="2"]
+offset_left = -174.673
+offset_top = 10.6127
+offset_right = 176.327
+offset_bottom = 143.613
+text = "Game designer,
+sound designer"
 
 [node name="CreditsPerson2" parent="Control/MadeBy/People" instance=ExtResource("4_bacv1")]
 layout_mode = 1
@@ -255,10 +217,18 @@ offset_right = 1323.0
 offset_bottom = 345.0
 
 [node name="Label" parent="Control/MadeBy/People/CreditsPerson2" index="1"]
-offset_left = -104.0
-offset_top = -36.0
-offset_right = 135.0
-offset_bottom = 69.0
+offset_left = -183.466
+offset_top = -70.3975
+offset_right = 211.534
+offset_bottom = 34.6025
+text = "AmongRyzh"
+
+[node name="Label2" parent="Control/MadeBy/People/CreditsPerson2" index="2"]
+offset_left = -183.466
+offset_top = 42.3619
+offset_right = 112.534
+offset_bottom = 147.362
+text = "Level designer"
 
 [node name="CreditsPerson3" parent="Control/MadeBy/People" instance=ExtResource("4_bacv1")]
 layout_mode = 1
@@ -268,10 +238,18 @@ offset_right = 654.0
 offset_bottom = 718.0
 
 [node name="Label" parent="Control/MadeBy/People/CreditsPerson3" index="1"]
-offset_left = -104.0
-offset_top = -36.0
-offset_right = 135.0
-offset_bottom = 69.0
+offset_left = -175.104
+offset_top = -75.9344
+offset_right = 225.896
+offset_bottom = 29.0656
+text = "КОНДУКТОР"
+
+[node name="Label2" parent="Control/MadeBy/People/CreditsPerson3" index="2"]
+offset_left = -175.104
+offset_top = 28.8656
+offset_right = 120.896
+offset_bottom = 133.866
+text = "Programmer"
 
 [node name="CreditsPerson4" parent="Control/MadeBy/People" instance=ExtResource("4_bacv1")]
 layout_mode = 1
@@ -281,40 +259,18 @@ offset_right = 1323.0
 offset_bottom = 718.0
 
 [node name="Label" parent="Control/MadeBy/People/CreditsPerson4" index="1"]
-offset_left = -104.0
-offset_top = -36.0
-offset_right = 135.0
-offset_bottom = 69.0
+offset_left = -183.466
+offset_top = -75.9344
+offset_right = 218.534
+offset_bottom = 29.0656
+text = "Davleeenie"
 
-[node name="Menu" type="Button" parent="Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -285.0
-offset_top = 350.0
-offset_right = 319.0
-offset_bottom = 460.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_o7wt1")
-theme_override_font_sizes/font_size = 80
-theme_override_styles/focus = SubResource("StyleBoxEmpty_eo3r1")
-theme_override_styles/hover = SubResource("StyleBoxFlat_1yjav")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_bvn8s")
-theme_override_styles/normal = SubResource("StyleBoxFlat_t8fr6")
-text = "Back to menu
-"
-script = ExtResource("5_24bn4")
-
-[connection signal="pressed" from="Control/Menu" to="." method="_on_menu_pressed"]
+[node name="Label2" parent="Control/MadeBy/People/CreditsPerson4" index="2"]
+offset_left = -183.466
+offset_top = 28.8656
+offset_right = 112.534
+offset_bottom = 133.866
+text = "Artist"
 
 [editable path="Control/MadeBy/People/CreditsPerson"]
 [editable path="Control/MadeBy/People/CreditsPerson2"]
