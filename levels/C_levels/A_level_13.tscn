@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=4 uid="uid://bwko81p5rcgy1"]
+[gd_scene load_steps=5 format=4 uid="uid://bwko81p5rcgy1"]
 
 [ext_resource type="PackedScene" uid="uid://bwgimqktwg1dp" path="res://levels/level.tscn" id="1_qo2ew"]
+[ext_resource type="Texture2D" uid="uid://bbbqjls4jbo7i" path="res://visuals/3_graveyard/web.png" id="3_364d6"]
 [ext_resource type="PackedScene" uid="uid://di1tbxrtr3467" path="res://gameplay_elements/ghost/ghost.tscn" id="3_exr0h"]
+[ext_resource type="Texture2D" uid="uid://c51ls85x7kc4n" path="res://visuals/3_graveyard/leans.png" id="4_0oji3"]
 
 [node name="Level" instance=ExtResource("1_qo2ew")]
 
@@ -11,3 +13,28 @@ tile_map_data = PackedByteArray("AAAAAAAABgAAAAEAAAAAAAEABgAAAAEAAAAAAAIABgAAAAE
 [node name="Ghost" parent="." index="1" instance=ExtResource("3_exr0h")]
 position = Vector2(1312, 416)
 ANGER_RANGE = 500.0
+
+[node name="Web" type="Sprite2D" parent="Deco" index="0"]
+position = Vector2(562, 238)
+rotation = -1.30968
+texture = ExtResource("3_364d6")
+
+[node name="Leans" type="Sprite2D" parent="Deco" index="1"]
+position = Vector2(1184, 736)
+texture = ExtResource("4_0oji3")
+
+[node name="Leans2" type="Sprite2D" parent="Deco" index="2"]
+position = Vector2(1215, 670)
+texture = ExtResource("4_0oji3")
+flip_h = true
+
+[connection signal="body_entered" from="Tiles/Spring" to="Tiles/Spring" method="_on_body_entered"]
+[connection signal="body_entered" from="Tiles/Spring" to="Tiles/Spring/Sounds" method="_on_spring_body_entered"]
+[connection signal="body_entered" from="Tiles/Danger" to="Tiles/Danger" method="_on_body_entered"]
+[connection signal="body_entered" from="Tiles/Danger" to="Tiles/Danger/Sounds" method="_on_danger_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@97003" to="Tiles/@Area2D@97003" method="_on_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@97003" to="Tiles/@Area2D@97003/Sounds" method="_on_danger_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@97004" to="Tiles/@Area2D@97004" method="_on_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@97004" to="Tiles/@Area2D@97004/Sounds" method="_on_danger_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@97005" to="Tiles/@Area2D@97005" method="_on_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@97005" to="Tiles/@Area2D@97005/Sounds" method="_on_danger_body_entered"]

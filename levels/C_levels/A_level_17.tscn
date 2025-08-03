@@ -15,3 +15,12 @@ ANGER_RANGE = 700.0
 [node name="Ghost2" parent="." index="2" instance=ExtResource("2_00i4k")]
 position = Vector2(1312, 190)
 ANGER_RANGE = 700.0
+
+[connection signal="body_entered" from="Tiles/Danger" to="Tiles/Danger" method="_on_body_entered"]
+[connection signal="body_entered" from="Tiles/Danger" to="Tiles/Danger/Sounds" method="_on_danger_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@100235" to="Tiles/@Area2D@100235" method="_on_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@100235" to="Tiles/@Area2D@100235/Sounds" method="_on_danger_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@100236" to="Tiles/@Area2D@100236" method="_on_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@100236" to="Tiles/@Area2D@100236/Sounds" method="_on_danger_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@100237" to="Tiles/@Area2D@100237" method="_on_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@100237" to="Tiles/@Area2D@100237/Sounds" method="_on_danger_body_entered"]

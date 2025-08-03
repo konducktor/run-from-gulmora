@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=4 uid="uid://dfncmlf12cjkr"]
+[gd_scene load_steps=5 format=4 uid="uid://dfncmlf12cjkr"]
 
 [ext_resource type="PackedScene" uid="uid://bwgimqktwg1dp" path="res://levels/level.tscn" id="1_nqytj"]
 [ext_resource type="PackedScene" uid="uid://dxayu1wpok0d0" path="res://gameplay_elements/pipe/pipe.tscn" id="3_8rgau"]
 [ext_resource type="PackedScene" uid="uid://eurxn62028bp" path="res://gameplay_elements/spike/spike.tscn" id="4_1k0th"]
+[ext_resource type="Texture2D" uid="uid://bgmiqx7yoxhlc" path="res://visuals/2_sewer/trash.png" id="4_nqytj"]
 
 [node name="Level" instance=ExtResource("1_nqytj")]
 
@@ -66,3 +67,11 @@ rotation = -1.5708
 [node name="Danger12" parent="." index="15" instance=ExtResource("4_1k0th")]
 position = Vector2(930, 289)
 rotation = -1.5708
+
+[node name="Trash" type="Sprite2D" parent="Deco" index="0"]
+position = Vector2(1023, 622)
+texture = ExtResource("4_nqytj")
+
+[node name="Trash2" type="Sprite2D" parent="Deco" index="1"]
+position = Vector2(878, 303)
+texture = ExtResource("4_nqytj")

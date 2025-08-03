@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=4 uid="uid://dohsqupi45knq"]
+[gd_scene load_steps=4 format=4 uid="uid://dohsqupi45knq"]
 
 [ext_resource type="PackedScene" uid="uid://bwgimqktwg1dp" path="res://levels/level.tscn" id="1_c4g2u"]
 [ext_resource type="PackedScene" uid="uid://di1tbxrtr3467" path="res://gameplay_elements/ghost/ghost.tscn" id="2_wpdxo"]
+[ext_resource type="Texture2D" uid="uid://c51ls85x7kc4n" path="res://visuals/3_graveyard/leans.png" id="3_wpdxo"]
 
 [node name="Level" instance=ExtResource("1_c4g2u")]
 
@@ -11,3 +12,11 @@ tile_map_data = PackedByteArray("AAAAAAAABgAAAAEAAAAAAAEABgAAAAEAAAAAAAIABgAAAAE
 [node name="Ghost" parent="." index="1" instance=ExtResource("2_wpdxo")]
 position = Vector2(608, 207)
 ANGER_RANGE = 500.0
+
+[node name="Leans" type="Sprite2D" parent="Deco" index="0"]
+position = Vector2(928, 352)
+texture = ExtResource("3_wpdxo")
+
+[node name="Leans" type="Sprite2D" parent="." index="4"]
+position = Vector2(979, 930)
+texture = ExtResource("3_wpdxo")
