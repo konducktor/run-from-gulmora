@@ -36,6 +36,7 @@ func _ready() -> void:
 	GlobalSignals.final_level_reached.connect(_on_final_level_reached)
 	GlobalSignals.player_died.connect(_on_player_death)
 	GlobalSignals.tutorial_finished.connect(_on_tutorial_finished)
+	GlobalSignals.new_lap_started.connect(_on_new_lap_started)
 
 
 func _physics_process(delta: float) -> void:
@@ -84,3 +85,7 @@ func _on_final_level_reached() -> void:
 
 func _on_player_death() -> void:
 	new_speed_state(SPEED_STATES.BACK)
+
+func _on_new_lap_started() -> void:
+	NORMAL_SPEED += 50.0
+	new_speed_state(SPEED_STATES.NORMAL)

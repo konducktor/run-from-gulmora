@@ -9,10 +9,12 @@ signal notified
 @export var SOUNDS : NotificationSounds
 
 var letters_collected : int
+var laps : int
 
 
 func _ready() -> void:
 	letters_collected = 0
+	laps = 0
 	
 	GlobalSignals.tutorial_finished.connect(_on_tutorial_finished)
 	GlobalSignals.new_layer_reached.connect(_on_new_layer_reached)
@@ -27,8 +29,18 @@ func _on_tutorial_finished() -> void:
 func _on_new_layer_reached(_layer: int) -> void:
 	notify("New layer reached!")
 
+
+
 func _on_new_lap_started() -> void:
-	pass
+	var texts = [
+		'Gulmora is Angry..',
+		'Gulmora is VERY ANGRY',
+		'GULMORA IS FURIOUS',
+	]
+	
+	SOUNDS.monster()
+	notify(texts[min(laps, len(texts)-1)])
+	laps += 1
 
 func _on_letter_collected() -> void:
 	var texts = [
@@ -38,7 +50,7 @@ func _on_letter_collected() -> void:
 		'L O O P',
 	]
 	
-	notify(texts[letters_collected % len(texts)])
+	notify(texts[min(letters_collected, len(texts)-1)])
 	letters_collected += 1
 
 
