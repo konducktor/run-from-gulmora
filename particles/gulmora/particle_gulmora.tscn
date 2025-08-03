@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dy8p6cvgyacek"]
+
+[ext_resource type="Texture2D" uid="uid://jw3p5m4a6wrq" path="res://particles/art/circle_particle_little.png" id="1_s7ufg"]
+
+[sub_resource type="Gradient" id="Gradient_x4eis"]
+colors = PackedColorArray(0, 0, 0, 1, 0.205117, 0.205117, 0.205117, 0)
+
+[node name="particle_gulmora" type="CPUParticles2D"]
+amount = 30
+texture = ExtResource("1_s7ufg")
+lifetime = 3.0
+randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(1920, 0)
+gravity = Vector2(0, -1000)
+color_ramp = SubResource("Gradient_x4eis")
