@@ -61,8 +61,6 @@ level_generator = NodePath("../LevelGenerator")
 
 [node name="LevelGenerator" type="Node2D" parent="."]
 script = ExtResource("4_53nod")
-DISABLE_TUTORIAL = true
-GENERATE_LETTERS_FASTER = true
 TUTORIAL_DIR = "res://levels/tutorial_levels/"
 A_LEVEL_DIR = "res://levels/A_levels/"
 B_LEVEL_DIR = "res://levels/B_levels/"
@@ -76,7 +74,6 @@ FINAL_LEVEL = ExtResource("9_gh0v3")
 
 [node name="Monster" parent="." node_paths=PackedStringArray("PLAYER") instance=ExtResource("13_2qs7h")]
 position = Vector2(960, 3456)
-ACTIVE = false
 NORMAL_SPEED = 250.0
 SLOW_SPEED = 50.0
 FAST_SPEED = 600.0
@@ -130,9 +127,11 @@ PARTICLES = [null, NodePath("Rain"), null, null]
 [node name="Pause" parent="CanvasLayer" instance=ExtResource("18_q2ml8")]
 process_mode = 3
 visible = false
+z_index = 1
 
 [node name="DeathScreen" parent="CanvasLayer" node_paths=PackedStringArray("GAME_VALUES") instance=ExtResource("2_63nix")]
 visible = false
+z_index = 2
 GAME_VALUES = NodePath("../../GameplayValues")
 
 [node name="Music" type="Node" parent="." node_paths=PackedStringArray("PLAYER_1", "PLAYER_2")]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpxl4y14jr02m"
-path="res://.godot/imported/background_graveyard.png-02a9a55ee338fed684dc6f0c7c97d84b.ctex"
+uid="uid://c7hlx0xrrt60"
+path="res://.godot/imported/tiles_graveyard.png-827eb3874579bab8e5be75fdb8928cdf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://visuals/3_graveyard/background_graveyard.png"
-dest_files=["res://.godot/imported/background_graveyard.png-02a9a55ee338fed684dc6f0c7c97d84b.ctex"]
+source_file="res://visuals/3_graveyard/tiles_graveyard.png"
+dest_files=["res://.godot/imported/tiles_graveyard.png-827eb3874579bab8e5be75fdb8928cdf.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bjci11dyaeiot" path="res://visuals/layer_switcher/layer_switcher.tscn" id="1_rtpuw"]
 [ext_resource type="Texture2D" uid="uid://qlg8r4ichtrk" path="res://visuals/1_hell/background_hell.png" id="2_onm2c"]
 [ext_resource type="Texture2D" uid="uid://e7f8fyg3vqbf" path="res://visuals/2_sewer/background_sewer.png" id="3_4dlxx"]
-[ext_resource type="Texture2D" uid="uid://bshd4s8scdxi" path="res://visuals/3_graveyard/background_graveyard.png" id="4_4dlxx"]
+[ext_resource type="Texture2D" uid="uid://cpxl4y14jr02m" path="res://visuals/3_graveyard/background_graveyard.png" id="4_4dlxx"]
 [ext_resource type="Texture2D" uid="uid://blmni2rwuhmvb" path="res://visuals/4_void/background_void.png" id="4_onm2c"]
 
 [node name="Background" type="Node2D"]
