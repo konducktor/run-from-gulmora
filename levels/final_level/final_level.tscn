@@ -31,6 +31,7 @@ size = Vector2(384, 384)
 
 [node name="FinalLevel" type="Node2D"]
 script = ExtResource("1_wbc31")
+CREDITS_SCENE = null
 
 [node name="Tiles" type="TileMapLayer" parent="."]
 use_parent_material = true

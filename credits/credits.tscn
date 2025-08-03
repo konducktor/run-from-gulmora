@@ -164,7 +164,7 @@ shadow_offset = Vector2(0, 2.335)
 script = ExtResource("1_5uwby")
 AUDIO_PLAYER = NodePath("AudioStreamPlayer")
 ANIMATION_PLAYER = NodePath("AnimationPlayer")
-MAIN_MENU = ExtResource("2_24bn4")
+MAIN_MENU = null
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_s541x")
