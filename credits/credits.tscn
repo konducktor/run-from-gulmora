@@ -164,6 +164,7 @@ _data = {
 
 [node name="Credits" type="Node2D" node_paths=PackedStringArray("AUDIO_PLAYER", "ANIMATION_PLAYER")]
 script = ExtResource("1_5uwby")
+LINK = "https://youtu.be/yr3k-Ok9GE4"
 AUDIO_PLAYER = NodePath("AudioStreamPlayer")
 ANIMATION_PLAYER = NodePath("AnimationPlayer")
 

@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=4 uid="uid://belvg64r07nfw"]
+[gd_scene load_steps=6 format=4 uid="uid://belvg64r07nfw"]
 
 [ext_resource type="Script" uid="uid://d1d7dlfpksgqn" path="res://levels/level.gd" id="1_a2hbu"]
 [ext_resource type="TileSet" uid="uid://caasbtsyfkkgk" path="res://levels/level_tileset.tres" id="2_vx30g"]
+[ext_resource type="Texture2D" uid="uid://drw3j4bfy2xqp" path="res://visuals/1_hell/chain.png" id="4_a2hbu"]
+[ext_resource type="Texture2D" uid="uid://bcmhgrrgt5cei" path="res://visuals/1_hell/chain-2.png" id="5_7mf8w"]
 [ext_resource type="Texture2D" uid="uid://bricevu3ycyf2" path="res://levels/tutorial_levels/tutorial.png" id="6_7mf8w"]
 
 [node name="Level" type="Node2D"]
@@ -20,3 +22,15 @@ scale = Vector2(0.552835, 0.552835)
 texture = ExtResource("6_7mf8w")
 
 [node name="Extra" type="Node2D" parent="."]
+
+[node name="Deco" type="CanvasGroup" parent="."]
+z_index = -1
+
+[node name="Chain" type="Sprite2D" parent="Deco"]
+position = Vector2(512, 608)
+texture = ExtResource("4_a2hbu")
+
+[node name="Chain-2" type="Sprite2D" parent="Deco"]
+position = Vector2(1412, 156)
+texture = ExtResource("5_7mf8w")
+flip_h = true

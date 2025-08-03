@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://ciofim6bqh6iw"]
+[gd_scene load_steps=6 format=4 uid="uid://ciofim6bqh6iw"]
 
 [ext_resource type="PackedScene" uid="uid://bwgimqktwg1dp" path="res://levels/level.tscn" id="1_l8ujm"]
 [ext_resource type="PackedScene" uid="uid://cgweq44ec2mce" path="res://gameplay_elements/letter/letter.tscn" id="2_ld0g1"]
 [ext_resource type="PackedScene" uid="uid://c4e4u1228hili" path="res://gameplay_elements/monster_slow_zone/monster_slow_zone.tscn" id="3_ld0g1"]
 [ext_resource type="PackedScene" uid="uid://buxgxciwhv2ht" path="res://particles/secret_room/secret_room.tscn" id="4_3d0c8"]
+[ext_resource type="Texture2D" uid="uid://le2atqt8gbxl" path="res://visuals/4_void/lines.png" id="5_46kl5"]
 
 [node name="Level" instance=ExtResource("1_l8ujm")]
 
@@ -20,9 +21,7 @@ position = Vector2(288, 498)
 position = Vector2(480, 608)
 rotation = -3.14159
 
-[connection signal="body_entered" from="Tiles/Danger" to="Tiles/Danger" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/Danger" to="Tiles/Danger/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@53869" to="Tiles/@Area2D@53869" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@53869" to="Tiles/@Area2D@53869/Sounds" method="_on_danger_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@53879" to="Tiles/@Area2D@53879" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@53879" to="Tiles/@Area2D@53879/Sounds" method="_on_danger_body_entered"]
+[node name="Lines" type="Sprite2D" parent="." index="6"]
+position = Vector2(1044, 544)
+rotation = 0.136729
+texture = ExtResource("5_46kl5")

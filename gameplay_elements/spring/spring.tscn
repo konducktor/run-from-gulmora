@@ -1,18 +1,92 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8esukmcwaxoj"]
+[gd_scene load_steps=17 format=3 uid="uid://b8esukmcwaxoj"]
 
 [ext_resource type="Script" uid="uid://bilnok5unqpkv" path="res://gameplay_elements/spring/spring.gd" id="1_6jmmg"]
-[ext_resource type="Texture2D" uid="uid://bvpyrciw3tsvw" path="res://gameplay_elements/spring/art/spring.png" id="1_knx1u"]
 [ext_resource type="Script" uid="uid://biv2dnge0xmjn" path="res://gameplay_elements/spring/sound/spring_sounds.gd" id="2_jfa5b"]
 [ext_resource type="AudioStream" uid="uid://bq2s8hpfmq2a8" path="res://gameplay_elements/spring/sound/spring.ogg" id="3_v0i11"]
+[ext_resource type="Script" uid="uid://cnyme51ppnara" path="res://gameplay_elements/spring/spring_visual.gd" id="4_v0i11"]
+[ext_resource type="Texture2D" uid="uid://xhob7y4dxxu7" path="res://gameplay_elements/spring/art/spring_down.png" id="5_v8m22"]
+[ext_resource type="Texture2D" uid="uid://nglbnn3s13yj" path="res://gameplay_elements/spring/art/spring_up.png" id="6_hc1re"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6jmmg"]
 size = Vector2(128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8m22"]
+atlas = ExtResource("5_v8m22")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hc1re"]
+atlas = ExtResource("5_v8m22")
+region = Rect2(128, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwpfv"]
+atlas = ExtResource("5_v8m22")
+region = Rect2(256, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_quy6t"]
+atlas = ExtResource("5_v8m22")
+region = Rect2(384, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x25fh"]
+atlas = ExtResource("6_hc1re")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojing"]
+atlas = ExtResource("6_hc1re")
+region = Rect2(128, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvyhd"]
+atlas = ExtResource("6_hc1re")
+region = Rect2(256, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxr2y"]
+atlas = ExtResource("6_hc1re")
+region = Rect2(384, 0, 128, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ynwp1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8m22")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hc1re")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwpfv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_quy6t")
+}],
+"loop": true,
+"name": &"down",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x25fh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojing")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvyhd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxr2y")
+}],
+"loop": false,
+"name": &"up",
+"speed": 12.0
+}]
 
 [node name="Spring" type="Area2D"]
 collision_layer = 16
 script = ExtResource("1_6jmmg")
 STRING_STRENGTH = 2900.0
 PLAYER_START_OFFSET = Vector2(0, -70)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6jmmg")
 
 [node name="Sounds" type="Node" parent="." node_paths=PackedStringArray("ACTIVATED")]
 script = ExtResource("2_jfa5b")
@@ -23,11 +97,15 @@ stream = ExtResource("3_v0i11")
 max_polyphony = 3
 bus = &"SFX"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_knx1u")
+[node name="Visual" type="Node2D" parent="." node_paths=PackedStringArray("ANIMATED_SPRITE")]
+script = ExtResource("4_v0i11")
+ANIMATED_SPRITE = NodePath("AnimatedSprite2D")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_6jmmg")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visual"]
+sprite_frames = SubResource("SpriteFrames_ynwp1")
+animation = &"down"
+autoplay = "down"
 
+[connection signal="activated" from="." to="Visual" method="_on_spring_activated"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="." to="Sounds" method="_on_spring_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=4 uid="uid://bvcqe6lk23svn"]
+[gd_scene load_steps=3 format=4 uid="uid://va0oruesat6m"]
 
 [ext_resource type="PackedScene" uid="uid://bwgimqktwg1dp" path="res://levels/level.tscn" id="1_pifwm"]
 [ext_resource type="PackedScene" uid="uid://biewwxre508mg" path="res://gameplay_elements/fireball_spawner/fireball_spawner.tscn" id="2_y0eyn"]

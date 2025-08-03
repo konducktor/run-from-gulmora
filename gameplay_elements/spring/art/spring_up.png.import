@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvpyrciw3tsvw"
-path="res://.godot/imported/spring.png-d03b97e5ffad57e1269b8dc14d6afdde.ctex"
+uid="uid://nglbnn3s13yj"
+path="res://.godot/imported/spring_up.png-72c34779b74e3822e9e7337169521d86.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gameplay_elements/spring/art/spring.png"
-dest_files=["res://.godot/imported/spring.png-d03b97e5ffad57e1269b8dc14d6afdde.ctex"]
+source_file="res://gameplay_elements/spring/art/spring_up.png"
+dest_files=["res://.godot/imported/spring_up.png-72c34779b74e3822e9e7337169521d86.ctex"]
 
 [params]
 

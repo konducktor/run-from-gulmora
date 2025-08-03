@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://df0v2abqki1gm"]
+[gd_scene load_steps=6 format=4 uid="uid://df0v2abqki1gm"]
 
 [ext_resource type="PackedScene" uid="uid://bwgimqktwg1dp" path="res://levels/level.tscn" id="1_dtuyd"]
 [ext_resource type="PackedScene" uid="uid://cgweq44ec2mce" path="res://gameplay_elements/letter/letter.tscn" id="2_lpp0i"]
 [ext_resource type="PackedScene" uid="uid://c4e4u1228hili" path="res://gameplay_elements/monster_slow_zone/monster_slow_zone.tscn" id="3_lpp0i"]
 [ext_resource type="PackedScene" uid="uid://buxgxciwhv2ht" path="res://particles/secret_room/secret_room.tscn" id="4_6lyhn"]
+[ext_resource type="Texture2D" uid="uid://drw3j4bfy2xqp" path="res://visuals/1_hell/chain.png" id="5_xsg2n"]
 
 [node name="Level" instance=ExtResource("1_dtuyd")]
 
@@ -18,3 +19,8 @@ position = Vector2(1630, 517)
 
 [node name="SecretRoomParticle" parent="." index="4" instance=ExtResource("4_6lyhn")]
 position = Vector2(1417, 608)
+
+[node name="Chain" type="Sprite2D" parent="Deco" index="0"]
+position = Vector2(1376, 788)
+rotation = 1.0472
+texture = ExtResource("5_xsg2n")

@@ -1,8 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmg3i5v15f3fa"]
+[gd_scene load_steps=10 format=3 uid="uid://dmg3i5v15f3fa"]
 
 [ext_resource type="Script" uid="uid://dha7qt5w5gjs6" path="res://ux/pause/pause.gd" id="1_l481r"]
 [ext_resource type="PackedScene" uid="uid://dyyu3xxnrqfo1" path="res://ux/settings/settings.tscn" id="1_vl5qj"]
 [ext_resource type="FontFile" uid="uid://di04vknxmp46b" path="res://ux/Daneehand Regular Cyr.ttf" id="2_l481r"]
+[ext_resource type="Texture2D" uid="uid://65p641x8c6w1" path="res://ux/main_menu/button.png" id="4_kfxtf"]
+[ext_resource type="Script" uid="uid://ctlyrlympirev" path="res://ux/main_menu/menu_button.gd" id="5_2b2mx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x6duh"]
+texture = ExtResource("4_kfxtf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rkwky"]
+texture = ExtResource("4_kfxtf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vm6yh"]
+texture = ExtResource("4_kfxtf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rmjbb"]
+texture = ExtResource("4_kfxtf")
 
 [node name="Pause" type="Control"]
 layout_mode = 3
@@ -20,10 +34,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -256.0
+offset_left = -311.0
 offset_top = -187.0
-offset_right = 256.0
-offset_bottom = 187.0
+offset_right = 311.0
+offset_bottom = 309.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -34,7 +48,7 @@ anchor_right = 1.0
 offset_bottom = 96.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_l481r")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 65
 text = "Pausing HARD.."
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -46,8 +60,37 @@ anchor_left = 0.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 64.0
-offset_top = -246.0
-offset_right = -64.0
-offset_bottom = 0.0
+offset_left = 65.0
+offset_top = -378.0
+offset_right = -63.0
+offset_bottom = -132.0
+
+[node name="Continue" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -302.0
+offset_top = -139.0
+offset_right = 302.0
+offset_bottom = -29.0
+grow_horizontal = 2
 grow_vertical = 0
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_l481r")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = SubResource("StyleBoxTexture_x6duh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rkwky")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_vm6yh")
+theme_override_styles/normal = SubResource("StyleBoxTexture_rmjbb")
+text = "Continue
+"
+script = ExtResource("5_2b2mx")
+
+[connection signal="pressed" from="Panel/Continue" to="." method="_on_continue_pressed"]

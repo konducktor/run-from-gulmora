@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://daqxkd3qpb8bd"]
+[gd_scene load_steps=6 format=4 uid="uid://daqxkd3qpb8bd"]
 
 [ext_resource type="PackedScene" uid="uid://bwgimqktwg1dp" path="res://levels/level.tscn" id="1_4r7aq"]
 [ext_resource type="PackedScene" uid="uid://cgweq44ec2mce" path="res://gameplay_elements/letter/letter.tscn" id="2_3smpy"]
 [ext_resource type="PackedScene" uid="uid://c4e4u1228hili" path="res://gameplay_elements/monster_slow_zone/monster_slow_zone.tscn" id="3_3smpy"]
 [ext_resource type="PackedScene" uid="uid://buxgxciwhv2ht" path="res://particles/secret_room/secret_room.tscn" id="4_xd5kl"]
+[ext_resource type="Texture2D" uid="uid://c51ls85x7kc4n" path="res://visuals/3_graveyard/leans.png" id="5_37h3v"]
 
 [node name="Level" instance=ExtResource("1_4r7aq")]
 
@@ -18,3 +19,13 @@ position = Vector2(1632, 512)
 
 [node name="SecretRoomParticle" parent="." index="4" instance=ExtResource("4_xd5kl")]
 position = Vector2(1440, 608)
+
+[node name="Leans" type="Sprite2D" parent="Deco" index="0"]
+position = Vector2(536, 544)
+texture = ExtResource("5_37h3v")
+
+[node name="Leans2" type="Sprite2D" parent="Deco" index="1"]
+position = Vector2(1145, 299)
+rotation = 0.135261
+texture = ExtResource("5_37h3v")
+flip_h = true

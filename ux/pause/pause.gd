@@ -33,3 +33,7 @@ func set_pausing_to(value: bool) -> void:
 		GlobalSignals.paused.emit()
 	else:
 		GlobalSignals.unpaused.emit()
+
+
+func _on_continue_pressed() -> void:
+	set_pausing_to(false)
