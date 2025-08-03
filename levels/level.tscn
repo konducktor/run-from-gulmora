@@ -150,7 +150,7 @@ sources/5 = SubResource("TileSetAtlasSource_hy0rb")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hjsbj"]
 size = Vector2(1919.75, 64)
 
-[node name="Level" type="Node2D" node_paths=PackedStringArray("next_level_trigger")]
+[node name="Level2" type="Node2D" node_paths=PackedStringArray("next_level_trigger")]
 script = ExtResource("1_hjsbj")
 next_level_trigger = NodePath("NextLevelTrigger")
 

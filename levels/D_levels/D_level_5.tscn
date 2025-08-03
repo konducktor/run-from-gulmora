@@ -7,18 +7,18 @@
 
 [node name="FireballSpawner" parent="." index="0" instance=ExtResource("2_ggqm6")]
 position = Vector2(0, 672)
-COOLDOWN = 2.0
-FIREBALL_SPEED = 450.0
+COOLDOWN = 3.0
+FIREBALL_SPEED = 300.0
 
 [node name="FireballSpawner3" parent="." index="1" instance=ExtResource("2_ggqm6")]
 position = Vector2(0, 160)
-COOLDOWN = 2.0
-FIREBALL_SPEED = 450.0
+COOLDOWN = 3.0
+FIREBALL_SPEED = 300.0
 
 [node name="FireballSpawner2" parent="." index="2" instance=ExtResource("2_ggqm6")]
 position = Vector2(2255, 416)
-COOLDOWN = 2.0
-FIREBALL_SPEED = 450.0
+COOLDOWN = 3.0
+FIREBALL_SPEED = 300.0
 FIREBALL_DIRECTION = 1
 
 [node name="Tiles" parent="." index="3"]

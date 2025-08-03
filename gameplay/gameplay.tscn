@@ -11,11 +11,11 @@
 [ext_resource type="PackedScene" uid="uid://c1lkuldvp0734" path="res://levels/letter_levels/B_letter_level.tscn" id="6_y3ygr"]
 [ext_resource type="PackedScene" uid="uid://daqxkd3qpb8bd" path="res://levels/letter_levels/C_letter_level.tscn" id="7_xmdrq"]
 [ext_resource type="PackedScene" uid="uid://ciofim6bqh6iw" path="res://levels/letter_levels/D_letter_level.tscn" id="8_47db2"]
-[ext_resource type="PackedScene" uid="uid://uf3x5rrl31qh" path="res://levels/final_level/final_level.tscn" id="9_gh0v3"]
 [ext_resource type="Script" uid="uid://dux2ueculjt2t" path="res://global/camera.gd" id="10_s60jr"]
 [ext_resource type="PackedScene" uid="uid://hqq6qxfhsob4" path="res://gameplay_elements/platform/platform.tscn" id="11_q2ml8"]
 [ext_resource type="PackedScene" uid="uid://uos88rcjypfn" path="res://player/player.tscn" id="12_n6aft"]
 [ext_resource type="PackedScene" uid="uid://ypgd2rchig6s" path="res://monster/monster.tscn" id="13_2qs7h"]
+[ext_resource type="PackedScene" uid="uid://uf3x5rrl31qh" path="res://levels/final_level/final_level.tscn" id="13_n6aft"]
 [ext_resource type="FontFile" uid="uid://di04vknxmp46b" path="res://ux/Daneehand Regular Cyr.ttf" id="14_wxx72"]
 [ext_resource type="Script" uid="uid://dtydotpfe7we1" path="res://ux/gameplay_stats_ux.gd" id="15_2beay"]
 [ext_resource type="PackedScene" uid="uid://cwklp2uls81do" path="res://visuals/borders/borders.tscn" id="16_ni0ts"]
@@ -61,9 +61,9 @@ level_generator = NodePath("../LevelGenerator")
 
 [node name="LevelGenerator" type="Node2D" parent="."]
 script = ExtResource("4_53nod")
-LEVELS_IN_LAYER = 1
+LEVELS_IN_LAYER = 5
 DISABLE_TUTORIAL = true
-GENERATE_LETTERS_FASTER = true
+STARTING_LAYER = 2
 TUTORIAL_DIR = "res://levels/tutorial_levels/"
 A_LEVEL_DIR = "res://levels/A_levels/"
 B_LEVEL_DIR = "res://levels/B_levels/"
@@ -73,7 +73,7 @@ A_LETTER_LEVEL = ExtResource("5_b2kny")
 B_LETTER_LEVEL = ExtResource("6_y3ygr")
 C_LETTER_LEVEL = ExtResource("7_xmdrq")
 D_LETTER_LEVEL = ExtResource("8_47db2")
-FINAL_LEVEL = ExtResource("9_gh0v3")
+FINAL_LEVEL = ExtResource("13_n6aft")
 
 [node name="Monster" parent="." node_paths=PackedStringArray("PLAYER") instance=ExtResource("13_2qs7h")]
 position = Vector2(960, 3456)

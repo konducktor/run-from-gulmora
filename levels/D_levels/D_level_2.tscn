@@ -10,11 +10,11 @@ tile_map_data = PackedByteArray("AAAAAAAABAABAAEAAAAAAAEABAABAAEAAAAAAAIABAABAAE
 
 [node name="FireballSpawner2" parent="." index="1" instance=ExtResource("2_yfult")]
 position = Vector2(-35, 544)
-COOLDOWN = 1.7
-FIREBALL_SPEED = 500.0
+COOLDOWN = 2.5
+FIREBALL_SPEED = 333.0
 
 [node name="FireballSpawner" parent="." index="2" instance=ExtResource("2_yfult")]
 position = Vector2(2036, 256)
-COOLDOWN = 1.7
-FIREBALL_SPEED = 500.0
+COOLDOWN = 2.5
+FIREBALL_SPEED = 333.0
 FIREBALL_DIRECTION = 1
