@@ -46,13 +46,11 @@ var levels_played : int
 
 var current_level_layer : LEVEL_LAYERS
 
-var is_generating_letter_levels : bool
 var letter_level_index_in_layer : int
 var current_letter_level : PackedScene
 
 
 func _ready() -> void:
-	is_generating_letter_levels = false
 	
 	update_current_level_layer(STARTING_LAYER)
 	
@@ -105,7 +103,7 @@ func generate_next_level(custom_level: PackedScene = null) -> Level:
 	if custom_level:
 		next_level = custom_level
 	elif (
-		is_generating_letter_levels and
+		GlobalValues.is_generating_letter_levels and
 		(current_level_index % LEVELS_IN_LAYER) == letter_level_index_in_layer
 	):
 		next_level = current_letter_level
@@ -164,6 +162,7 @@ func update_current_level_layer(custom: LEVEL_LAYERS = -1) -> void:
 			current_level_layer = LEVEL_LAYERS.B_LEVEL
 		LEVEL_LAYERS.B_LEVEL:
 			current_level_layer = LEVEL_LAYERS.C_LEVEL
+			GlobalValues.is_generating_letter_levels = true
 		LEVEL_LAYERS.C_LEVEL:
 			current_level_layer = LEVEL_LAYERS.D_LEVEL
 		LEVEL_LAYERS.D_LEVEL:
@@ -188,7 +187,6 @@ func get_all_levels(directory_path: String) -> Array[PackedScene]:
 
 
 func new_lap() -> void:
-	is_generating_letter_levels = true
 	GlobalSignals.new_lap_started.emit()
 
 

@@ -2,6 +2,7 @@ extends Node
 
 var letter_count : int
 var is_tutorial_finished : bool
+var is_generating_letter_levels : bool
 
 func _ready() -> void:
 	Engine.time_scale = 1.0

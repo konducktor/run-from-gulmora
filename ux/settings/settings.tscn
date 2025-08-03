@@ -15,7 +15,7 @@ thickness = 10
 color = Color(0.632225, 1.9493e-06, 3.36915e-07, 1)
 thickness = 10
 
-[node name="Settings" type="Control"]
+[node name="Settings" type="Control" node_paths=PackedStringArray("MUSIC_SLIDER", "SFX_SLIDER")]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -29,6 +29,8 @@ offset_bottom = 164.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cucbm")
+MUSIC_SLIDER = NodePath("VBoxContainer/MusicSlider")
+SFX_SLIDER = NodePath("VBoxContainer/SFXSlider")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
