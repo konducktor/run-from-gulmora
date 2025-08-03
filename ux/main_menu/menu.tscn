@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://oy076h1ap0o0"]
+[gd_scene load_steps=16 format=3 uid="uid://oy076h1ap0o0"]
 
 [ext_resource type="Texture2D" uid="uid://eemdwk24aovb" path="res://ux/main_menu/gmtk2025.png" id="1_lti8b"]
 [ext_resource type="Script" uid="uid://ys28y1n0g2id" path="res://ux/main_menu/main_menu.gd" id="1_ouk20"]
@@ -9,41 +9,22 @@
 [ext_resource type="Script" uid="uid://cn8bmgvld6mor" path="res://ux/main_menu/menu_texture_button.gd" id="5_33wq2"]
 [ext_resource type="AudioStream" uid="uid://qgrixw6eshsc" path="res://sounds/music/if i die, please, don`t cry.mp3" id="6_fd84x"]
 [ext_resource type="PackedScene" uid="uid://dyyu3xxnrqfo1" path="res://ux/settings/settings.tscn" id="7_4fcg6"]
+[ext_resource type="Texture2D" uid="uid://65p641x8c6w1" path="res://ux/main_menu/button.png" id="7_f72l3"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ouk20"]
 texture = ExtResource("2_4fcg6")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lti8b"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0j60j"]
+texture = ExtResource("7_f72l3")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ouk20"]
-bg_color = Color(0.843184, 0.843184, 0.843184, 1)
-corner_radius_top_left = 32
-corner_radius_top_right = 32
-corner_radius_bottom_right = 32
-corner_radius_bottom_left = 32
-shadow_color = Color(0.205117, 0.205117, 0.205117, 0.6)
-shadow_size = 5
-shadow_offset = Vector2(0, 2.335)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fi21v"]
+texture = ExtResource("7_f72l3")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mae5d"]
-bg_color = Color(0.625597, 0.625597, 0.625597, 1)
-corner_radius_top_left = 32
-corner_radius_top_right = 32
-corner_radius_bottom_right = 32
-corner_radius_bottom_left = 32
-shadow_color = Color(0.205117, 0.205117, 0.205117, 0.6)
-shadow_size = 5
-shadow_offset = Vector2(0, 2.335)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nmfkd"]
+texture = ExtResource("7_f72l3")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vsb4k"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 32
-corner_radius_top_right = 32
-corner_radius_bottom_right = 32
-corner_radius_bottom_left = 32
-shadow_color = Color(0.205117, 0.205117, 0.205117, 0.6)
-shadow_size = 5
-shadow_offset = Vector2(0, 2.335)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_myd1k"]
+texture = ExtResource("7_f72l3")
 
 [node name="Menu" type="Control" node_paths=PackedStringArray("settings_panel", "main_panel", "button_anim_timer")]
 layout_mode = 3
@@ -109,10 +90,10 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_ao3db")
 theme_override_font_sizes/font_size = 80
-theme_override_styles/focus = SubResource("StyleBoxEmpty_lti8b")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ouk20")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_mae5d")
-theme_override_styles/normal = SubResource("StyleBoxFlat_vsb4k")
+theme_override_styles/focus = SubResource("StyleBoxTexture_0j60j")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fi21v")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nmfkd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_myd1k")
 text = "Play
 "
 script = ExtResource("3_m2eq4")
@@ -134,10 +115,10 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_ao3db")
 theme_override_font_sizes/font_size = 80
-theme_override_styles/focus = SubResource("StyleBoxEmpty_lti8b")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ouk20")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_mae5d")
-theme_override_styles/normal = SubResource("StyleBoxFlat_vsb4k")
+theme_override_styles/focus = SubResource("StyleBoxTexture_0j60j")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fi21v")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nmfkd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_myd1k")
 text = "Settings
 "
 script = ExtResource("3_m2eq4")
@@ -159,16 +140,15 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_ao3db")
 theme_override_font_sizes/font_size = 80
-theme_override_styles/focus = SubResource("StyleBoxEmpty_lti8b")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ouk20")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_mae5d")
-theme_override_styles/normal = SubResource("StyleBoxFlat_vsb4k")
+theme_override_styles/focus = SubResource("StyleBoxTexture_0j60j")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fi21v")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nmfkd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_myd1k")
 text = "Quit
 "
 script = ExtResource("3_m2eq4")
 
 [node name="Panel2" type="Panel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -214,9 +194,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -161.0
+offset_left = -238.0
 offset_top = -129.0
-offset_right = 161.0
+offset_right = 238.0
 offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -227,10 +207,10 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_ao3db")
 theme_override_font_sizes/font_size = 80
-theme_override_styles/focus = SubResource("StyleBoxEmpty_lti8b")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ouk20")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_mae5d")
-theme_override_styles/normal = SubResource("StyleBoxFlat_vsb4k")
+theme_override_styles/focus = SubResource("StyleBoxTexture_0j60j")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fi21v")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nmfkd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_myd1k")
 text = "Back"
 script = ExtResource("3_m2eq4")
 
