@@ -1,8 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://oy076h1ap0o0"]
+[gd_scene load_steps=13 format=3 uid="uid://oy076h1ap0o0"]
 
 [ext_resource type="Texture2D" uid="uid://eemdwk24aovb" path="res://ux/main_menu/gmtk2025.png" id="1_lti8b"]
 [ext_resource type="Script" uid="uid://ys28y1n0g2id" path="res://ux/main_menu/main_menu.gd" id="1_ouk20"]
-[ext_resource type="PackedScene" uid="uid://dtamhc3u844oa" path="res://gameplay/gameplay.tscn" id="2_4fcg6"]
 [ext_resource type="FontFile" uid="uid://di04vknxmp46b" path="res://ux/Daneehand Regular Cyr.ttf" id="3_ao3db"]
 [ext_resource type="Script" uid="uid://ctlyrlympirev" path="res://ux/main_menu/menu_button.gd" id="3_m2eq4"]
 [ext_resource type="Script" uid="uid://cn8bmgvld6mor" path="res://ux/main_menu/menu_texture_button.gd" id="5_33wq2"]
@@ -51,7 +50,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ouk20")
-gameplay_scene = ExtResource("2_4fcg6")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
