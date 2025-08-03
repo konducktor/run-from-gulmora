@@ -1,21 +1,21 @@
 [gd_scene load_steps=3 format=4 uid="uid://dblj7x3vv8acy"]
 
-[ext_resource type="PackedScene" uid="uid://bwgimqktwg1dp" path="res://levels/level.tscn" id="1_5jkyn"]
-[ext_resource type="PackedScene" uid="uid://biewwxre508mg" path="res://gameplay_elements/fireball_spawner/fireball_spawner.tscn" id="2_ggqm6"]
+[ext_resource type="PackedScene" uid="uid://bwgimqktwg1dp" path="res://levels/level.tscn" id="1_nf76c"]
+[ext_resource type="PackedScene" uid="uid://biewwxre508mg" path="res://gameplay_elements/fireball_spawner/fireball_spawner.tscn" id="2_wulh0"]
 
-[node name="Level" instance=ExtResource("1_5jkyn")]
+[node name="Level" instance=ExtResource("1_nf76c")]
 
-[node name="FireballSpawner" parent="." index="0" instance=ExtResource("2_ggqm6")]
+[node name="FireballSpawner" parent="." index="0" instance=ExtResource("2_wulh0")]
 position = Vector2(0, 672)
 COOLDOWN = 3.0
 FIREBALL_SPEED = 300.0
 
-[node name="FireballSpawner3" parent="." index="1" instance=ExtResource("2_ggqm6")]
+[node name="FireballSpawner3" parent="." index="1" instance=ExtResource("2_wulh0")]
 position = Vector2(0, 160)
 COOLDOWN = 3.0
 FIREBALL_SPEED = 300.0
 
-[node name="FireballSpawner2" parent="." index="2" instance=ExtResource("2_ggqm6")]
+[node name="FireballSpawner2" parent="." index="2" instance=ExtResource("2_wulh0")]
 position = Vector2(2255, 416)
 COOLDOWN = 3.0
 FIREBALL_SPEED = 300.0
