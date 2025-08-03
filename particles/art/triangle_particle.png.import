@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctlddmr4wflgy"
-path="res://.godot/imported/partical_rain.png-b146d8751c238afbb8f54d5c94f5edf5.ctex"
+uid="uid://hjcog67i0gc0"
+path="res://.godot/imported/triangle_particle.png-66bce7990accc3c7018af3b482f9b9ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://particles_2d/partical_rain.png"
-dest_files=["res://.godot/imported/partical_rain.png-b146d8751c238afbb8f54d5c94f5edf5.ctex"]
+source_file="res://particles/art/triangle_particle.png"
+dest_files=["res://.godot/imported/triangle_particle.png-66bce7990accc3c7018af3b482f9b9ef.ctex"]
 
 [params]
 

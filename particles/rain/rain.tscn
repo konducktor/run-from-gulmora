@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dgtchwtkoa68j"]
 
-[ext_resource type="Texture2D" uid="uid://ctlddmr4wflgy" path="res://particles_2d/partical_rain.png" id="1_ai6dt"]
+[ext_resource type="Texture2D" uid="uid://ctlddmr4wflgy" path="res://particles/rain/partical_rain.png" id="1_3e5xg"]
 
 [sub_resource type="Gradient" id="Gradient_d5hex"]
 interpolation_mode = 2
@@ -8,7 +8,7 @@ colors = PackedColorArray(0, 1, 1, 1, 0, 0.462745, 1, 1)
 
 [node name="Rain" type="CPUParticles2D"]
 amount = 100
-texture = ExtResource("1_ai6dt")
+texture = ExtResource("1_3e5xg")
 emission_shape = 3
 emission_rect_extents = Vector2(500, 1)
 gravity = Vector2(-400, 1000)
