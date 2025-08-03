@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://oy076h1ap0o0"]
+[gd_scene load_steps=15 format=3 uid="uid://oy076h1ap0o0"]
 
 [ext_resource type="Texture2D" uid="uid://eemdwk24aovb" path="res://ux/main_menu/gmtk2025.png" id="1_lti8b"]
 [ext_resource type="Script" uid="uid://ys28y1n0g2id" path="res://ux/main_menu/main_menu.gd" id="1_ouk20"]
-[ext_resource type="PackedScene" uid="uid://dtamhc3u844oa" path="res://gameplay/gameplay.tscn" id="2_4fcg6"]
+[ext_resource type="PackedScene" uid="uid://dtamhc3u844oa" path="res://gameplay/gameplay.tscn" id="2_4b2jh"]
+[ext_resource type="Texture2D" uid="uid://d1s0de01vbctp" path="res://ux/main_menu/menu_bg.png" id="2_4fcg6"]
 [ext_resource type="FontFile" uid="uid://di04vknxmp46b" path="res://ux/Daneehand Regular Cyr.ttf" id="3_ao3db"]
 [ext_resource type="Script" uid="uid://ctlyrlympirev" path="res://ux/main_menu/menu_button.gd" id="3_m2eq4"]
 [ext_resource type="Script" uid="uid://cn8bmgvld6mor" path="res://ux/main_menu/menu_texture_button.gd" id="5_33wq2"]
@@ -10,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dyyu3xxnrqfo1" path="res://ux/settings/settings.tscn" id="7_4fcg6"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ouk20"]
+texture = ExtResource("2_4fcg6")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lti8b"]
 
@@ -43,7 +45,7 @@ shadow_color = Color(0.205117, 0.205117, 0.205117, 0.6)
 shadow_size = 5
 shadow_offset = Vector2(0, 2.335)
 
-[node name="Menu" type="Control"]
+[node name="Menu" type="Control" node_paths=PackedStringArray("settings_panel", "main_panel", "button_anim_timer")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -51,7 +53,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ouk20")
-gameplay_scene = null
+gameplay_scene = ExtResource("2_4b2jh")
+settings_panel = NodePath("Panel2")
+main_panel = NodePath("Control")
+button_anim_timer = NodePath("ButtonAnimTimer")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -62,39 +67,16 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ouk20")
 
-[node name="Exit" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -159.0
-offset_top = 15.0
-offset_right = -29.0
-offset_bottom = 140.0
-grow_horizontal = 0
-size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_ao3db")
-theme_override_font_sizes/font_size = 120
-theme_override_styles/focus = SubResource("StyleBoxEmpty_lti8b")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ouk20")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_mae5d")
-theme_override_styles/normal = SubResource("StyleBoxFlat_vsb4k")
-text = "X"
-script = ExtResource("3_m2eq4")
-
 [node name="GMTKLogo" type="TextureButton" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 49.0
-offset_top = -325.0
-offset_right = 459.0
-offset_bottom = -40.0
+offset_left = 1489.0
+offset_top = -353.0
+offset_right = 1899.0
+offset_bottom = -68.0
 grow_vertical = 0
 texture_normal = ExtResource("1_lti8b")
 texture_pressed = ExtResource("1_lti8b")
@@ -105,19 +87,20 @@ ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("5_33wq2")
 
-[node name="Node" type="Node" parent="."]
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Play" type="Button" parent="Node"]
-anchors_preset = 8
-anchor_left = 0.5
+[node name="Play" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 4
 anchor_top = 0.5
-anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -302.0
-offset_top = -257.0
-offset_right = 302.0
-offset_bottom = -147.0
-grow_horizontal = 2
+offset_left = 40.0
+offset_top = 546.0
+offset_right = 644.0
+offset_bottom = 656.0
 grow_vertical = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -134,9 +117,125 @@ text = "Play
 "
 script = ExtResource("3_m2eq4")
 
-[node name="Settings" parent="Node" instance=ExtResource("7_4fcg6")]
+[node name="Settings" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = 707.0
+offset_right = 644.0
+offset_bottom = 817.0
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ao3db")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lti8b")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ouk20")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mae5d")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vsb4k")
+text = "Settings
+"
+script = ExtResource("3_m2eq4")
+
+[node name="Quit" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = 868.0
+offset_right = 644.0
+offset_bottom = 978.0
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ao3db")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lti8b")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ouk20")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mae5d")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vsb4k")
+text = "Quit
+"
+script = ExtResource("3_m2eq4")
+
+[node name="Panel2" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -187.0
+offset_right = 256.0
+offset_bottom = 254.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel2"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 96.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_ao3db")
+theme_override_font_sizes/font_size = 50
+text = "Pausing HARD.."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Settings" parent="Panel2" instance=ExtResource("7_4fcg6")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = -345.0
+offset_right = -64.0
+offset_bottom = -99.0
+grow_vertical = 0
+
+[node name="Back" type="Button" parent="Panel2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -161.0
+offset_top = -129.0
+offset_right = 161.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ao3db")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lti8b")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ouk20")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mae5d")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vsb4k")
+text = "Back"
+script = ExtResource("3_m2eq4")
 
 [node name="Name" type="Label" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -156,6 +255,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Credits" type="Label" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -185,6 +285,11 @@ attenuation = 1e-05
 panning_strength = 0.0
 bus = &"Music"
 
-[connection signal="pressed" from="Exit" to="." method="_on_quit_pressed"]
+[node name="ButtonAnimTimer" type="Timer" parent="."]
+wait_time = 0.16
+
 [connection signal="pressed" from="GMTKLogo" to="." method="_on_gmtk_logo_pressed"]
-[connection signal="pressed" from="Node/Play" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Control/Play" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Control/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Control/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Panel2/Back" to="." method="_on_settings_back_pressed"]

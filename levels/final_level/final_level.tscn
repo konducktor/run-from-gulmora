@@ -12,6 +12,7 @@ size = Vector2(384, 384)
 
 [node name="FinalLevel" type="Node2D"]
 script = ExtResource("1_wbc31")
+link = "https://www.youtube.com/watch?v=yr3k-Ok9GE4"
 
 [node name="Tiles" type="TileMapLayer" parent="."]
 use_parent_material = true
