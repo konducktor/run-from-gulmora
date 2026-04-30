@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=19 format=3 uid="uid://caasbtsyfkkgk"]
+[gd_resource type="TileSet" format=3 uid="uid://caasbtsyfkkgk"]
 
 [ext_resource type="Texture2D" uid="uid://bwlaympteebee" path="res://gameplay_elements/platform/block.png" id="1_csqdk"]
 [ext_resource type="PackedScene" uid="uid://eurxn62028bp" path="res://gameplay_elements/spike/spike.tscn" id="2_gypcw"]

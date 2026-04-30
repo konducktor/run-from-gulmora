@@ -4,6 +4,7 @@ extends Node
 
 signal tutorial_finished
 signal next_level
+signal next_level_path(path: String)
 signal new_layer_reached
 signal new_lap_started
 

@@ -12,6 +12,8 @@ signal hyped
 
 
 @export_group('Balancing')
+@export var VARIABLE_HEIGHT : bool = true
+
 @export var PLAYER_SPEED : float
 
 @export var EXTRA_JUMPS : int
@@ -121,7 +123,7 @@ func calculate_jump(_delta: float, vertical_velocity: float) -> float:
 			jumped.emit()
 			return jump_velocity
 	
-	if velocity.y < 0.0:
+	if velocity.y < 0.0 and VARIABLE_HEIGHT:
 		if Input.is_action_just_released("movement_jump") and can_release:
 			return vertical_velocity * 0.5
 	

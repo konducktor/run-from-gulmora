@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dtamhc3u844oa"]
+[gd_scene format=3 uid="uid://dtamhc3u844oa"]
 
 [ext_resource type="Script" uid="uid://bvntop35l4m5u" path="res://global/gameplay.gd" id="1_bx64p"]
 [ext_resource type="Script" uid="uid://d3asyxqei0o6m" path="res://gameplay/mouse.gd" id="2_53nod"]
@@ -28,18 +28,18 @@
 [ext_resource type="AudioStream" uid="uid://dyhle4xwr78k6" path="res://sounds/music/so alone.mp3" id="22_q2ml8"]
 [ext_resource type="AudioStream" uid="uid://c1tks48l4mhxl" path="res://sounds/music/so strange.mp3" id="23_n6aft"]
 
-[node name="Gameplay" type="Node2D"]
+[node name="Gameplay" type="Node2D" unique_id=421557473]
 script = ExtResource("1_bx64p")
 
-[node name="Mouse" type="Node" parent="."]
+[node name="Mouse" type="Node" parent="." unique_id=847539000]
 process_mode = 3
 script = ExtResource("2_53nod")
 
-[node name="GameplayValues" type="Node" parent="." node_paths=PackedStringArray("PLAYER")]
+[node name="GameplayValues" type="Node" parent="." unique_id=1979610324 node_paths=PackedStringArray("PLAYER")]
 script = ExtResource("3_4vl10")
 PLAYER = NodePath("../Player")
 
-[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("REFERENCE_OBJECT")]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=120362274 node_paths=PackedStringArray("REFERENCE_OBJECT")]
 position = Vector2(960, 576)
 limit_bottom = 1155
 position_smoothing_enabled = true
@@ -48,18 +48,19 @@ script = ExtResource("10_s60jr")
 REFERENCE_OBJECT = NodePath("../Player")
 OFFSET = 100.0
 
-[node name="Platform" parent="." instance=ExtResource("11_q2ml8")]
+[node name="Platform" parent="." unique_id=1043599743 instance=ExtResource("11_q2ml8")]
 position = Vector2(960, 1088)
 
-[node name="Player" parent="." instance=ExtResource("12_n6aft")]
+[node name="Player" parent="." unique_id=1807311024 instance=ExtResource("12_n6aft")]
 position = Vector2(960, 960)
 collision_mask = 14
+VARIABLE_HEIGHT = false
 
-[node name="LetterSetup" type="Node2D" parent="." node_paths=PackedStringArray("level_generator")]
+[node name="LetterSetup" type="Node2D" parent="." unique_id=167710256 node_paths=PackedStringArray("level_generator")]
 script = ExtResource("3_63nix")
 level_generator = NodePath("../LevelGenerator")
 
-[node name="LevelGenerator" type="Node2D" parent="."]
+[node name="LevelGenerator" type="Node2D" parent="." unique_id=510509313]
 script = ExtResource("4_53nod")
 TUTORIAL_DIR = "res://levels/tutorial_levels/"
 A_LEVEL_DIR = "res://levels/A_levels/"
@@ -72,7 +73,7 @@ C_LETTER_LEVEL = ExtResource("7_xmdrq")
 D_LETTER_LEVEL = ExtResource("8_47db2")
 FINAL_LEVEL = ExtResource("13_n6aft")
 
-[node name="Monster" parent="." node_paths=PackedStringArray("PLAYER") instance=ExtResource("13_2qs7h")]
+[node name="Monster" parent="." unique_id=1245830370 node_paths=PackedStringArray("PLAYER") instance=ExtResource("13_2qs7h")]
 position = Vector2(960, 3456)
 NORMAL_SPEED = 250.0
 SLOW_SPEED = 50.0
@@ -80,27 +81,39 @@ FAST_SPEED = 600.0
 FAST_MIN_DISTANCE = 1400.0
 PLAYER = NodePath("../Player")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=743520618]
 layer = 10
 
-[node name="Stats" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("GAME_VALUES", "METERS_LABEL", "TIME_LABEL")]
+[node name="Stats" type="Control" parent="CanvasLayer" unique_id=1868316189 node_paths=PackedStringArray("GAME_VALUES", "METERS_LABEL", "TIME_LABEL", "CURRENT_ROOM_LABEL", "LEFT_LABEL", "RIGHT_LABEL", "JUMP_LABEL")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("15_2beay")
 GAME_VALUES = NodePath("../../GameplayValues")
-METERS_LABEL = NodePath("VBoxContainer/MetersLabel")
-TIME_LABEL = NodePath("VBoxContainer/TimeLabel")
+METERS_LABEL = NodePath("Stats/MetersLabel")
+TIME_LABEL = NodePath("Stats/TimeLabel")
+CURRENT_ROOM_LABEL = NodePath("Stats/CurrentRoom")
+LEFT_LABEL = NodePath("Inputs/Left")
+RIGHT_LABEL = NodePath("Inputs/Right")
+JUMP_LABEL = NodePath("Inputs/Jump")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Stats"]
+[node name="Stats" type="VBoxContainer" parent="CanvasLayer/Stats" unique_id=1104966229]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 40.0
-offset_right = 452.0
-offset_bottom = 93.0
+offset_top = 8.0
+offset_right = 420.0
+offset_bottom = 289.0
 
-[node name="MetersLabel" type="Label" parent="CanvasLayer/Stats/VBoxContainer"]
+[node name="CurrentRoom" type="Label" parent="CanvasLayer/Stats/Stats" unique_id=1370354487]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("14_wxx72")
+theme_override_font_sizes/font_size = 50
+text = "Room:"
+
+[node name="MetersLabel" type="Label" parent="CanvasLayer/Stats/Stats" unique_id=1183058592]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
@@ -109,7 +122,7 @@ theme_override_fonts/font = ExtResource("14_wxx72")
 theme_override_font_sizes/font_size = 50
 text = "Meters: миллион тысяч"
 
-[node name="TimeLabel" type="Label" parent="CanvasLayer/Stats/VBoxContainer"]
+[node name="TimeLabel" type="Label" parent="CanvasLayer/Stats/Stats" unique_id=330737789]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
@@ -118,24 +131,60 @@ theme_override_fonts/font = ExtResource("14_wxx72")
 theme_override_font_sizes/font_size = 50
 text = "Time: 99:99"
 
-[node name="Notification" parent="CanvasLayer" instance=ExtResource("18_b2kny")]
+[node name="Inputs" type="VBoxContainer" parent="CanvasLayer/Stats" unique_id=162651361]
+layout_mode = 0
+offset_left = 1703.0
+offset_right = 1919.0
+offset_bottom = 167.0
+alignment = 2
 
-[node name="OverlayParticles" parent="CanvasLayer" node_paths=PackedStringArray("PARTICLES") instance=ExtResource("5_n6aft")]
+[node name="Left" type="Label" parent="CanvasLayer/Stats/Inputs" unique_id=1914351379]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("14_wxx72")
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 2
+
+[node name="Right" type="Label" parent="CanvasLayer/Stats/Inputs" unique_id=1865041051]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("14_wxx72")
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 2
+
+[node name="Jump" type="Label" parent="CanvasLayer/Stats/Inputs" unique_id=316775532]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("14_wxx72")
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 2
+
+[node name="Notification" parent="CanvasLayer" unique_id=1788220222 instance=ExtResource("18_b2kny")]
+
+[node name="OverlayParticles" parent="CanvasLayer" unique_id=211750386 node_paths=PackedStringArray("PARTICLES") instance=ExtResource("5_n6aft")]
 z_index = -1
 position = Vector2(960, 576)
 PARTICLES = [null, NodePath("Rain"), null, null]
 
-[node name="Pause" parent="CanvasLayer" instance=ExtResource("18_q2ml8")]
+[node name="Pause" parent="CanvasLayer" unique_id=54117160 instance=ExtResource("18_q2ml8")]
 process_mode = 3
 visible = false
 z_index = 4
 
-[node name="DeathScreen" parent="CanvasLayer" node_paths=PackedStringArray("GAME_VALUES") instance=ExtResource("2_63nix")]
+[node name="DeathScreen" parent="CanvasLayer" unique_id=1140007305 node_paths=PackedStringArray("GAME_VALUES") instance=ExtResource("2_63nix")]
 visible = false
 z_index = 5
 GAME_VALUES = NodePath("../../GameplayValues")
 
-[node name="Music" type="Node" parent="." node_paths=PackedStringArray("PLAYER_1", "PLAYER_2")]
+[node name="Node" type="Node" parent="CanvasLayer" unique_id=1367249969]
+
+[node name="Music" type="Node" parent="." unique_id=1107613345 node_paths=PackedStringArray("PLAYER_1", "PLAYER_2")]
 process_mode = 3
 script = ExtResource("19_y3ygr")
 SOUNDTRACKS = Array[AudioStream]([ExtResource("20_xmdrq"), ExtResource("21_s60jr"), ExtResource("22_q2ml8"), ExtResource("23_n6aft")])
@@ -143,16 +192,16 @@ TRANSITION_TIME = 0.5
 PLAYER_1 = NodePath("AudioStreamPlayer1")
 PLAYER_2 = NodePath("AudioStreamPlayer2")
 
-[node name="AudioStreamPlayer1" type="AudioStreamPlayer" parent="Music"]
+[node name="AudioStreamPlayer1" type="AudioStreamPlayer" parent="Music" unique_id=220175716]
 stream = ExtResource("20_xmdrq")
 bus = &"Music"
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Music"]
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Music" unique_id=455744910]
 bus = &"Music"
 
-[node name="Visual" type="Node2D" parent="."]
+[node name="Visual" type="Node2D" parent="." unique_id=260557881]
 
-[node name="Borders" parent="Visual" node_paths=PackedStringArray("player") instance=ExtResource("16_ni0ts")]
+[node name="Borders" parent="Visual" unique_id=852787308 node_paths=PackedStringArray("player") instance=ExtResource("16_ni0ts")]
 player = NodePath("../../Player")
 
-[node name="Background" parent="Visual" instance=ExtResource("20_b2kny")]
+[node name="Background" parent="Visual" unique_id=525506111 instance=ExtResource("20_b2kny")]

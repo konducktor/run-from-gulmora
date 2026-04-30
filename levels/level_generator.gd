@@ -130,6 +130,7 @@ func generate_next_level(custom_level: PackedScene = null) -> Level:
 func add_level_to_scene(level: PackedScene, level_position: Vector2 = Vector2.ZERO) -> Level:
 	var new_level : Level = level.instantiate()
 	new_level.position = level_position
+	new_level.level_path = level.resource_path
 	
 	call_deferred('add_child', new_level)
 	return new_level

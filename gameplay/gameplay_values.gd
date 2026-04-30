@@ -4,7 +4,6 @@ class_name GameValues
 
 @export var PLAYER : Node2D
 
-
 var is_capturing : bool
 
 var meters_offset : float
