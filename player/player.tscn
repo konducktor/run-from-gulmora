@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://uos88rcjypfn"]
+[gd_scene format=3 uid="uid://uos88rcjypfn"]
 
 [ext_resource type="Script" uid="uid://dga84sgb8gjup" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Script" uid="uid://baxjv5p6gbkoa" path="res://player/player_animation.gd" id="2_g1dw6"]
@@ -206,7 +206,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("COYOTE_TIMER") groups=["Player"]]
+[node name="Player" type="CharacterBody2D" unique_id=1013868745 node_paths=PackedStringArray("COYOTE_TIMER") groups=["Player"]]
 collision_mask = 30
 script = ExtResource("1_rkbax")
 PLAYER_SPEED = 800.0
@@ -216,39 +216,39 @@ JUMP_PEAK_TIME = 0.3
 JUMP_FALL_TIME = 0.25
 COYOTE_TIMER = NodePath("CoyoteTimer")
 
-[node name="CoyoteTimer" type="Timer" parent="."]
+[node name="CoyoteTimer" type="Timer" parent="." unique_id=17298171]
 wait_time = 0.2
 one_shot = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1852295659]
 position = Vector2(0, 28)
 shape = SubResource("CapsuleShape2D_g1dw6")
 debug_color = Color(0.665493, 0.314121, 1, 0.42)
 
-[node name="Sounds" type="Node" parent="." node_paths=PackedStringArray("JUMP", "WALKING", "FALL")]
+[node name="Sounds" type="Node" parent="." unique_id=1170516103 node_paths=PackedStringArray("JUMP", "WALKING", "FALL")]
 script = ExtResource("2_qjkh3")
 JUMP = NodePath("Jump")
 WALKING = NodePath("Walking")
 FALL = NodePath("Fall")
 
-[node name="Jump" type="AudioStreamPlayer" parent="Sounds"]
+[node name="Jump" type="AudioStreamPlayer" parent="Sounds" unique_id=1390080043]
 stream = ExtResource("3_rgyib")
 volume_db = -3.0
 max_polyphony = 2
 bus = &"SFX"
 
-[node name="Walking" type="AudioStreamPlayer" parent="Sounds"]
+[node name="Walking" type="AudioStreamPlayer" parent="Sounds" unique_id=710923433]
 stream = ExtResource("4_boad6")
 volume_db = -5.0
 bus = &"SFX"
 
-[node name="Fall" type="AudioStreamPlayer" parent="Sounds"]
+[node name="Fall" type="AudioStreamPlayer" parent="Sounds" unique_id=566767052]
 stream = ExtResource("4_hg6s5")
 volume_db = -10.0
 max_polyphony = 2
 bus = &"SFX"
 
-[node name="Visuals" type="Node2D" parent="." node_paths=PackedStringArray("LANDING_PARTICLE", "STEP_PARTICLE", "ANIMATED_SPRITE", "COLLISION", "PLAYER")]
+[node name="Visuals" type="Node2D" parent="." unique_id=1861599983 node_paths=PackedStringArray("LANDING_PARTICLE", "STEP_PARTICLE", "ANIMATED_SPRITE", "COLLISION", "PLAYER")]
 script = ExtResource("2_g1dw6")
 PLAYER_DEATH_IMPACT_VELOCITY = Vector2(0, -2000)
 LANDING_PARTICLE = NodePath("ParticleLanding")
@@ -257,17 +257,18 @@ ANIMATED_SPRITE = NodePath("AnimatedSprite2D")
 COLLISION = NodePath("../CollisionShape2D")
 PLAYER = NodePath("..")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals" unique_id=480901485]
 sprite_frames = SubResource("SpriteFrames_x7c3f")
 animation = &"walking"
 autoplay = "idle_1"
+frame_progress = 0.20082207
 
-[node name="ParticleStep" parent="Visuals" instance=ExtResource("8_hg6s5")]
+[node name="ParticleStep" parent="Visuals" unique_id=1374381468 instance=ExtResource("8_hg6s5")]
 position = Vector2(0, 56)
 amount = 5
 lifetime = 2.0
 
-[node name="ParticleLanding" parent="Visuals" instance=ExtResource("8_rgyib")]
+[node name="ParticleLanding" parent="Visuals" unique_id=627957496 instance=ExtResource("8_rgyib")]
 position = Vector2(0, 64)
 
 [connection signal="fall" from="." to="Sounds" method="_on_player_fall"]
