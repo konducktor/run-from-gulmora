@@ -108,7 +108,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qjkh3")
 }],
-"loop": true,
+"loop": 1,
 "name": &"dead",
 "speed": 12.0
 }, {
@@ -116,7 +116,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_g6k8r")
 }],
-"loop": true,
+"loop": 1,
 "name": &"fall",
 "speed": 12.0
 }, {
@@ -133,7 +133,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7pqkx")
 }],
-"loop": true,
+"loop": 1,
 "name": &"hyped",
 "speed": 12.0
 }, {
@@ -150,7 +150,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8t03j")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_1",
 "speed": 12.0
 }, {
@@ -167,7 +167,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kb6p2")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_2",
 "speed": 12.0
 }, {
@@ -175,7 +175,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wodsf")
 }],
-"loop": true,
+"loop": 1,
 "name": &"jump",
 "speed": 12.0
 }, {
@@ -201,7 +201,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bjvpn")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walking",
 "speed": 12.0
 }]
@@ -259,9 +259,8 @@ PLAYER = NodePath("..")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals" unique_id=480901485]
 sprite_frames = SubResource("SpriteFrames_x7c3f")
-animation = &"walking"
+animation = &"fall"
 autoplay = "idle_1"
-frame_progress = 0.20082207
 
 [node name="ParticleStep" parent="Visuals" unique_id=1374381468 instance=ExtResource("8_hg6s5")]
 position = Vector2(0, 56)

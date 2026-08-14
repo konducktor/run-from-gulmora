@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cgweq44ec2mce"]
+[gd_scene format=3 uid="uid://cgweq44ec2mce"]
 
 [ext_resource type="Texture2D" uid="uid://c64etftqqhbyj" path="res://gameplay_elements/letter/art/L.png" id="1_edkgh"]
 [ext_resource type="Script" uid="uid://bewkgt0sd4i2h" path="res://gameplay_elements/letter/letter.gd" id="1_hxa6d"]
@@ -33,12 +33,12 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wld4g")
 }],
-"loop": false,
+"loop": 0,
 "name": &"collected",
 "speed": 9.0
 }, {
 "frames": [],
-"loop": true,
+"loop": 1,
 "name": &"main",
 "speed": 5.0
 }]
@@ -109,41 +109,39 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_a2bqv"]
 radius = 128.0
 
-[node name="Letter" type="Area2D" node_paths=PackedStringArray("collison_shape", "sprite") groups=["Letter"]]
+[node name="Letter" type="Area2D" unique_id=624878081 node_paths=PackedStringArray("collison_shape", "sprite") groups=["Letter"]]
 script = ExtResource("1_hxa6d")
 letter_textures = Array[Texture2D]([ExtResource("1_edkgh"), ExtResource("3_b5b0c"), ExtResource("3_b5b0c"), ExtResource("4_vrgli")])
 collison_shape = NodePath("CollisionShape2D")
 sprite = NodePath("Visual/Sprite2D")
 
-[node name="Sounds" type="Node" parent="." node_paths=PackedStringArray("COLLECT")]
+[node name="Sounds" type="Node" parent="." unique_id=2097669216 node_paths=PackedStringArray("COLLECT")]
 script = ExtResource("5_xw0v6")
 COLLECT = NodePath("AudioStreamPlayer")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sounds"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sounds" unique_id=1702034119]
 stream = ExtResource("6_riiat")
 bus = &"SFX"
 
-[node name="Visual" type="Node2D" parent="." node_paths=PackedStringArray("ANIMATION_PLAYER", "BACKDROP")]
+[node name="Visual" type="Node2D" parent="." unique_id=2108180392 node_paths=PackedStringArray("ANIMATION_PLAYER", "BACKDROP")]
 script = ExtResource("7_riiat")
 ANIMATION_PLAYER = NodePath("AnimationPlayer")
 BACKDROP = NodePath("Backdrop")
 
-[node name="Backdrop" type="AnimatedSprite2D" parent="Visual"]
+[node name="Backdrop" type="AnimatedSprite2D" parent="Visual" unique_id=1609750184]
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_u0h2t")
 animation = &"main"
 autoplay = "main"
 
-[node name="Sprite2D" type="Sprite2D" parent="Visual"]
+[node name="Sprite2D" type="Sprite2D" parent="Visual" unique_id=2133393356]
 texture = ExtResource("1_edkgh")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Visual"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Visual" unique_id=2076835094]
 root_node = NodePath("../..")
-libraries = {
-&"": SubResource("AnimationLibrary_hrfwh")
-}
+libraries/ = SubResource("AnimationLibrary_hrfwh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=866012784]
 shape = SubResource("CircleShape2D_a2bqv")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

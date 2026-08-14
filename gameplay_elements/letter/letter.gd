@@ -28,7 +28,9 @@ func _on_body_entered(body: Node2D) -> void:
 	if not body.is_in_group("Player"):
 		return
 	
+	var player: Player = body as Player
+	
 	collison_shape.set_deferred('disabled', true)
 	
-	body.hyped.emit()
+	player.hyped.emit()
 	collected.emit()

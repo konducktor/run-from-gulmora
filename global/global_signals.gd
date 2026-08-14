@@ -18,3 +18,6 @@ signal final_level_reached
 
 signal paused
 signal unpaused
+
+signal jetpack_picked_up
+signal jetpack_finished

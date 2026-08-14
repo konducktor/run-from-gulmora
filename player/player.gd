@@ -58,6 +58,12 @@ func _physics_process(delta: float) -> void:
 	if disable_moving:
 		velocity = Vector2.ZERO
 	
+	if GlobalValues.current_player_type != GlobalValues.PlayerType.REGULAR:
+		visible = false
+		return
+	else:
+		visible = true
+	
 	if is_on_floor():
 		if previously_falling:
 			previously_falling = false

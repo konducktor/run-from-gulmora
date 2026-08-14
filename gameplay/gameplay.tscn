@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://df0v2abqki1gm" path="res://levels/letter_levels/A_letter_level.tscn" id="5_b2kny"]
 [ext_resource type="PackedScene" uid="uid://bqsh4nv2m2e5d" path="res://visuals/overlay_particles/overlay_particles.tscn" id="5_n6aft"]
 [ext_resource type="PackedScene" uid="uid://c1lkuldvp0734" path="res://levels/letter_levels/B_letter_level.tscn" id="6_y3ygr"]
+[ext_resource type="PackedScene" uid="uid://60mcb6piyk1a" path="res://gameplay_elements/jetpack/player_jetpack/player_jetpack.tscn" id="7_2qs7h"]
 [ext_resource type="PackedScene" uid="uid://daqxkd3qpb8bd" path="res://levels/letter_levels/C_letter_level.tscn" id="7_xmdrq"]
 [ext_resource type="PackedScene" uid="uid://ciofim6bqh6iw" path="res://levels/letter_levels/D_letter_level.tscn" id="8_47db2"]
 [ext_resource type="Script" uid="uid://dux2ueculjt2t" path="res://global/camera.gd" id="10_s60jr"]
@@ -37,7 +38,7 @@ script = ExtResource("2_53nod")
 
 [node name="GameplayValues" type="Node" parent="." unique_id=1979610324 node_paths=PackedStringArray("PLAYER")]
 script = ExtResource("3_4vl10")
-PLAYER = NodePath("../Player")
+PLAYER = NodePath("../Player/Player")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=120362274 node_paths=PackedStringArray("REFERENCE_OBJECT")]
 position = Vector2(960, 576)
@@ -51,10 +52,16 @@ OFFSET = 150.0
 [node name="Platform" parent="." unique_id=1043599743 instance=ExtResource("11_q2ml8")]
 position = Vector2(960, 1088)
 
-[node name="Player" parent="." unique_id=1807311024 instance=ExtResource("12_n6aft")]
+[node name="Player" type="Node" parent="." unique_id=787962983]
+
+[node name="Player" parent="Player" unique_id=1807311024 instance=ExtResource("12_n6aft")]
 position = Vector2(960, 960)
-collision_mask = 14
 VARIABLE_HEIGHT = false
+
+[node name="PlayerJetpack" parent="Player" unique_id=611945072 node_paths=PackedStringArray("player") instance=ExtResource("7_2qs7h")]
+visible = false
+position = Vector2(960, 960)
+player = NodePath("../Player")
 
 [node name="LetterSetup" type="Node2D" parent="." unique_id=167710256 node_paths=PackedStringArray("level_generator")]
 script = ExtResource("3_63nix")
@@ -79,7 +86,7 @@ NORMAL_SPEED = 250.0
 SLOW_SPEED = 50.0
 FAST_SPEED = 600.0
 FAST_MIN_DISTANCE = 1400.0
-PLAYER = NodePath("../Player")
+PLAYER = NodePath("../Player/Player")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=743520618]
 layer = 10
@@ -202,6 +209,6 @@ bus = &"Music"
 [node name="Visual" type="Node2D" parent="." unique_id=260557881]
 
 [node name="Borders" parent="Visual" unique_id=852787308 node_paths=PackedStringArray("player") instance=ExtResource("16_ni0ts")]
-player = NodePath("../../Player")
+player = NodePath("../../Player/Player")
 
 [node name="Background" parent="Visual" unique_id=525506111 instance=ExtResource("20_b2kny")]
