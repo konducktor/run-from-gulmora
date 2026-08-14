@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://mv1d3fe308hq"]
+
+[ext_resource type="Texture2D" uid="uid://cnyax8hxm4eiu" path="res://gameplay_elements/dash_bubble/dash_bubble.png" id="1_c1dt1"]
+[ext_resource type="Script" uid="uid://daop3imnjqf4i" path="res://gameplay_elements/dash_bubble/dash_bubble.gd" id="1_mo0be"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_njsjv"]
+radius = 97.020615
+
+[node name="DashBubble" type="Area2D" unique_id=1844456505]
+script = ExtResource("1_mo0be")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=366385872]
+texture = ExtResource("1_c1dt1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=929370961]
+shape = SubResource("CircleShape2D_njsjv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

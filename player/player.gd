@@ -38,6 +38,7 @@ var jump_buffer : bool = false
 
 var jump_amount : int
 var stunned : bool
+var disable_moving : bool
 
 var can_release : bool
 
@@ -54,6 +55,9 @@ func _ready():
 
 
 func _physics_process(delta: float) -> void:
+	if disable_moving:
+		velocity = Vector2.ZERO
+	
 	if is_on_floor():
 		if previously_falling:
 			previously_falling = false
@@ -75,9 +79,10 @@ func _physics_process(delta: float) -> void:
 			previously_walking = true
 			walking.emit()
 	else:
-		velocity.y = calculate_gravity(delta, velocity.y)
+		if !disable_moving:
+			velocity.y = calculate_gravity(delta, velocity.y)
 	
-	if not stunned:
+	if not stunned and not disable_moving:
 		velocity.x = calculate_horizontal_movement(delta, velocity.x)
 		velocity.y = calculate_jump(delta, velocity.y)
 	
