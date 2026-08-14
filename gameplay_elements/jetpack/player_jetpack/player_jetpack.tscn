@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://60mcb6piyk1a"]
+
+[ext_resource type="Script" uid="uid://y3ctfci6lcvv" path="res://gameplay_elements/jetpack/player_jetpack/player_jetpack.gd" id="1_2si4m"]
+[ext_resource type="Texture2D" uid="uid://dd3c7vq5r84uw" path="res://gameplay_elements/jetpack/player_jetpack/player_jetpack.png" id="1_srjts"]
+
+[node name="PlayerJetpack" type="Area2D" unique_id=611945072]
+collision_mask = 2
+script = ExtResource("1_2si4m")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1684777503]
+texture = ExtResource("1_srjts")
