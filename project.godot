@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="gmtk-2025"
-run/main_scene="uid://oy076h1ap0o0"
+run/main_scene="uid://dtamhc3u844oa"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
@@ -50,6 +50,10 @@ folder_colors={
 "res://ux/main_menu/": "purple",
 "res://visuals/": "teal"
 }
+
+[global_group]
+
+Danger=""
 
 [input]
 

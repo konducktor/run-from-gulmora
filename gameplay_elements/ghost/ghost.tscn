@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://di1tbxrtr3467"]
+[gd_scene format=3 uid="uid://di1tbxrtr3467"]
 
 [ext_resource type="Texture2D" uid="uid://bqvvd37r2vmkv" path="res://gameplay_elements/ghost/art/ghost.png" id="1_2uhf4"]
 [ext_resource type="Script" uid="uid://nyae8kk0ioh7" path="res://gameplay_elements/ghost/ghost.gd" id="1_njrju"]
@@ -21,48 +21,48 @@ radius = 32.0
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[node name="Ghost" type="Node2D" node_paths=PackedStringArray("STATE_MACHINE")]
+[node name="Ghost" type="Node2D" unique_id=282105101 node_paths=PackedStringArray("STATE_MACHINE")]
 script = ExtResource("1_njrju")
 SPEED = 300.0
 ANGER_RANGE = 400.0
 PASSIVE_RANGE = 1000.0
 STATE_MACHINE = NodePath("StateMachine")
 
-[node name="Editor" type="Node2D" parent="."]
+[node name="Editor" type="Node2D" parent="." unique_id=1631789496]
 script = ExtResource("2_siwcv")
 
-[node name="Danger" parent="." instance=ExtResource("3_y8ata")]
+[node name="Danger" parent="." unique_id=1387646880 instance=ExtResource("3_y8ata")]
 
 [node name="CollisionShape2D" parent="Danger" index="0"]
 shape = SubResource("CircleShape2D_jp7xg")
 
-[node name="StateMachine" type="Node2D" parent="." node_paths=PackedStringArray("INITIAL_STATE")]
+[node name="StateMachine" type="Node2D" parent="." unique_id=1756533355 node_paths=PackedStringArray("INITIAL_STATE")]
 script = ExtResource("4_f3ecn")
 INITIAL_STATE = NodePath("Idle")
 
-[node name="Idle" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("ACTIVE_STATE")]
+[node name="Idle" type="Node2D" parent="StateMachine" unique_id=2007142050 node_paths=PackedStringArray("ACTIVE_STATE")]
 script = ExtResource("5_8g54a")
 ACTIVE_STATE = NodePath("../Active")
 
-[node name="Active" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("IDLE_STATE")]
+[node name="Active" type="Node2D" parent="StateMachine" unique_id=1969627818 node_paths=PackedStringArray("IDLE_STATE")]
 script = ExtResource("6_y8ata")
 IDLE_STATE = NodePath("../Idle")
 
-[node name="Sounds" type="Node2D" parent="." node_paths=PackedStringArray("ATTACK", "DEATH")]
+[node name="Sounds" type="Node2D" parent="." unique_id=1841950623 node_paths=PackedStringArray("ATTACK", "DEATH")]
 script = ExtResource("7_u321h")
 ATTACK = NodePath("Attack")
 DEATH = NodePath("Death")
 
-[node name="Attack" type="AudioStreamPlayer" parent="Sounds"]
+[node name="Attack" type="AudioStreamPlayer" parent="Sounds" unique_id=1412634157]
 stream = ExtResource("8_5oia5")
 volume_db = 10.0
 bus = &"SFX"
 
-[node name="Death" type="AudioStreamPlayer" parent="Sounds"]
+[node name="Death" type="AudioStreamPlayer" parent="Sounds" unique_id=1978842501]
 stream = ExtResource("8_1h73h")
 bus = &"SFX"
 
-[node name="Proximity" type="AudioStreamPlayer2D" parent="Sounds"]
+[node name="Proximity" type="AudioStreamPlayer2D" parent="Sounds" unique_id=737064108]
 stream = ExtResource("9_alnux")
 volume_db = 10.0
 autoplay = true
@@ -71,16 +71,16 @@ attenuation = 0.3
 bus = &"SFX"
 parameters/looping = true
 
-[node name="Visual" type="Node2D" parent="." node_paths=PackedStringArray("ACTIVE_STATE", "SPRITE")]
+[node name="Visual" type="Node2D" parent="." unique_id=429127770 node_paths=PackedStringArray("ACTIVE_STATE", "SPRITE")]
 script = ExtResource("7_jp7xg")
 ACTIVE_STATE = NodePath("../StateMachine/Active")
 SPRITE = NodePath("Sprite2D")
 
-[node name="Sprite2D" type="Sprite2D" parent="Visual"]
+[node name="Sprite2D" type="Sprite2D" parent="Visual" unique_id=1127947397]
 z_index = 3
 texture = ExtResource("1_2uhf4")
 
-[node name="particle_ghost" parent="Visual" instance=ExtResource("12_alnux")]
+[node name="particle_ghost" parent="Visual" unique_id=1602991182 instance=ExtResource("12_alnux")]
 z_index = 2
 emission_shape = 1
 emission_sphere_radius = 20.0

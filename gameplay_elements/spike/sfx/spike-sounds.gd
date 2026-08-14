@@ -7,3 +7,9 @@ func _on_danger_body_entered(body: Node2D) -> void:
 		return
 	
 	play_sound(DEATH, random_pitch())
+
+func _on_danger_area_entered(area):
+	if not area is DashBubble:
+		return
+	
+	play_sound(DEATH, random_pitch())

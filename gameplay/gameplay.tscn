@@ -46,7 +46,7 @@ position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 script = ExtResource("10_s60jr")
 REFERENCE_OBJECT = NodePath("../Player")
-OFFSET = 100.0
+OFFSET = 150.0
 
 [node name="Platform" parent="." unique_id=1043599743 instance=ExtResource("11_q2ml8")]
 position = Vector2(960, 1088)

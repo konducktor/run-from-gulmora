@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bwgimqktwg1dp" path="res://levels/level.tscn" id="1_v2yr8"]
 [ext_resource type="Texture2D" uid="uid://drw3j4bfy2xqp" path="res://visuals/1_hell/chain.png" id="2_wwuf0"]
+[ext_resource type="PackedScene" uid="uid://mv1d3fe308hq" path="res://gameplay_elements/dash_bubble/dash_bubble.tscn" id="3_66rxv"]
 
 [node name="Level" unique_id=1327631094 instance=ExtResource("1_v2yr8")]
 
@@ -12,3 +13,6 @@ tile_map_data = PackedByteArray("AAAAAAAAAwABAAEAAAAAAAEAAwABAAEAAAAAAAIAAwABAAE
 position = Vector2(555, 189)
 rotation = 0.437236
 texture = ExtResource("2_wwuf0")
+
+[node name="DashBubble" parent="." index="3" unique_id=1844456505 instance=ExtResource("3_66rxv")]
+position = Vector2(992, 670)
