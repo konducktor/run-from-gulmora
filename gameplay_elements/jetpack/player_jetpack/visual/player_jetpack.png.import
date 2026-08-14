@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dd3c7vq5r84uw"
-path="res://.godot/imported/player_jetpack.png-6c99bc543e09e516065828f391b917ce.ctex"
+path="res://.godot/imported/player_jetpack.png-d89cf846df422df6c1e022954c4eda8d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gameplay_elements/jetpack/player_jetpack/player_jetpack.png"
-dest_files=["res://.godot/imported/player_jetpack.png-6c99bc543e09e516065828f391b917ce.ctex"]
+source_file="res://gameplay_elements/jetpack/player_jetpack/visual/player_jetpack.png"
+dest_files=["res://.godot/imported/player_jetpack.png-d89cf846df422df6c1e022954c4eda8d.ctex"]
 
 [params]
 

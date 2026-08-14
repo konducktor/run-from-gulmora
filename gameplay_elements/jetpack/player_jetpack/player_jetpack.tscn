@@ -1,11 +1,34 @@
 [gd_scene format=3 uid="uid://60mcb6piyk1a"]
 
 [ext_resource type="Script" uid="uid://y3ctfci6lcvv" path="res://gameplay_elements/jetpack/player_jetpack/player_jetpack.gd" id="1_2si4m"]
-[ext_resource type="Texture2D" uid="uid://dd3c7vq5r84uw" path="res://gameplay_elements/jetpack/player_jetpack/player_jetpack.png" id="1_srjts"]
+[ext_resource type="Texture2D" uid="uid://dd3c7vq5r84uw" path="res://gameplay_elements/jetpack/player_jetpack/visual/player_jetpack.png" id="1_srjts"]
+[ext_resource type="Script" uid="uid://d2d2ui1xw7fby" path="res://gameplay_elements/jetpack/player_jetpack/visual/player_jetpack_visual.gd" id="2_jmati"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r030d"]
+radius = 61.39218
 
 [node name="PlayerJetpack" type="Area2D" unique_id=611945072]
 collision_mask = 2
 script = ExtResource("1_2si4m")
+vertical_speed = 2000.0
+acceleration = 150.0
+horizontal_speed = 800.0
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1684777503]
+[node name="Visual" type="Node2D" parent="." unique_id=1201354857]
+script = ExtResource("2_jmati")
+
+[node name="Sprite2D" type="Sprite2D" parent="Visual" unique_id=1684777503]
 texture = ExtResource("1_srjts")
+
+[node name="Sound" type="Node" parent="." unique_id=1677933161]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1037507196]
+shape = SubResource("CircleShape2D_r030d")
+
+[node name="JetpackTimer" type="Timer" parent="." unique_id=1096102662]
+unique_name_in_owner = true
+one_shot = true
+
+[connection signal="activated" from="." to="Visual" method="_on_player_jetpack_activated"]
+[connection signal="deactivated" from="." to="Visual" method="_on_player_jetpack_deactivated"]
+[connection signal="timeout" from="JetpackTimer" to="." method="_on_timer_timeout"]

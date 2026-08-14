@@ -20,3 +20,4 @@ signal paused
 signal unpaused
 
 signal jetpack_picked_up
+signal jetpack_finished

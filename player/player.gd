@@ -54,6 +54,12 @@ func _ready():
 
 
 func _physics_process(delta: float) -> void:
+	if GlobalValues.current_player_type != GlobalValues.PlayerType.REGULAR:
+		visible = false
+		return
+	else:
+		visible = true
+	
 	if is_on_floor():
 		if previously_falling:
 			previously_falling = false

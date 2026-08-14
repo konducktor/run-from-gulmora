@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://d1d7dlfpksgqn" path="res://levels/level.gd" id="1_dhodc"]
 [ext_resource type="TileSet" uid="uid://caasbtsyfkkgk" path="res://levels/level_tileset.tres" id="2_pc1t6"]
 [ext_resource type="Texture2D" uid="uid://drw3j4bfy2xqp" path="res://visuals/1_hell/chain.png" id="3_wujdd"]
-[ext_resource type="PackedScene" uid="uid://dmb2i10yojke7" path="res://gameplay_elements/jetpack/jetpack_item/jetpack_item.tscn" id="4_vk3wp"]
 
 [node name="Level" type="Node2D" unique_id=1119224816]
 script = ExtResource("1_dhodc")
@@ -21,15 +20,12 @@ position = Vector2(1408, 320)
 rotation = 1.64803
 texture = ExtResource("3_wujdd")
 
-[node name="JetpackItem" parent="." unique_id=943665142 instance=ExtResource("4_vk3wp")]
-position = Vector2(612, 679)
-
 [connection signal="activated" from="Tiles/Spring" to="Tiles/Spring/Visual" method="_on_spring_activated"]
 [connection signal="body_entered" from="Tiles/Spring" to="Tiles/Spring" method="_on_body_entered"]
 [connection signal="body_entered" from="Tiles/Spring" to="Tiles/Spring/Sounds" method="_on_spring_body_entered"]
-[connection signal="activated" from="Tiles/@Area2D@39695" to="Tiles/@Area2D@39695/Visual" method="_on_spring_activated"]
-[connection signal="body_entered" from="Tiles/@Area2D@39695" to="Tiles/@Area2D@39695" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@39695" to="Tiles/@Area2D@39695/Sounds" method="_on_spring_body_entered"]
-[connection signal="activated" from="Tiles/@Area2D@39701" to="Tiles/@Area2D@39701/Visual" method="_on_spring_activated"]
-[connection signal="body_entered" from="Tiles/@Area2D@39701" to="Tiles/@Area2D@39701" method="_on_body_entered"]
-[connection signal="body_entered" from="Tiles/@Area2D@39701" to="Tiles/@Area2D@39701/Sounds" method="_on_spring_body_entered"]
+[connection signal="activated" from="Tiles/@Area2D@106749" to="Tiles/@Area2D@106749/Visual" method="_on_spring_activated"]
+[connection signal="body_entered" from="Tiles/@Area2D@106749" to="Tiles/@Area2D@106749" method="_on_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@106749" to="Tiles/@Area2D@106749/Sounds" method="_on_spring_body_entered"]
+[connection signal="activated" from="Tiles/@Area2D@106755" to="Tiles/@Area2D@106755/Visual" method="_on_spring_activated"]
+[connection signal="body_entered" from="Tiles/@Area2D@106755" to="Tiles/@Area2D@106755" method="_on_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@106755" to="Tiles/@Area2D@106755/Sounds" method="_on_spring_body_entered"]
