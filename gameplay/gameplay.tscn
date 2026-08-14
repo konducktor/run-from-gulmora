@@ -58,7 +58,7 @@ position = Vector2(960, 1088)
 position = Vector2(960, 960)
 VARIABLE_HEIGHT = false
 
-[node name="PlayerJetpack" parent="Player" unique_id=611945072 node_paths=PackedStringArray("player") instance=ExtResource("7_2qs7h")]
+[node name="PlayerJetpack" parent="Player" unique_id=611945072 node_paths=PackedStringArray("player") groups=["Danger", "Player"] instance=ExtResource("7_2qs7h")]
 visible = false
 position = Vector2(960, 960)
 player = NodePath("../Player")

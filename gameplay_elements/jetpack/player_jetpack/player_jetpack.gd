@@ -61,7 +61,6 @@ func _physics_process(delta: float) -> void:
 	if velocity.y < -vertical_speed:
 		velocity.y = -vertical_speed
 	
-	print(velocity.y)
 	position += velocity * delta
 
 
