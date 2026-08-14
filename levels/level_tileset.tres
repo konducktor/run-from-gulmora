@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b8esukmcwaxoj" path="res://gameplay_elements/spring/spring.tscn" id="4_l4fxl"]
 [ext_resource type="PackedScene" uid="uid://biewwxre508mg" path="res://gameplay_elements/fireball_spawner/fireball_spawner.tscn" id="5_xwwbm"]
 [ext_resource type="PackedScene" uid="uid://di1tbxrtr3467" path="res://gameplay_elements/ghost/ghost.tscn" id="6_o2xp6"]
+[ext_resource type="PackedScene" uid="uid://dmb2i10yojke7" path="res://gameplay_elements/jetpack/jetpack_item/jetpack_item.tscn" id="7_gypcw"]
 [ext_resource type="Texture2D" uid="uid://d53iyq4dn4r5" path="res://visuals/2_sewer/tiles_sewer.jpg" id="7_m1kh2"]
 [ext_resource type="Texture2D" uid="uid://dums2b7iw6i8a" path="res://visuals/1_hell/tiles_hell.png" id="8_yl5tn"]
 [ext_resource type="Texture2D" uid="uid://d12l5xls8eqrv" path="res://visuals/4_void/tiles_void.png" id="9_21kwo"]
@@ -24,6 +25,7 @@ scenes/2/scene = ExtResource("3_ph2vw")
 scenes/3/scene = ExtResource("4_l4fxl")
 scenes/4/scene = ExtResource("5_xwwbm")
 scenes/5/scene = ExtResource("6_o2xp6")
+scenes/6/scene = ExtResource("7_gypcw")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rtcij"]
 texture = ExtResource("7_m1kh2")
